@@ -1,0 +1,86 @@
+/* CSS Document */
+a:link {
+	color: #0000CC;
+}
+a:visited {
+	color: #00CCFF;
+}
+a:hover {
+	color: #0099CC;
+}
+a:active {
+	color: #0000CC;
+}
+.eiffel_cuerpo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	line-height: 20px;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #0000CC;
+	letter-spacing: normal;
+	text-align: left;
+	vertical-align: baseline;
+	word-spacing: normal;
+	white-space: normal;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+}
+
+
+
+
+.eiffel_encabezado1 {
+	font-family: "Arial Narrow";
+	font-size: 18px;
+	font-style: normal;
+	font-weight: bold;
+	text-transform: capitalize;
+	color: #D45500;
+	background-position: 0px;
+	word-spacing: normal;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	line-height: 20px
+	}
+
+.eiffel_pie {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	vertical-align: middle;
+	white-space: normal;
+	height: 20px;
+	color: #010B38;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+}
+.eiffel_encabezado2 {
+	font-family: "Arial Narrow";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: normal;
+	color: #D45500;
+	background-color: #FFF7F7;
+}
+.eiffel_encabezado1b {
+	font-family: "Arial Narrow";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: bold;
+	color: #D45500;
+	background-color: #FFF7F7;
+	text-transform: none;
+}
+#divservicios {
+	position: static;
+	display: none;
+}

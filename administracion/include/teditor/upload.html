@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Upload and Insert Local File</title>
+<script>
+
+/****************************    CONFIGURATION HINT    ********************************/
+/**************************************************************************************
+UPLOADSCRIPT= URL of upload.pl, upload.php or upload.asp - Relative to "upload.html" or absolute url
+Also to configurate in those server script the variables: max filesize, pooldir and poolurl
+POOLURL= URL to upload directory - Relative to "upload.html" or absolute url
+***************************************************************************************/
+
+
+// Samples FOR USING PERLscript. You can use these for testing
+/*
+UPLOADSCRIPT= "http://ngocanh.virtualave.net/cgi-bin/uploads/upload.pl"; //absolute
+POOLURL= "http://ngocanh.virtualave.net/uploads"; //absolute
+*/
+
+// Samples for testing Perlscript at Localhost
+/*
+UPLOADSCRIPT= "http://127.0.0.1/cgi-bin/uploads/upload.pl"; //absolute
+POOLURL= "http://127.0.0.1/uploads"; //absolute
+*/
+
+// Samples FOR USING PHPscript
+/*
+UPLOADSCRIPT= "upload.php"; //relative to upload.html
+POOLURL= "./uploads"; //relative to upload.html
+*/
+UPLOADSCRIPT= "http://vietdev.sourceforge.net/jscript/upload.php"; //absolute
+POOLURL= "http://vietdev.sourceforge.net/jscript/uploads"; //absolute
+
+
+// Samples FOR USING ASP-Script
+/*
+UPLOADSCRIPT= "upload.asp"; //same directory like upload.html
+POOLURL= "show.asp"; // same directory like upload.asp
+*/
+
+function goSubmit()
+{
+  document.forms[0].action= UPLOADSCRIPT
+  document.forms[0].submit()
+}
+
+</script>
+
+<style>
+td {color:white; font-family:Arial; font-size:14px}
+input {color:blue; background:#eeffee;}
+</style>
+
+</head>
+
+<body bgcolor=#c0c0a0 scroll=no>
+
+<center>
+
+<form method=post enctype="multipart/form-data">
+
+<TABLE bgColor=#999999 border=1 width=100% cellpading=0 cellspacing=0>
+
+
+<TR>
+<TD align=middle bgColor=#aa4444 colSpan=2>File Upload</TD>
+</TR>
+
+<TR>
+<TD align=right>Select File:</TD>
+<TD><input type=file name="file" size=55 accept="application/x-www-form-urlencoded"></TD>
+</TR>
+
+<TR>
+<TD colspan=2 align=center>
+<INPUT onclick=goSubmit() title=Send type=button value="Send" style="width:70px; height:22px; background:#aa4444; color:white">
+<INPUT onclick=self.close() title=Close type=button value="Close" style="width:70px; height:22px; background:#aa4444; color:white">
+
+<script>
+var strx= "<INPUT onclick=window.open('" + POOLURL ;
+strx += "') title=Show type=button value='Files-Pool' style='width:70px; height:22px; background:#aa4444; color:white'>";
+document.writeln(strx);
+</script>
+
+</TD></TR>
+
+</TABLE>
+</FORM>
+</center>
+
+</body>
+

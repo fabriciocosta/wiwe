@@ -1,0 +1,66 @@
+<DIV id="SUBCONTENIDO" class="edicion subedicion">
+	
+	<div id="TITULO" class="campo">
+		<label class="MAD_EDIT_TIT">{CARDTITLE}</label>
+		<div  class="MAD_EDIT_FIELD">*TITULO* *ML_TITULO*</div>
+	</div>
+
+	<div id="COPETE" class="campo">
+		<label class="MAD_EDIT_TIT" onclick="javascript:togglediv('COPETE_*ID*_');">{CARDBRIEF}</label>
+		<div id="COPETE_*ID*_" class="MAD_EDIT_FIELD" style="display: none;">*COPETE* *ML_COPETE*</div>
+	</div>
+
+	<div id="DETALLES" class="campo">
+		<label class="MAD_EDIT_TIT">{CARDDETAILS}</label>
+		<div  class="MAD_EDIT_FIELD">*DETALLES*</div>
+	</div>
+
+	<div id="CUERPO" class="campo">
+		<label class="MAD_EDIT_TIT"  onclick="javascript:togglediv('CUERPO_*ID*_');">{CARDBODY}</label>
+		<div id="CUERPO_*ID*_"  class="MAD_EDIT_FIELD" style="display: none;">*CUERPO*  *ML_CUERPO*</div>
+	</div>
+
+	<div id="BAJA" class="campo">
+		<label class="MAD_EDIT_TIT">{CARDVERIFIED}</label>
+		<div  class="MAD_EDIT_FIELD">*BAJA*</div>
+	</div>
+
+	<div class="vista-adicionales campo">
+		
+		<label class="MAD_EDIT_TIT" onclick="javascript:togglediv('campos-adicionales_*ID*_');">{CARDMOREFIELDS}+</label>
+		
+		<div id="campos-adicionales_*ID*_" style="display: none;">
+		
+			<div id="PALABRASCLAVES" class="campo">
+				<label class="MAD_EDIT_TIT">{CARDKEYWORDS}</label>
+				<div  class="MAD_EDIT_FIELD">*PALABRASCLAVE*  *ML_PALABRASCLAVE*</div>
+			</div>
+
+			<div id="FECHAEVENTO" class="campo">
+				<label class="MAD_EDIT_TIT">{CARDEVENTDATE}</label>
+				<div  class="MAD_EDIT_FIELD">*FECHAEVENTO*</div>
+			</div>
+
+			<div id="FECHAALTA" class="campo">
+				<label class="MAD_EDIT_TIT">{CARDDATEIN}</label>
+				<div  class="MAD_EDIT_FIELD">*FECHAALTA*</div>
+			</div>
+
+			<div id="FECHABAJA" class="campo">
+				<label class="MAD_EDIT_TIT">{CARDDATEOUT}</label>
+				<div  class="MAD_EDIT_FIELD">*FECHABAJA*</div>
+			</div>
+			
+		</div>
+		
+	</div>
+
+	<div style="display:none;">
+		*ID_SECCION*
+		*ID_CONTENIDO*
+		*ID_TIPOCONTENIDO*
+		*ID_USUARIO_CREADOR*
+		*ID_USUARIO_MODIFICADOR*
+		{SCRIPT}
+	</div>
+</div>

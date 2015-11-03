@@ -1,0 +1,144 @@
+
+
+.panel {
+	display: block;
+	float: left;
+	position: relative;
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	background-color: #F0F0F0;
+}
+
+.edicion div.campo,
+.edicion div.vista-adicionales {
+	background-color: #F0F0F0;
+}
+
+
+
+.panelcontent {
+	display: block;
+	position: relative; 
+	width: 30%;
+	float: left;
+	text-align: center;
+	margin: 1%;
+}
+
+.vistas-adicionales {
+	display: block;
+}
+
+.campos-adicionales {
+	display: none;
+}
+
+.panelrecord {
+	display: block;
+	position: relative;
+	border-bottom: solid 1px #EFEFEF;
+	float: left;
+	clear: both;
+	height: auto;
+	width: 99%;
+}
+
+.consulta, .resultados {
+	border: solid 0px;
+}
+
+
+.panelrecord .consulta div,
+.panelrecord .consulta label {
+	display: none;
+	float: left;
+	position: relative;
+	border: solid 0px;
+}
+
+.panelrecord .consulta .titulo,
+.panelrecord .consulta .acciones,
+.panelrecord .consulta .status
+ {
+	display: block;
+}
+
+
+.panelrecord .consulta .acciones {
+		display: none;
+	 	position: absolute;
+	 	top: 0px;
+	 	right: 0px;
+	 	float: none;
+	 	width: auto;
+	 	background-color: #EFEFEF;
+}
+
+.consulta .status {
+	display: block;
+	padding: 0px !important;
+	background-repeat: no-repeat;	
+	width: 20px;
+	height: 20px;
+}
+
+.consulta .statusS {
+	background-image: url('/wiwe/inc/images/bullet-color-S.png');
+}
+
+.consulta .statusN {
+	background-image: url('/wiwe/inc/images/bullet-color-N.png');
+}
+
+.consulta .acciones .arriba,
+.consulta .acciones .abajo {
+	display: none;
+}
+
+.consulta .acciones a {
+	text-decoration: underline;
+	font-weight: bold:
+}
+
+.consulta .titulo {
+	width: 80%;
+	text-align: left;
+	font-weight: normal;
+}
+
+.panelcontent_menu {
+	
+	width: 100%;
+	float: left;
+	clear: both;
+
+}
+
+.panelrecords {
+	display: block;
+	height: 200px;
+	float: left;
+	position: relative;
+	overflow: scroll;
+	width: 100%;
+
+}
+
+
+/*  FICHAS */
+
+
+.MAD_EDIT_FIELD table {
+		width: 100%;
+}
+
+td.MAD_EDIT_DET_TIT {
+		width: 150px;
+}
+
+.campo input {
+	display: block;
+	width: 100%;
+}
+

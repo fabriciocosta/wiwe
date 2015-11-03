@@ -1,0 +1,284 @@
+
+
+.perfil {
+
+}
+
+
+/* PERFIL */
+
+/*NUEVA VERSION - EDICION DE CAMPOS*/
+
+.usuario {
+	background-color: #D1D1D1;
+}
+
+/* cada campo */
+
+.edicion div.campo,
+.edicion div.vista-adicionales {
+
+	display: block;
+	position: relative;
+	float: left;
+	
+	
+	width: 100%;
+	height: auto;
+	padding: 0px;
+	margin: 0px;
+	border-top: solid 0px #000000;
+	background-color: #D1D1D1;
+	
+	padding-top: 10px;	
+	padding-bottom: 10px;		
+}
+.edicion  .campo  .MAD_EDIT_TIT {
+	display: block;
+	float: left;
+	width: 20%;
+	/*
+	display: block;
+	position: relative;
+	float: left;
+	clear: both;
+	*/
+}
+
+.edicion .campo .MAD_EDIT_FIELD {
+	display: block;
+	float: left;
+	width: 75%;	
+	margin-left: 5%;
+	/*clear: right;*/
+	/*
+	
+	position: relative;
+		
+	border: solid 0px #000000;	
+	*/
+}
+
+.MAD_EDIT_FIELD input,
+.MAD_EDIT_FIELD table
+ {
+
+	width: 100%;
+}
+
+.MAD_EDIT_FIELD table textarea {
+	width: 100%;
+}
+
+
+.profileerror {
+	display: block;
+	float: left;
+	clear: both;
+	background-color: #FFEFEF;
+	padding-left: 2%;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-weight: bold;
+	width: 98%;
+	text-align: left;
+	border: solid 0px #FF8888;
+}
+
+.profileerror div {
+	display: block !important;
+	border: 0px;
+	background-color: transparent;
+	font-weight: bold;
+	color: #880000 !important;
+	padding: 5px;
+	float: left !important;
+}
+
+div.edicion {
+	display: block;
+	float: left;
+	position: relative;
+	width: 100%;
+	/*height: 100%;*/
+	padding: 0;
+	margin: 0;
+}
+
+div.columna-izq {
+	display: block;
+	float: left;
+	position: relative;
+	width: 50%;
+}
+
+div.proveedor,
+div.obligatorios {
+	width: 100%;
+	display: block;
+	float: left;
+	clear: both;
+	position: relative;
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;	
+
+}
+
+div.adicionales {
+	display: block;
+	float: right;
+	/*position: absolute;*/
+	position: relative;
+	width: 40%;
+	border: solid 0px;
+	float: right;
+	margin-top: 40px;
+	margin-right: 10px;
+	
+	height: 300px;
+	
+	/*
+	right: 0px;
+	bottom: 10px;
+	*/
+}
+
+.adicionales .unregister {
+		top: 30px;
+}
+
+.adicionales .campo,
+#ACEPTAR {
+	float: right !important;
+	text-align: right;
+}
+
+
+.fielderror {
+	/*display: inline !important;*/
+	/*border: solid 1px #FF0000 !important;*/
+	color: #FF0000 !important;
+	font-weight: bold !important;
+}
+
+.fielderror label,
+.fielderror a {
+	/*display: inline !important;*/
+	/*border: solid 1px #FF0000 !important;*/
+	color: #FF0000 !important;
+	font-weight: bold !important;
+}
+
+.fielderror input,
+.fielderror textarea,
+.fielderror select
+ {
+	border: solid 5px #FF8888;	
+}
+
+#TERMINOS a {
+	color: #000000;
+	text-decoration: underline;
+}
+
+#camposobligatorios {
+	display: block;
+	position: absolute;
+	top: 20px;
+	right: 10px;
+}
+
+#obligatorio {
+	color: #FF0000;
+}
+
+#NOTIFICACIONES  label,
+#TERMINOS label
+ {
+	/*width: auto !important;
+	position: absolute !important;
+	right: 0px;
+	bottom: 2px;
+	float: none !important;*/
+	text-align: right;
+	width: 80%;
+}
+
+.campo label {
+		text-align: right;
+}
+
+#NOTIFICACIONES .MAD_EDIT_FIELD,
+#TERMINOS .MAD_EDIT_FIELD {
+/*
+	width: 20px !important;
+	position: absolute !important;
+	float: none !important;
+	right: 300px;
+	bottom: 0px;
+	*/
+	text-align: left;
+	width: 15%;
+	text-align: left;
+}
+
+
+/* POR ROLES */
+.role-usuario #PROVEEDOR_OBLIGATORIOS {
+	display: none !important;
+}
+
+.role-usuario .role-proveedor {
+	display: none !important;
+}
+
+
+#login #formlogin div,
+#recovery #formrecovery div
+{
+	padding: 5px;
+}
+
+#login #formlogin input,
+#login #formlogin label,
+#recovery input,
+#recovery label
+ {
+	padding: 5px;
+	font-size: 12px;
+}
+
+#login #formlogin #usermailinput input {
+	width: 230px;
+}
+
+
+#login,
+#recovery {
+	display: block;
+	clear: both;
+	position: relative;
+}
+
+#login #formlogin,
+#recovery #formrecovery {
+	
+	display: block;
+	clear: both;
+	position: relative;
+	
+	width: 50%;
+	padding: 10px;
+	margin-left: 25%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: solid 1px #000088;
+}
+
+#message {	
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
+

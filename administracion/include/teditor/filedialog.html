@@ -1,0 +1,161 @@
+<html>
+<head>
+<title>File Choice</title>
+<script>
+
+var SYMBOLE= "<!--SEPARATOR-->";
+
+function saveFile(filename)
+{
+   if(filename==''){alert('Filename is empty'); return;}
+   var fspec= window.opener.document.forms;
+
+   if(!fspec || fspec.length==0) return ;
+
+   window.opener.actualize();
+
+   var fso, tf;
+   fso = new ActiveXObject("Scripting.FileSystemObject");
+   tf = fso.CreateTextFile(filename, true);
+
+   var fidx, oForm;
+   for(var fidx=0; fidx<fspec.length; fidx++)
+    {
+	 oForm= fspec[fidx]
+     for(var i=0; i<oForm.elements.length; i++)
+     {
+      el= oForm.elements[i]
+      if(el.type!='text' && el.type!='textarea' && el.type!='hidden') continue
+	  var temp= el.value
+	  temp= temp.replace(/&#39;/g,'\'');
+	  tf.Write( window.opener.toUnicode(temp) + SYMBOLE ) ;
+     }
+	}
+   tf.Write(SYMBOLE) ;
+   tf.Close();
+   alert("Finish");
+}
+
+
+
+
+function openFile(filename)
+{
+  if(filename==''){alert('Filename is empty'); return;}
+  var fspec= window.opener.document.forms;
+
+  if(!fspec || fspec.length==0) return ;
+
+
+  var fso, ts;
+  var ForReading = 1;
+  fso = new ActiveXObject("Scripting.FileSystemObject");
+  try{ ts = fso.OpenTextFile(filename, ForReading); }
+  catch(e){alert("No file found."); return }
+
+  var conts='';
+  while(1)
+  {
+    try{ conts += ts.Readline() + '\n'; }
+    catch(e){ break; }
+  }
+  ts.Close();
+
+  var fidx, oForm, el, fIDx, linex, lidx=0;
+  var cbArr= conts.split(SYMBOLE);
+  var frspec= window.opener.document.frames
+  for(fidx=0; fidx<fspec.length; fidx++)
+	{
+	 oForm= fspec[fidx]
+	 for(var i=0; i<oForm.elements.length; i++, linex='')
+	  {
+       el= oForm.elements[i]
+       if(el.type!='text' && el.type!='textarea' && el.type!='hidden') continue
+    
+	   linex= cbArr[lidx++];
+    
+       fIDx= fidx +'VDevID'+ el.name
+	   if(el.type=='hidden' && frspec[fIDx] && linex) initDefaultOptions(linex,fIDx)
+	   else if(el.type!='hidden') el.value= linex;
+     } // end for i
+	} // end for fidx
+
+   self.close();
+}
+
+
+
+
+function initDefaultOptions(linex,fID)
+{
+  // remove old Style
+  var oSS= window.opener.CSS[fID]
+  if(oSS) for(var i=0; i<oSS.rules.length; i++) oSS.removeRule(i);
+
+
+  var retArr= new Array();
+  retArr= window.opener.DefaultOptions(linex)
+
+  var oFrame= window.opener.document.frames[fID].document
+  oFrame.body.style.fontFamily= retArr[0]
+  oFrame.body.style.fontSize= retArr[1]
+  oFrame.body.style.color= retArr[3]
+  oFrame.body.style.backgroundColor= retArr[2]
+  oFrame.body.style.backgroundImage= 'url(' + retArr[4] + ')'
+  window.opener.CSS[fID]= oFrame.createStyleSheet(retArr[5])
+  window.opener.FACE[fID]= retArr[0];
+  window.opener.SIZE[fID]= retArr[1];
+  window.opener.COLOR[fID]= retArr[3];
+  window.opener.BCOLOR[fID]= retArr[2];
+  window.opener.BIMAGE[fID]= retArr[4];
+
+  var conts= retArr[6].replace(/&#39;/g,"\'")
+  oFrame.body.innerHTML= conts;
+
+}
+
+</script>
+
+<style>
+td {color:white; font-family:Arial; font-size:14px}
+input {color:blue; background:#eeffee;}
+</style>
+
+</head>
+
+<body bgcolor=#c0c0a0 scroll=no>
+
+<center>
+
+<form>
+
+<TABLE bgColor=#999999 border=1 width=100% cellpading=0 cellspacing=0>
+
+<!-- 1st row -->
+<TR>
+<TD align=middle bgColor=#aa4444 colSpan=2>Open/Save File (Pls. enable Browser-Option "Init. and script ActiveX ...")</TD>
+</TR>
+
+<!-- 2sd row -->
+<TR>
+<TD align=right>FileName:</TD>
+<TD><input type=file name="file" size="40"></TD>
+</TR>
+
+
+
+<!-- Last row -->
+<TR>
+<TD colspan=2 align=center>
+<INPUT onclick=openFile(this.form.file.value) title=Open type=button value="Open" style="width:70px; height:22px; background:#aa4444; color:white">
+<INPUT onclick=saveFile(this.form.file.value) title=Save type=button value="Save" style="width:70px; height:22px; background:#aa4444; color:white">
+<INPUT onclick=self.close() title=Close type=button value="Close" style="width:70px; height:22px; background:#aa4444; color:white">
+</TD></TR>
+
+</TABLE>
+
+</FORM>
+</center>
+
+</body>
+

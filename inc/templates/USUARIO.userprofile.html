@@ -1,0 +1,252 @@
+[ERROR]
+
+<div id="USUARIO" class="edicion usuario [ROLECLASS]">
+
+
+	<div id="USUARIO_COLUMNA" class="columna-izq">
+	
+	<!--DATOS OBLIGATORIOS-->
+	<div id="USUARIO_OBLIGATORIOS" class="obligatorios">	
+		<div id="NICK" class="campo #NICK#">
+			<label class="MAD_EDIT_TIT">{USERNICK} <span id="obligatorio">*</span></label>
+			<div class="MAD_EDIT_FIELD">*NICK*</div>
+		</div>
+		<div id="NOMBRE" class="campo #NOMBRE#">
+			<label class="MAD_EDIT_TIT">{USERFIRSTNAME} <span id="obligatorio">*</span></label>
+			<div class="MAD_EDIT_FIELD">*NOMBRE*</div>
+		</div>
+		<div id="APELLIDO" class="campo #APELLIDO#">
+			<label class="MAD_EDIT_TIT">{USERLASTNAME} <span id="obligatorio">*</span></label>
+			<div class="MAD_EDIT_FIELD">*APELLIDO*</div>
+		</div>
+		<div id="MAIL" class="campo #MAIL#">
+			<label class="MAD_EDIT_TIT">{USEREMAIL} <span id="obligatorio">*</span></label>
+			<div class="MAD_EDIT_FIELD">*MAIL*</div>
+		</div>		
+		<div id="VERIFICATION" class="campo #VERIFICACIONVISUAL#">
+			<label class="MAD_EDIT_TIT">{VISUALVERIFICATION} <span id="obligatorio">*</span></label>
+			<div class="MAD_EDIT_FIELD">{VERIFICATIONVISUELLE}</div>
+		</div>
+		
+		<div id="PASSWORD" class="campo #PASSWORD#">
+			<label id="_label_PASSWORD" class="MAD_EDIT_TIT">{USERPASSWORD} <span id="obligatorio">*</span></label>
+			<div class="MAD_EDIT_FIELD">
+				<input id="_e_PASSWORD" name="_e_PASSWORD" value="" size="35" class="campo" type="password">
+			</div>
+		</div>
+		
+		<div id="PASSWORD" class="campo #PASSWORD#">
+			<label id="_label_PASSWORD_confirm" class="MAD_EDIT_TIT">{USERPASSWORDCONFIRM} <span id="obligatorio">*</span></label>
+			<div class="MAD_EDIT_FIELD">
+				<input id="_e_PASSWORD_confirm" name="_e_PASSWORD_confirm" value="" size="35" class="campo" type="password">
+			</div>
+		</div>	
+	</div>
+
+	<div id="PROVEEDOR_OBLIGATORIOS" class="proveedor hidden">
+		<!--OBLIGATORIOS PROVEEDOR-->
+		<div id="TELEFONO" class="campo #TELEFONO#">
+			<label class="MAD_EDIT_TIT">{USERPHONENUMBER} <span id="obligatorio">*</span></label>
+			<div class="MAD_EDIT_FIELD">*TELEFONO*</div>
+		</div>	
+		<div id="PAIS" class="campo #PAIS#">
+			<label class="MAD_EDIT_TIT">{USERCOUNTRY} <span id="obligatorio">*</span></label>
+			<div class="MAD_EDIT_FIELD">*PAIS*</div>
+		</div>
+		<div id="PROVINCIA" class="campo #PROVINCIA#">
+			<label class="MAD_EDIT_TIT">{USERREGION} <span id="obligatorio">*</span></label>
+			<div class="MAD_EDIT_FIELD">*PROVINCIA*</div>
+		</div>
+		<div id="CIUDAD" class="campo #CIUDAD#">
+			<label class="MAD_EDIT_TIT">{USERLOCATION} <span id="obligatorio">*</span></label>
+			<div class="MAD_EDIT_FIELD">*CIUDAD*</div>
+		</div>		
+		<div id="DIRECCION" class="campo #DIRECCION#">
+			<label class="MAD_EDIT_TIT">{USERADDRESS} <span id="obligatorio">*</span></label>
+			<div class="MAD_EDIT_FIELD">*DIRECCION*</div>
+		</div>
+		<div id="PISO" class="campo #PISO#">
+			<label class="MAD_EDIT_TIT">{USERFLOOR} <span id="obligatorio">*</span></label>
+			<div class="MAD_EDIT_FIELD">*PISO*</div>
+		</div>
+		<div id="CP" class="campo #CP#">
+			<label class="MAD_EDIT_TIT">{USERCP} <span id="obligatorio">*</span></label>
+			<div class="MAD_EDIT_FIELD">*CP*</div>
+		</div>
+		<div id="CONTACTO" class="campo #CONTACTO#">
+			<label class="MAD_EDIT_TIT">Horarios de atención <span id="obligatorio">*</span></label>
+			<div class="MAD_EDIT_FIELD">*CONTACTO*</div>
+		</div>
+		<div id="PAGINA" class="campo">
+			<label class="MAD_EDIT_TIT">{USERWEBPAGE}</label>
+			<div class="MAD_EDIT_FIELD">*PAGINA*</div>
+		</div>		
+		<div id="CELULAR" class="campo">
+			<label class="MAD_EDIT_TIT">{USERCELLNUMBER}</label>
+			<div class="MAD_EDIT_FIELD">*CELULAR*</div>
+		</div>			
+	</div>
+
+
+
+	<!-- OPCIONALES PROVEEDOR-->
+	<div id="PROVEEDOR_ADICIONALES" class="proveedor hidden">		
+		<!--DATOS ADICIONALES-->
+		<div id="EMPRESA" class="campo">
+			<label class="MAD_EDIT_TIT">{USERCOMPANY}</label>
+			<div class="MAD_EDIT_FIELD">*EMPRESA*</div>
+		</div>
+		<div id="OFICINA" class="campo">
+			<label class="MAD_EDIT_TIT">{USEROFFICE}</label>
+			<div class="MAD_EDIT_FIELD">*OFICINA*</div>
+		</div>				
+		<div id="NACIMIENTO" class="campo">
+			<label class="MAD_EDIT_TIT">{USERBIRTHDATE}</label>
+			<div class="MAD_EDIT_FIELD">*NACIMIENTO*</div>
+		</div>
+		<div id="SEXO" class="campo">
+			<label class="MAD_EDIT_TIT">{USERSEX}</label>
+			<div class="MAD_EDIT_FIELD">*SEXO*</div>
+		</div>
+		<div id="INTERNO" class="campo">
+			<label class="MAD_EDIT_TIT">{USERINTERNALNUMBER}</label>
+			<div class="MAD_EDIT_FIELD">*INTERNO*</div>
+		</div>
+		<div id="IDIOMAS" class="campo hidden">
+			<label class="MAD_EDIT_TIT">{USERLANGUAGES}</label>
+			<div class="MAD_EDIT_FIELD">*IDIOMAS*</div>
+		</div>
+		<div id="OCUPACION" class="campo hidden">
+			<label class="MAD_EDIT_TIT">{OCCUPATION}</label>
+			<div class="MAD_EDIT_FIELD">*OCUPACION*</div>
+		</div>	
+<!-- 
+		<div id="IMAGEN" class="campo">
+			<label class="MAD_EDIT_TIT">Agrega el logo de tu empresa o una foto personal</label>
+			<div class="MAD_EDIT_FIELD">*#USUARIO_IMAGEN#*</div>
+		</div>	
+-->
+	</div>	
+	
+<div id="CONFIRM" class="campo">
+		<div id="TERMINOS" class="campo #_conditions_#">
+			<label class="MAD_EDIT_TIT">{ACCEPTCONDITIONS} <a href="/perfil/conditions" target="_blank">{CONDITIONS}</a></label>
+			<div class="MAD_EDIT_FIELD"><input type="checkbox" name="_conditions_" id="_conditions_"/></div>
+		</div>
+			
+		<div id="ACEPTAR" class="campo">
+			<button class="inputbutton" value="submit">{SAVE}</button>
+		</div>
+</div>
+
+<!-- OTROS -->
+	<div id="ID_CONTENIDO" class="campo hidden">
+		<label class="MAD_EDIT_TIT">{CONTENT}</label>
+		<div class="MAD_EDIT_FIELD">*ID_CONTENIDO*</div>
+	</div>
+
+
+	</div> <!-- columna-izq final -->
+
+	<!-- FICHA USUARIO -->
+	<div id="FICHA_USUARIO" class="adicionales">
+		<div id="UNREGISTER" class="campo unregister">
+			<a class="inputbutton" href="/perfil/closeaccount">{UNREGISTER}</a>
+		</div>
+		<!-- 
+		<div id="NOTIFICACIONES" class="campo">
+			<label class="MAD_EDIT_TIT #USUARIO_NO_RECIBIR_NOTIFICACIONES#">Deseo no recibir notificaciones por email</label>
+			<div class="MAD_EDIT_FIELD">*#USUARIO_NO_RECIBIR_NOTIFICACIONES#*</div>		
+		</div>		
+		-->
+	</div>
+	
+	<div id="camposobligatorios"><span id="obligatorio">*</span> {REQUIREDFIELD}</div>
+	
+</div>
+
+
+
+<!-- 
+<table align="center" border="0" width="100%">
+                <tbody>
+                <tr>
+                  <td width="120"><div align="right">{USERFIRSTNAME}: </div></td>
+                  <td colspan="2">*NOMBRE*</td>
+                  <td colspan="2"></td>
+                </tr>
+				<tr>
+                  <td width="120"><div align="right">{USERLASTNAME}: </div></td>
+                  <td colspan="2">*APELLIDO*</td>
+                  <td colspan="2"></td>
+                </tr>
+				<tr>
+                  <td width="120"><div align="right"></div></td>
+                  <td colspan="2">
+                  <table cellpadding="0" cellspacing="0">                  					
+                  		<tr><td align="left"><label id="_label_PASSWORD">{USERPASSWORD}</label><input id="_e_PASSWORD" name="_e_PASSWORD" value="" size="35" class="campo" type="password"></td></tr>
+                  		<tr><td align="left"><label id="_label_PASSWORD_confirm">{USERPASSWORDCONFIRM}</label><input id="_e_PASSWORD_confirm" name="_e_PASSWORD_confirm" value="" size="35" class="campo" type="password"></td></tr>
+                  </table>
+                  </td>
+                  <td colspan="2"></td>
+                </tr> 
+				<tr>
+                  <td width="120"><div align="right">{USERSEX}: </div></td>
+                  <td colspan="2">*SEXO*</td>
+                  <td colspan="2"></td>
+                </tr>
+				<tr>
+                  <td width="120"><div align="right">{COUNTRY}: </div></td>
+                  <td colspan="2">*PAIS*</td>
+                  <td colspan="2"></td>
+                </tr> 
+                <tr>
+                  <td><div align="right">{YOURPHONE}: </div></td>
+                  <td colspan="2">*TELEFONO*</td>
+                  <td colspan="2"><div align="left"><span class="style17">{THISAPPEARSFORWVERYONE}</span></div></td>
+                </tr>
+                <tr>
+                  <td><div align="right">{YOURMOBILE}: </div></td>
+                  <td colspan="2">*CELULAR*</td>
+                  <td colspan="2"><div align="left"><span class="style17">{THISAPPEARSFORWVERYONE}</span></div></td>
+                </tr>
+                <tr>
+                  <td><div align="right">{YOUREMAIL}: </div></td>
+                  <td colspan="2">*NICK*</td>
+                  <td colspan="2"><div align="left"><span class="style17">{YOUREMAILWONTAPPEAR}</span></div></td>
+                </tr>
+                <tr>
+                  <td><div align="right">{CONFIRMYOUREMAIL}: </div></td>
+                  <td colspan="2">*MAIL*</td>
+                  <td colspan="2"></td>
+                </tr>
+                <tr>
+                  <td colspan="5"><input type="submit" value="{SAVE}" name="submit"></td>
+                </tr>
+              </tbody></table>
+              
+
+-->
+<div class="hidden">
+*TITULO*
+*ML_TITULO*
+*ID_TIPOCONTENIDO*
+*ID_SECCION*
+*PALABRASCLAVE*
+*ML_PALABRASCLAVE*
+*COPETE*
+*ML_COPETE*
+*CUERPO*
+*ML_CUERPO*
+*AUTOR*
+*ORDEN*
+*URL*
+*FECHAALTA*
+*FECHABAJA*
+*FECHAEVENTO*
+*PRINCIPAL*
+*VOTOS*
+
+*DETALLES*
+
+</div>

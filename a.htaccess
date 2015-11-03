@@ -1,0 +1,12 @@
+RewriteEngine  on
+
+
+RewriteRule ^admin$ /principal/admin/index.php [L]
+RewriteRule ^config$ /administracion/login/login.php [L]
+RewriteRule ^administracion$ /administracion/login/login.php [L]
+
+RewriteRule ^home$ /principal/home/home.php
+RewriteRule ^$ /principal/home/home.php
+
+
+

@@ -1,0 +1,103 @@
+<?Php
+// ********************************
+//             CONFIRMAR ABM 
+// ********************************
+
+require "deftabla.php";
+require '../include/bloqueoheader.php';
+if ($_logueado_=='verdadero') {
+?>
+<?
+	
+	/*FIN ARREGLOS*/
+	
+	if ($_cancelar_=='no') $_error_ = $tabla->Verificar();//verifica y completa un valor: $errores , y listo
+
+	if (!$_error_) {
+		if ($_borrar_=='si') {
+			//OJO, si la accion es borrar, entonces no puede haber detalles q tenga este id_tipodetalle:
+			$_tdetalles_->LimpiarSQL();
+			$_tdetalles_->SQL = 'SELECT * FROM detalles WHERE ID_TIPODETALLE='.$_primario_ID;
+			$_tdetalles_->Open();
+			if ($_tdetalles_->nresultados>0) {
+				$_exito_ = false;
+				$tabla->exito = 'No se puede borrar el tipo de detalle ya que tiene detalles asociados a el.<br> Sólo está permitido borrar un tipodedetalle sin usar.';
+			} else {		
+				$_exito_ = $tabla->Borrar();
+				if ($_exito_) {					
+					$_ttiposdetalles_->LimpiarSQL();
+					$_ttiposdetalles_->SQL = 'DELETE FROM detalles WHERE ID_TIPODETALLE='.$_primario_ID;
+					$_exito_ = $_ttiposdetalles_->EjecutaSQL();
+					if (!$_exito_) $tabla->exito = 'No se puede borrar.';
+				}
+			}
+		} elseif ($_nuevo_=='si') {
+
+			$_exito_ = $tabla->Insertar();
+			
+		} elseif ($_modificar_=='si') {
+
+			$_exito_ = $tabla->Modificar();
+
+		} elseif ($_cancelar_=='si') {
+			$_exito_ = true;
+			$tabla->exito = 'Cancelado!!!';
+		} else {
+			echo "ERROR: no se definió ninguna acción";
+		}	
+		
+				
+		$_pausa_ = false;			
+		if (($_exito_) and ($_debug_!='si') and !$_pausa_) { if ($_admin_!='si') $_onload_="javascript:consultar();";  else $_onload_="javascript:admin();"; }
+		if ($_exito_) { $_errorimg_ = '<img src="../images/ingresado.gif" border="0">'; $tabla->exito = '<span class="navegador1">'.$tabla->exito.'</span>';
+		} else { 
+			$_errorimg_ = '<img src="../images/error.gif" border="0">'; $tabla->exito = '<span class="error">'.$tabla->exito.'</span>'; 
+			$tabla->exito.= '<br><a href="javascript:volver();"><img src="../images/ok.gif" alt="" width="50" height="25" border="0" onMouseOver="javascript:showimg(\'../images/ok_down.gif\');" onMouseOut="javascript:showimg(\'../images/ok.gif\');"></a>';
+		}
+	} else {
+		$_errorimg_ = '<img src="../images/error.gif" border="0">';
+		$_errores_ = $tabla->ImprimirErrores();
+		$tabla->exito = '<a href="javascript:volver();"><img src="../images/ok.gif" alt="" width="50" height="25" border="0" onMouseOver="javascript:showimg(\'../images/ok_down.gif\');" onMouseOut="javascript:showimg(\'../images/ok.gif\');"></a>';
+	}
+?>
+
+<html>
+<head>
+<title>confirmando acción</title>
+<?
+require "../include/style.php"; 
+require "../include/scripts.php";
+?>
+</head>
+<body onLoad="<?=$_onload_?>" marginheight="0" marginwidth="0">
+<?include "../include/pageheader.php";?>
+<?include "../include/navegador.php";?>
+<!-- SECCION CONFIRMACION -->
+<?include "../include/confirmarheader.php";?>
+<?=$_errores_?>
+<?=$tabla->exito;?>
+<br><br>
+<form name="consultar" method="post" action="consulta.php">
+<div style="position:absolute;display:none;">
+<? 
+
+	$tabla->FiltrarCampo('ID_TIPOCONTENIDO','','escondido');
+	$tabla->FiltrarCampo('TIPO','','escondido');
+	$tabla->FiltrarCampo('DESCRIPCION','','escondido');
+	$tabla->FiltrarCampo('TXTDATA','','escondido');
+	$tabla->FiltrarCampo('TIPOCAMPO','','escondido');	
+	$tabla->Ordenar($_orden_);
+?>
+</div>
+<input name="_consulta_" type="hidden"  value="si">
+<input name="_debug_" type="hidden" value="<?=$_debug_?>">
+<input name="_admin_" type="hidden" value="<?=$_admin_?>">
+<input name="_usuario_" type="hidden" value="<?=$_usuario_?>">
+<input name="_usuariologs_" type="hidden" value="<?=$_usuariologs_?>">
+</form>
+<?include "../include/confirmarfooter.php";?>
+<?include "../include/pagefooter.php";?>
+</body></html>
+<?
+} else { include '../include/bloqueofooter.php'; }
+?>

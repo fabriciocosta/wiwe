@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<TITLE>ControlPanelExtras</TITLE>
+
+<STYLE TYPE="text/css">
+.,BODY,TD {font-family:Arial,Verdana; font-size:12;}
+TABLE  {cursor:pointer}
+
+img.vdev {width:23; height:22}
+select.vdev {font-family:arial; font-size:12; height:22; background:#a0a080; color:#FFFFFF}
+input.vdev {font-family:arial; font-size:12; height:20; background:#a0a080; color:#FFFFFF}
+</STYLE>
+
+</HEAD>
+
+<body scroll=no leftmargin=0 topmargin=10 bgcolor=#c0c0a0>
+<center>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=0>
+
+<script>
+if(window.opener.USETABLE==1)
+{
+var str= "\
+<TR bgColor=#c0c0a0 valign=middle align=center>\
+<TD nowrap>\
+<img src='./imgedit/instable.gif' alt='InsertTable' class=vdev onclick='window.opener.insertTable()'>\
+<img src='./imgedit/tabprop.gif' alt='TableProperties' class=vdev onclick='window.opener.tableProp()'>\
+<img src='./imgedit/cellprop.gif' alt='CellProperties' class=vdev onclick='window.opener.cellProp()'>\
+<img src='./imgedit/inscell.gif' alt='InsertCell' class=vdev onclick='window.opener.insertTableCell();window.focus()'>\
+<img src='./imgedit/delcell.gif' alt='DeleteCell' class=vdev onclick='window.opener.deleteTableCell();window.focus()'>\
+<img src='./imgedit/insrow.gif' alt='InsertRow' class=vdev onclick='window.opener.insertTableRow();window.focus()'>\
+<img src='./imgedit/delrow.gif' alt='DeleteRow' class=vdev onclick='window.opener.deleteTableRow();window.focus()'>\
+<img src='./imgedit/inscol.gif' alt='InsertCol' class=vdev onclick='window.opener.insertTableCol();window.focus()'>\
+<img src='./imgedit/delcol.gif' alt='DeleteCol' class=vdev onclick='window.opener.deleteTableCol();window.focus()'>\
+<img src='./imgedit/mrgcell.gif' alt='IncreaseColSpan' class=vdev onclick='window.opener.morecolSpan();window.focus()'>\
+<img src='./imgedit/spltcell.gif' alt='DecreaseColSpan' class=vdev onclick='window.opener.lesscolSpan();window.focus()'>\
+<img src='./imgedit/mrgrow.gif' alt='IncreaseRowSpan' class=vdev onclick='window.opener.morerowSpan();window.focus()'>\
+<img src='./imgedit/spltrow.gif' alt='DecreaseRowSpan' class=vdev onclick='window.opener.lessrowSpan();window.focus()'>\
+</TD></TR>\
+";
+document.writeln(str);
+}
+</script>
+
+
+<TR bgColor=#c0c0a0 valign=middle align=center>
+<TD>
+<img src='./imgedit/div.gif' alt='CreateDiv/DivStyle' class=vdev onclick='window.opener.insertDivLayer();window.focus()'>
+
+<script>
+if(!document.all)
+  document.write("<img src='./imgedit/divstyle.gif' alt='DivStyle' class=vdev onclick='window.opener.editDivStyle()'>")
+</script>
+
+<img src='./imgedit/divborder.gif' alt='DivBorder' class=vdev onclick='window.opener.editDivBorder()'>
+<img src='./imgedit/divfilter.gif' alt='DivFilter' class=vdev onclick='window.opener.editDivFilter()'>
+<img src='./imgedit/marquee.gif' alt='Marquee' class=vdev onclick='window.opener.doFormatF("InsertMarquee");window.focus()'>
+<img src='./imgedit/all.gif' alt='SelectAll' class=vdev onclick='window.opener.selectAll()'>
+<img src='./imgedit/cut.gif' alt='Cut' class=vdev onclick='window.opener.doFormatF("Cut")'>
+<img src='./imgedit/copy.gif' alt='Copy' class=vdev onclick='window.opener.doFormatF("Copy")'>
+<img src='./imgedit/paste.gif' alt='Paste' class=vdev onclick='window.opener.doFormatF("Paste")'>
+<img src='./imgedit/chipcard.gif' alt='Content Recover/Insert-Smartcard-Data' class=vdev onclick='window.opener.SmartcardData()'>
+<img src='./imgedit/search.gif' alt='Search/Replace' class=vdev onclick='window.opener.findText()'>
+<img src='./imgedit/file.gif' alt='Open/Save File' class=vdev onclick='window.opener.FileDialog()'>
+</TD></TR>
+
+<TR bgColor=#c0c0a0 valign=middle align=center>
+<TD>
+<INPUT name='QBCNTRL1' value='SwapCode' class=vdev onclick='window.opener.swapCharCode();window.focus()' type=button style='width:70'>
+<INPUT name='QBCNTRL2' value='Upload' class=vdev onclick='window.opener.doUploadFile()' type=button style='width:65'>
+<INPUT name='QBCNTRL3' value='Options' class=vdev onclick='window.opener.doEditorOptions()' type=button style='width:65'>
+<INPUT name='QBCNTRL4' value='Help' class=vdev onclick='window.opener.displayHelp()' type=button style='width:65'>
+</TD></TR>
+
+</TABLE>
+</center>
+</BODY>
+</HTML>

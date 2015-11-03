@@ -1,0 +1,20 @@
+<div class="panelrecord" onmouseover="javascript:showdiv('drec*IDCONTENIDO*_menu');"  
+onmouseout="javascript:hidediv('drec*IDCONTENIDO*_menu');" title="*TITULO*">
+	<div id="_*ID*_" class="*ID_TIPOCONTENIDO:FICHA_TIPO*">
+		<div id="_*ID*_" class="consulta">
+			<div class="selector"><input type="checkbox" name="cb_*ID*">*ORDEN*</div>
+			<div class="creador">*USUARIO:NICK*</div>		
+			<div class="editor" title="{CARDUPDATE} *ACTUALIZACION*">*EDITOR:NICK*</div>
+			<div class="tipo">*ID_TIPOCONTENIDO:FICHA_TIPO*</div>
+			<div class="status status*BAJA*"></div>
+			<div class="titulo"><a href="[LINK_CONTENIDO]">*TITULO*</a></div>
+			<div class="fecha dia">*ALTA DIA*</div>
+			<div class="fecha hora">*ALTA HORA*</div>
+			<div id="drec*IDCONTENIDO*_menu" class="acciones">
+				<a  class="panelitem" href="/panel/_accion_=modificar&_cID_=*IDCONTENIDO*">Modificar  | </a><a  class="panelitem" href="/panel/_accion_=borrar&_cID_=*IDCONTENIDO*">Eliminar</a>
+				<a href="javascript:upcontenido(*ID*)" title="{UP}" class="arriba"></a>
+				<a href="javascript:downcontenido(*ID*)" title="{DOWN}" class="abajo"></a>		
+			</div>
+		</div>
+	</div>		
+</div>

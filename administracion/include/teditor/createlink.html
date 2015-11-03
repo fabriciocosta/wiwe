@@ -1,0 +1,184 @@
+<HTML>
+<HEAD>
+<TITLE>Create/Edit Links</TITLE>
+
+<STYLE TYPE="text/css">
+BODY   {margin-left:10; font-family:Verdana; font-size:12; background:#c0c0a0}
+input, select {width:15em}
+button {width:5em; color:white}
+</STYLE>
+
+
+<script>
+
+var IE= document.all
+
+function getParentTagA(el)
+{
+  var Range= el.document.selection.createRange()
+  var parent=Range(0).parentElement
+  while(parent && parent.tagName!='BODY')
+  {
+	if(parent.tagName=='A'){ return parent }
+	parent= parent.parentElement
+  }
+
+  return null
+}
+
+
+function init()
+{
+  if(!document.all) return;
+
+  if(IE) el= window.dialogArguments; 
+  else el= window.opener.document.getElementById(window.opener.fID).contentWindow;
+
+  var sel
+  sel= el.document.selection;
+
+  var Range;
+  Range = sel.createRange()
+
+
+  var href='', target='', type='', parent;
+  if (sel.type=="Control")
+  {
+    parent= getParentTagA(el)
+	if(!parent) return;
+    href= parent.getAttribute('href')
+    target= parent.getAttribute('target')
+  }
+  else
+  {
+    parent= Range.parentElement();
+    if(parent.tagName!='A') return;
+    href= parent.href
+    target= parent.target
+  }
+
+
+  var idx= href.indexOf('://')
+  if(idx>=0)
+  {
+    type= href.substring(0,idx+3);
+	href= href.substr(idx+3);
+  }
+
+
+  document.forms[0].type.value= type
+  document.forms[0].href.value= href
+  document.forms[0].target.value= target
+
+}
+
+
+
+function doCreate()
+{
+  var el; 
+  if(IE) el= window.dialogArguments; 
+  else el= window.opener.document.getElementById(window.opener.fID).contentWindow;
+
+  var href= document.forms[0].href.value
+  if(href==''){ window.close(); return; }
+
+  if(href.indexOf('://')<0) href= document.forms[0].type.value + href
+
+  if(!IE) // Mozilla
+   {
+    el.document.execCommand("CreateLink",false,href)
+	window.close();
+	return
+   }
+  
+  var target= document.forms[0].target.value
+
+  var sel = el.document.selection;
+  if(sel==null) return
+
+  var selType= sel.type
+  var Range, parent;
+  if(selType!='Control')
+  {
+   Range= sel.createRange();
+   el.curword= Range.duplicate();
+   if(el.curword.text=='' && Range.parentElement().tagName!='A')
+   {
+    el.curword.text= href;
+	Range.moveEnd("character", href.length);
+	el.curword= Range;
+	el.curword.select();
+   }
+  }
+
+  el.document.execCommand("CreateLink",false,href)  
+
+  if(selType!='Control')
+  {
+   Range = sel.createRange();
+   parent= Range.parentElement();
+   if(target) parent.target= target
+   else parent.removeAttribute('target')
+  }
+  else
+  {
+   parent= getParentTagA(el)
+   if(target) parent.setAttribute('target',target);
+   else parent.removeAttribute('target')
+  }
+
+  window.close()
+}
+
+
+
+function doUnLink()
+{
+  if(!IE) return;
+
+  var el= window.dialogArguments;
+  el.document.execCommand("UnLink",false,null)  
+  window.focus()
+}
+
+</script>
+
+</HEAD>
+
+<body scroll=no onload=init() text=white topmargin=10>
+<center>
+<form>
+<table border=1 cellpadding=2 cellspacing=0>
+<tr>
+<td align=right>Type
+<td><select name=type>
+<option value="">
+<option value="http://" selected>http
+<option value="https://">https
+<option value="ftp://">ftp
+<option value="mailto://">mailto
+<option value="file://">file
+<option value="telnet://">telnet
+<option value="news://">news
+<option value="gopher://">gopher
+<option value="wais://">wais
+</select>
+</tr>
+<tr>
+<td align=right>URL<td><input name=href value="">
+</tr>
+<tr>
+<td align=right>Target<td><input name=target value="">
+</tr>
+<tr>
+<td colspan=2 align=middle>
+<BUTTON onclick="doCreate()">Apply</button>
+<BUTTON onclick="window.close()">Cancel</button>
+<BUTTON onclick="doUnLink()">UnLink</button>
+</tr>
+</table>
+</form>
+</center>
+</BODY>
+</HTML>

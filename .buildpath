@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="src" path="administracion"/>
+	<buildpathentry kind="src" path="inc/core"/>
+	<buildpathentry kind="src" path="inc/fpdf"/>
+	<buildpathentry kind="src" path="inc/include"/>
+	<buildpathentry kind="src" path="inc/js/ckeditor"/>
+	<buildpathentry kind="src" path="inc/modules"/>
+	<buildpathentry kind="src" path="principal/admin"/>
+	<buildpathentry kind="src" path="principal/home"/>
+	<buildpathentry kind="src" path="tmp"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+</buildpath>

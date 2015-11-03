@@ -1,0 +1,621 @@
+/* CSS Document */
+
+/*BODY GENERAL*/
+body,td,th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000000;
+}
+
+body {
+	background-color: #FFFFFF;
+	background-image: url('../../inc/images/fd.jpg');
+	background-position: 0 -16;
+	margin: 0px;
+}
+
+a:link {
+	color:#666666;
+	text-decoration: none;
+}
+
+a:visited {
+	color:#666666;
+	text-decoration: none;	
+}
+
+a:hover {
+	color:#666666;
+	text-decoration: underline;
+}
+
+a:active {
+	color:#666666;
+	text-decoration: none;
+}
+
+
+input, textarea, select, checkbox, button { font-family: Verdana,Arial; font-size: 10px; color: #666666; }
+span,div,td {  font-size: 10px; font-family: Verdana,Arial; color:#666666; }
+
+td.conseiltit {
+	padding-left: 20px;
+}
+
+td.conseiltxt {
+	padding-left: 40px;
+}
+
+span.conseiltit {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #666666;
+}
+
+span.conseiltxt {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: normal;
+	color: #666666;
+}
+
+
+a.conseil:link {
+	color:#666666;
+	text-decoration: none;
+}
+
+a.conseil:visited {
+	color:#666666;
+	text-decoration: none;	
+}
+
+a.conseil:hover {
+	color:#666666;
+	text-decoration: none;
+}
+
+a.conseil:active {
+	color:#666666;
+	text-decoration: none;
+}
+
+
+
+/*SECCIONES SITIO */
+.modulo_titulo { font-weight: bold; }
+.modulo_txt { font-weight: normal; }
+.modulo_txt_pie { font-weight: normal; }
+.modulo_categoria_titulo { font-weight: bold; }
+.modulo_categoria_desc { font-weight: normal; }
+.modulo_seccion_titulo { font-weight: bold; }
+.modulo_seccion_desc { font-weight: normal; }
+
+/*CONTENIDOS SITIO */
+.modulo_contenido_titulo { font-weight: bold; }
+.modulo_contenido_copete { font-weight: normal; font-style: italic; }
+.modulo_contenido_cuerpo { font-weight: normal; }
+.modulo_contenido_autor { font-weight: normal; }
+.modulo_contenido_detalle_titulo { font-size: 9px; font-weight: bold; }
+.modulo_contenido_detalle_txt { font-weight: normal; }
+.modulo_contenido_fechaevento { font-weight: normal; }
+.modulo_contenido_fechaalta { font-weight: normal; }
+.modulo_contenido_fechabaja { font-weight: normal; }
+
+/*MODULO USUARIO*/
+.modulo_login {  font-weight: bold; }
+.modulo_usuario_titulo { font-weight: bold; }
+.modulo_usuario_txt { font-weight: bold; }
+.modulo_usuario_campo { font-weight: bold; }
+.modulo_usuario_valor { font-weight: normal; }
+.modulo_usuario_error { font-weight: bold; } 
+
+
+/* MODULO ADMIN */
+.modulo_admin_login { font-weight: bold; }
+.modulo_admin_loginerror { font-weight: bold; }
+
+.modulo_admin_mantenimiento_funcion { font-weight: bold;}
+.modulo_admin_mantenimiento_resultado { font-weight: bold;}
+
+.modulo_admin_consulta_resultado { font-weight: bold; }
+.modulo_admin_consulta_sin_resultado { font-weight: bold; }
+.modulo_admin_consulta_nuevousuario { font-weight: bold; }
+.modulo_admin_consulta_nuevaficha { font-weight: bold; }
+.modulo_admin_consulta_ordenar { font-weight: bold; }
+.modulo_admin_consulta_filtrar { font-weight: bold; }
+.modulo_admin_consulta_campo { font-weight: bold; }
+.modulo_admin_consulta_funciones { font-weight: bold; }
+.modulo_admin_consulta_buscar { font-weight: bold; }
+
+.modulo_admin_error { color:#EE0000; font-weight: bold; }
+.modulo_admin_warning { color:#f79905; font-weight: bold; }
+
+.modulo_admin_tipoficha { font-weight: bold; }
+.modulo_admin_usuario { color:#FFFFFF; font-size: 9px; font-weight: bold; }
+.modulo_admin_logout { color:#FFFFFF; font-size: 9px; font-weight: bold; }
+.modulo_admin_confirmar { color:#EE0000; font-weight: bold; }
+.modulo_admin_editar_nombre { font-weight: bold; }
+.modulo_admin_editar_texto { font-weight: normal; }
+.modulo_admin_titulo { font-weight: bold; }
+.modulo_admin_alta { font-weight: bold; }
+.modulo_admin_copete { font-weight: bold; }
+.modulo_admin_campo { text-indent:  9px; font-weight: normal; }
+.modulo_admin_valor { font-weight: bold; }
+.modulo_admin_detalle_campo { font-weight: normal; }
+.modulo_admin_detalle_valor { font-weight: bold; }
+.modulo_admin_txt { font-weight: normal; }
+.modulo_admin_txt_wh { color: white; font-weight: normal;}
+.modulo_admin_tipodetalle { font-weight: bold; }
+.modulo_admin_tipofiltro {font-weight: normal;}
+
+/* TREE NAVIGATOR CSS */
+
+.tree {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	padding: 9px;
+	white-space: nowrap;
+}
+.tree img {
+	border: 0px;
+	height: 18px;
+	vertical-align: text-bottom;
+}
+.tree a {
+	color: #000000;
+	text-decoration: none;
+}
+.tree a:hover {
+	color: #555555;
+}
+
+/*CSS2 specifications*/
+/*
+table.site {
+	background-image: url('../../inc/images/fd.jpg');
+	background-repeat: repeat-x;
+	background-position: top;
+	background-color: #C4C4BA;
+}
+*/
+table.sitehome {
+	/*background-color: #FFFFFF;*/
+}
+
+table.siteboutique {
+	/*background-color: #FFFFFF;*/
+}
+
+table.sitepanier {
+	/*background-color: #FFFFFF;*/
+}
+
+table.sitecommande {
+	/*background-color: #FFFFFF;*/
+}
+
+table.sitecontacts {
+	/*background-color: #FFFFFF;*/
+}
+
+table.siteconditions {
+	/*background-color: #FFFFFF;*/
+}
+
+
+/*PAGE*/
+td.page {
+	/*background-color:#FFFFFF;*/
+}
+
+table.page {
+	/*background-color:#FFFFFF;*/
+}
+
+td.pageleft {
+	padding-top: 0px;
+	/*padding-left: 40px;*/
+	/*width: 582px;	*/
+}
+
+td.pagecenter {
+	padding-top: 0px;
+	/*padding-left: 68px;*/
+}
+
+td.pageright {
+	padding-top: 30px;
+	/*padding-left: 68px;*/
+}
+
+td.pagefoot {
+	padding-top: 30px;
+}
+
+table.menu {
+	width: 442px;
+}
+
+td.menuhd {
+	padding-left: 23px;
+}
+
+td.menutxt {
+	padding-left: 20px;
+}
+
+/*BIENVENUE*/
+table.bienvenue {
+	
+}
+
+td.bienvenuehd {
+
+}
+
+td.bienvenuetxt {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+img.bienvenue {
+	width: 670px;
+	height: 32px;
+}
+
+/*NWESLETTER*/
+table.newsletter {
+}
+
+td.newsletterhd {
+	padding-left: 0px;
+}
+
+td.newslettertxt {
+	padding-left: 52px;
+	padding-right: 25px;
+}
+
+img.newsletter {
+	width: 280px;
+	height: 27px;
+}
+
+td.newsletterinput {
+	padding-top: 12px;
+	padding-left: 39px;
+	padding-right: 9px;
+}
+
+/*ACTUALITE*/
+table.actualite {
+}
+
+td.actualitehd {
+}
+
+td.actualitetxt {
+	padding-left: 67px;
+}
+
+img.actualite {
+	width: 670px;
+	height: 34px;	
+}
+
+table.tpl_re_actualite {
+}
+
+td.tpl_re_actualiteimg {
+	padding: 5px;
+}
+
+td.tpl_re_actualitehd {
+	font-weight: bold;
+	font-size: 10px;
+}
+
+td.tpl_re_actualitetxt {
+	padding-right: 175px;
+}
+/*ANNONCES*/
+
+table.annonces {
+}
+
+td.annonceshd {
+	padding-top: 0px;
+}
+
+td.annoncestxt {
+	padding-left: 52px;
+	padding-right: 25px;
+}
+
+a.gootitle {
+	font-size: 13px;
+	font-weight: bold;
+}
+
+img.annonces {
+	width: 280px;
+	height: 34px;
+}
+
+/*BOUTIQUE*/
+td.boutiquehd {
+	padding-left: 0px;
+	padding-top: 0px;
+}
+
+td.boutiquetxt {
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+table.vosachats {
+}
+
+td.vosachatshd {
+}
+
+td.vosachatstxt {
+}
+
+td.conditionstxt {
+	padding-left: 150px;
+	padding-top: 75px;
+	padding-bottom: 30px;
+	padding-right: 150px;
+	color: #000000;
+	font-size: 11px;
+	font-weight: normal;	
+}
+
+a.conditions {
+	font-family: Verdana, Arial;
+	font-size: 10px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+td.contactstxt {
+	padding-left: 78px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 20px;
+}
+
+table.photo1 {
+    background-color: #E3E3E3;
+}
+
+table.lesvins {
+	width: 591px;
+}
+
+td.lesvinshd {
+	width: 591px;
+}
+
+td.lesvinstxt {
+	width: 591px;
+	padding-bottom: 15px;
+}
+
+table.recommande {
+	
+}
+td.recommandehd {
+	padding-left: 36px;
+}
+td.recommandetxt {
+	padding-left: 73px;
+}
+
+table.categories {
+}
+
+td.categories {
+	padding-top: 0px;
+	padding-left: 0px;
+	/*width: 180px;*/
+}
+
+td.categoriechoisie {	
+	padding-left: 0px;
+	padding-bottom: 0px;
+}
+.categoriechoisie {
+	color: #336699;
+	font-family: Georgia, Times New Roman, Times, Serif;
+	font-size: 24px;
+	font-weight: bold;
+	text-decoration: none;
+
+}
+
+.categorie {
+	color: #336699;
+	font-family: Georgia, Times New Roman, Times, Serif;
+	font-size: 15px;
+	font-weight: bold;
+}
+.categorie a {
+	color: #45002f;
+	text-decoration: none;
+}
+a.categorie:link { color: #336699; text-decoration: none; }
+a.categorie:hover { color: #336699; text-decoration: none; background-color: lightgrey;}
+a.categorie:active { color: #336699; text-decoration: none; }
+a.categorie:visited { color: #336699; text-decoration: none; }
+
+.details {
+	font-family: Verdana, Arial;
+	font-size: 10px;
+	font-weight: normal;
+}
+a.details:link {
+	color:#000000;
+	text-decoration: none;
+}
+a.details:visited {
+	color:#000000;
+	text-decoration: none;
+}
+a.details:hover {
+	color:#000000;
+	text-decoration: underline;
+}
+a.details:active {
+	color:#000000;
+	text-decoration: underline;
+}
+
+td.produits {
+	padding-top: 0px;
+	padding-left: 10px;
+	width: 100%;
+}
+
+
+table.produit {
+	width: 99%;
+
+	/*width: 631px;*/
+
+}
+
+.produit {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 12px;
+	font-weight: normal;
+}
+.produit a {
+	color: #000000;
+	text-decoration: none;
+}
+a.produit:link { color: #000000; text-decoration: none; }
+a.produit:hover { color: #000000; text-decoration: none; }
+a.produit:active { color: #000000; text-decoration: none; }
+a.produit:visited { color: #000000; text-decoration: none; }
+
+td.produit_image {	
+	width: 211px;
+	height: 258px;
+	padding-top: 5px;
+}
+img.produit_image {
+	width: 211px;
+	height: 172px;
+}
+
+span.produit_categorie {
+	font-size: 12px;
+	font-weight: bold;
+}
+td.produit_descriptif {
+	/*width: 220px;*/
+}
+td.produit_titre {
+	padding-top: 17px;
+	width: 242px;
+}
+
+td.produit_detail {
+	padding-top: 17px;
+	width: 225px;
+}
+
+span.produit_titre {
+	color: #336699;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+span.produit_tarif {
+	color: #336699;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+td.produit_descriptif1 {
+	font-size: 10px;
+	font-weight: normal;
+	padding-top: 4px;
+	padding-right: 25px;
+}
+
+td.addproduct {
+	padding-top: 17px;
+}
+
+img.addproduct {
+	/*width: px;
+	height: px;*/
+}
+
+td.panier_titre {
+	padding-left: 10px;	
+}
+
+td.panier_image {
+	padding: 5px;	
+}
+
+img.panier_image {
+	width: 67px;
+	height: 90px;
+}
+
+td.panier_tarif {
+	padding-left: 10px;	
+}
+
+td.ligne {
+	background-color: #000000;
+}
+ 
+td.photoboutique {
+	padding-top: 20px;
+	padding-right: 20px;
+}
+
+.boxname { font-family: Verdana; font-size: 10px; color: #000000; }
+.boxfield { font-family: Verdana; font-size: 10px; color: #000000; }
+.error { font-family: Verdana; font-size: 10px; color: #FF0000; }
+
+
+/* WYSIWYG EDITOR */
+/* Toolbar */
+.toolbar1   { border: 1px solid #666666; height: 26px; background-image: url(../icons/background_silver.jpg); }
+.toolbar2   { border: 1px solid #666666; height: 24px; background-image: url(../icons/background_silver.jpg); border-bottom: 0px; border-top: 0px; }
+
+/* Command Buttons */
+.button     { width: 20px; height: 20px; border: 0px solid transparent; margin: 1px; padding: 0px; background: transparent; }
+.buttonOver { width: 20px; height: 20px; border: 1px solid #999999; margin: 0; padding: 0px; }
+
+
+/* Font Type and Size Drop Down */
+.dropdown          { background-color: #FFFFFF; border: 1px solid #333333; height: 140px; overflow: auto; padding: 1px; }
+button.mouseOver   { background-color: #EEEEEE; border: 1px solid #CCCCCC; padding: 3px; cursor: default; text-align: left;}
+button.mouseOut    { background-color: #FFFFFF; border: 1px solid #FFFFFF; padding: 3px; cursor: default; text-align: left;}
+
+
+
+
+/* CREATE TABLE POPUP */
+
+/* Select Border Width/Type */
+.on   { background-color: #EEEEEE; border: 1px solid #CCCCCC; padding: 6px; width: 140px; cursor: default; height: 5px;}
+.off  { background-color: #FFFFFF; border: 1px solid #FFFFFF; padding: 6px; width: 140px; cursor: default; height: 5px;}
+
+/* Select Shading/Border Color */
+.selectColorTable  { border: 1px solid #7E7E81; background-color: #F7F7F7; padding: 1px; }
+.selectColorBorder { border: 1px solid #F7F7F7; }
+.selectColorOn     { border: 1px solid #999999; background-color: #CCCCCC; }
+.selectColorOff    { border: 1px solid #F7F7F7; background-color: #F7F7F7; }
+.selectColorBox    { border: 1px solid #FFFFFF; font-size: 1px; height: 13px; width: 13px; }

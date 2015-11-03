@@ -1,0 +1,25 @@
+<div id="_*ID*_" class="usuario usuario-*usuarios.NIVEL*">
+	<div class="consulta">
+		<div class="selector"><input type="checkbox" name="cb_*usuarios.ID*"></div>
+		<div class="status status*usuarios.BAJA*"></div>
+		<div class="nivel nivel-*usuarios.NIVEL*"></div>
+
+		<label class="nick">{USERNICK}</label>
+		<a href="javascript:modificarusuario(*usuarios.ID*)" title="{EDIT}"><div class="nick">*usuarios.NICK*</div></a>
+
+		<label class="nombre">{USERFIRSTNAME}</label>
+		<div class="nombre">*usuarios.NOMBRE*</div>
+
+		<label class="apellido">{USERLASTNAME}</label>
+		<div class="apellido">*usuarios.APELLIDO*</div>
+
+		<label class="mail">{USEREMAIL}</label>
+		<a href="mailto:*usuarios.MAIL*"><div class="mail">*usuarios.MAIL*</div></a>
+			
+		<div class="acciones">
+			<a href="javascript:modificarusuario(*usuarios.ID*)" title="{EDIT}" class="modificar"></a>
+			<a href="javascript:borrarusuario(*usuarios.ID*)" title="{DELETE}" class="borrar"></a>
+		</div>
+		
+	</div>
+</div>	

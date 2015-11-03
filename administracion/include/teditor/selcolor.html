@@ -1,0 +1,220 @@
+<HTML>
+<HEAD>
+<TITLE>Select Color</TITLE>
+
+<STYLE TYPE="text/css">
+ BODY   {margin-left:10; font-family:Verdana; font-size:12; background:menu}
+ BUTTON {width:5em}
+ P      {text-align:center}
+ TABLE  {cursor:pointer}
+</STYLE>
+
+<SCRIPT>
+var arr= location.href.split("?")
+var QBPATH= arr[0].substring(0,arr[0].lastIndexOf("/"))
+var CMD= arr[1]
+
+function setLabelValue(refe)
+{
+  var label= document.getElementById("ReturnValue")
+  var color= refe.getAttribute("bgcolor")
+  label.value= color
+}
+
+function returnValueX()
+{
+  var label= document.getElementById("ReturnValue")
+  var res= label.value
+
+  if(res && document.all) window.returnValue= res
+  else if(res) window.opener.doFormatF(CMD+','+res)
+
+  self.close()
+
+}
+
+
+function displayValue(refe)
+{
+  var label= document.getElementById("RGB")
+  if(!refe){ label.innerHTML= ''; return; }
+
+  var color= refe.getAttribute("bgcolor")
+  label.innerHTML= color
+}
+
+</SCRIPT>
+
+</HEAD>
+
+<body scroll=no bgcolor=#c0c0a0>
+
+<center>
+<TABLE ID=ColorTable
+ BORDER=1 BORDERCOLOR=SILVER BORDERCOLORLIGHT=WHITE BORDERCOLORDARK=BLACK
+ CELLSPACING=0 CELLPADDING=0>
+<TR>
+<TD BGCOLOR=aliceblue TITLE=aliceblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TD BGCOLOR=antiquewhite TITLE=antiquewhite onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TD BGCOLOR=aqua TITLE=aqua onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TD BGCOLOR=aquamarine TITLE=aquamarine onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TD BGCOLOR=azure TITLE=azure onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TD BGCOLOR=beige TITLE=beige onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TD BGCOLOR=bisque TITLE=bisque onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TD BGCOLOR=black TITLE=black onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TD BGCOLOR=blanchedalmond TITLE=blanchedalmond onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TD BGCOLOR=blue TITLE=blue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TD BGCOLOR=blueviolet TITLE=blueviolet onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TD BGCOLOR=brown TITLE=brown onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TD BGCOLOR=burlywood TITLE=burlywood onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TD BGCOLOR=cadetblue TITLE=cadetblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TD BGCOLOR=chartreuse TITLE=chartreuse onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TD BGCOLOR=chocolate TITLE=chocolate onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;&nbsp;
+<TR>
+<TD BGCOLOR=coral TITLE=coral onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=cornflower TITLE=cornflower onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=cornsilk TITLE=cornsilk onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=crimson TITLE=crimson onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=cyan TITLE=cyan onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkblue TITLE=darkblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkcyan TITLE=darkcyan onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkgoldenrod TITLE=darkgoldenrod onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkgray TITLE=darkgray onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkgreen TITLE=darkgreen onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkkhaki TITLE=darkkhaki onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkmagenta TITLE=darkmagenta onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkolivegreen TITLE=darkolivegreen onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkorange TITLE=darkorange onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkorchid TITLE=darkorchid onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkred TITLE=darkred onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TR>
+<TD BGCOLOR=darksalmon TITLE=darksalmon onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkseagreen TITLE=darkseagreen onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkslateblue TITLE=darkslateblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkslategray TITLE=darkslategray onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkturquoise TITLE=darkturquoise onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=darkviolet TITLE=darkviolet onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=deeppink TITLE=deeppink onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=deepskyblue TITLE=deepskyblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=dimgray TITLE=dimgray onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=dodgerblue TITLE=dodgerblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=firebrick TITLE=firebrick onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=floralwhite TITLE=floralwhite onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=forestgreen TITLE=forestgreen onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=fuchia TITLE=fuchia onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=gainsboro TITLE=gainsboro onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=ghostwhite TITLE=ghostwhite onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TR>
+<TD BGCOLOR=gold TITLE=gold onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=goldenrod TITLE=goldenrod onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=gray TITLE=gray onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=green TITLE=green onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=greenyellow TITLE=greenyellow onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=honeydew TITLE=honeydew onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=hotpink TITLE=hotpink onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=indianred TITLE=indianred onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=indigo TITLE=indigo onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=ivory TITLE=ivory onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=khaki TITLE=khaki onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lavender TITLE=lavender onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lavenderblush TITLE=lavenderblush onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lawngreen TITLE=lawngreen onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lemonchiffon TITLE=lemonchiffon onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lightblue TITLE=lightblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TR>
+<TD BGCOLOR=lightcoral TITLE=lightcoral onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lightcyan TITLE=lightcyan onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lightgoldenrodyellow TITLE=lightgoldenrodyellow onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lightgreen TITLE=lightgreen onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lightgrey TITLE=lightgrey onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lightpink TITLE=lightpink onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lightsalmon TITLE=lightsalmon onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lightseagreen TITLE=lightseagreen onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lightskyblue TITLE=lightskyblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lightslategray TITLE=lightslategray onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lightsteelblue TITLE=lightsteelblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lightyellow TITLE=lightyellow onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=lime TITLE=lime onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=limegreen TITLE=limegreen onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=linen TITLE=linen onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=magenta TITLE=magenta onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TR>
+<TD BGCOLOR=maroon TITLE=maroon onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=mediumaquamarine TITLE=mediumaquamarine onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=mediumblue TITLE=mediumblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=mediumorchid TITLE=mediumorchid onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=mediumpurple TITLE=mediumpurple onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=mediumseagreen TITLE=mediumseagreen onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=mediumslateblue TITLE=mediumslateblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=mediumspringgreen TITLE=mediumspringgreen onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=mediumturquoise TITLE=mediumturquoise onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=mediumvioletred TITLE=mediumvioletred onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=midnightblue TITLE=midnightblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=mintcream TITLE=mintcream onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=mistyrose TITLE=mistyrose onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=moccasin TITLE=moccasin onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=navajowhite TITLE=navajowhite onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=navy TITLE=navy onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TR>
+<TD BGCOLOR=oldlace TITLE=oldlace onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=olive TITLE=olive onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=olivedrab TITLE=olivedrab onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=orange TITLE=orange onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=orangered TITLE=orangered onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=orchid TITLE=orchid onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=palegoldenrod TITLE=palegoldenrod onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=palegreen TITLE=palegreen onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=paleturquoise TITLE=paleturquoise onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=palevioletred TITLE=palevioletred onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=papayawhip TITLE=papayawhip onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=peachpuff TITLE=peachpuff onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=peru TITLE=peru onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=pink TITLE=pink onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=plum TITLE=plum onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=powderblue TITLE=powderblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TR>
+<TD BGCOLOR=purple TITLE=purple onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=red TITLE=red onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=rosybrown TITLE=rosybrown onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=royalblue TITLE=royalblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=saddlebrown TITLE=saddlebrown onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=salmon TITLE=salmon onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=sandybrown TITLE=sandybrown onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=seagreen TITLE=seagreen onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=seashell TITLE=seashell onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=sienna TITLE=sienna onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=silver TITLE=silver onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=skyblue TITLE=skyblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=slateblue TITLE=slateblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=slategray TITLE=slategray onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=snow TITLE=snow onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=springgreen TITLE=springgreen onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TR>
+<TD BGCOLOR=steelblue TITLE=steelblue onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=tan TITLE=tan onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=teal TITLE=teal onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=thistle TITLE=thistle onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=tomato TITLE=tomato onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=turquoise TITLE=turquoise onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=violet TITLE=violet onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=wheat TITLE=wheat onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=white TITLE=white onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=whitesmoke TITLE=whitesmoke onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=yellow TITLE=yellow onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR=yellowgreen TITLE=yellowgreen onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>&nbsp;&nbsp;
+<TD BGCOLOR='' TITLE='' colspan=4 style='font-size:10px' align=center onclick=setLabelValue(this) onmouseover=displayValue(this) onmouseout=displayValue()>Default
+</TABLE>
+
+<P>
+<LABEL FOR=SelColor>Color:</LABEL>
+<INPUT TYPE=TEXT SIZE=20 ID=ReturnValue>
+<BR>
+<SPAN ID=RGB>...</SPAN>
+
+<P>
+<BUTTON ID=Ok ONCLICK="returnValueX();">OK</BUTTON>
+<BUTTON ONCLICK="window.close();">Cancel</BUTTON>
+</center>
+
+</BODY>
+</HTML>

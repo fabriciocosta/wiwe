@@ -1,0 +1,100 @@
+<?Php
+// ****************************************************
+//             CONSULTA DE TABLA GENERICA
+//					MODELO BASE 
+// ****************************************************
+
+require "deftabla.php";
+require "../admin/deftabla.php";
+
+?><html>
+<head><title>Selector <?=$tabla->nombre?></title>
+<?
+require "../include/style.php";
+?>
+<script>
+	var nimagenes;
+	function insertar(_align) {
+		window.opener.insertarimagenes('<?=$_campo_?>',_align);
+	}
+</script>
+</head>
+<body>
+<form name="selector" method="post" action="">
+<table width="95%" bgcolor="#000000" cellpadding="0" cellspacing="1">
+<tr>
+<td>
+<table width="100%" bgcolor="#FFFFFF" cellpadding="2" cellspacing="0">
+<tr>
+	<td bgcolor="#000000"><span class="titulo" style="color:#FFFFFF">Selector de imágenes</span></td>
+</tr>
+<tr>
+<td>
+<?
+$_midir_ = $_SERVER['DOCUMENT_ROOT'];
+$nimagenes = 0;
+$_tsecciones_->LimpiarSQL();
+$_tsecciones_->SQL = 'select secciones.ID,secciones.NOMBRE,secciones.CARPETA FROM secciones WHERE secciones.ID='.$_seccion_;
+$_tsecciones_->Open();
+if ($_tsecciones_->nresultados>0) {
+	$row = $_tsecciones_->Fetch($_tsecciones_->resultados);
+	$_dirseccion_ = '/secciones/seccion'.$_seccion_.'_'.$row['secciones.CARPETA'];
+	//browseo los archivos del directorio
+	if ($dirh = @opendir($_midir_.$_dirseccion_)) {
+	
+	  while (($file = readdir($dirh)) !== false) {
+	  
+	  	if ($file!='.' and $file!='..' and (GetExtension($file)=='jpg' or GetExtension($file)=='gif'  or GetExtension($file)=='swf')) {	
+			if ($size = getimagesize ($_midir_.$_dirseccion_.'/'.$file)) {
+				$nimagenes++;
+				echo '<table bgcolor="#FFFFFF"><tr><td>'.'<input type="hidden" name="img'.$nimagenes.'" value="'.$_dirseccion_.'/'.$file.'">'.'<input name="cb'.$nimagenes.'" type="checkbox" value="on" unchecked>'.'</td><td><a href="'.$_dirseccion_.'/'.$file.'" target="_blank">'.$file.'</a></td><td><img width="80" src="'.$_dirseccion_.'/'.$file.'" border="0"></td></tr></table>';
+			}			
+		}
+		
+	  }   
+	  closedir($dirh);
+	  
+	  $_dirseccion_ = '/secciones/seccion'.$_seccion_.'_'.$row['secciones.CARPETA']."/arch";
+	  //browseo los archivos del directorio
+	  if ($dirh = @opendir($_midir_.$_dirseccion_)) {
+		
+			while (($file = readdir($dirh)) !== false) {
+		  
+				if ($file!='.' and $file!='..' and (GetExtension($file)=='jpg' or GetExtension($file)=='gif' or GetExtension($file)=='swf')) {
+					if (GetExtension($file)=='swf') {
+							$nimagenes++;
+							echo '<table bgcolor="#FFFFFF"><tr><td>'.'<input type="hidden" name="img'.$nimagenes.'" value="'.$_dirseccion_.'/'.$file.'">'.'<input name="cb'.$nimagenes.'" type="checkbox" value="on" unchecked>'.'</td><td><a href="'.$_dirseccion_.'/'.$file.'" target="_blank">'.$file.'</a></td><td><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.#version=5,0,30,0" height="100" width="100">
+				<param name="movie" value="'.$_dirseccion_.'/'.$file.'">
+				<param name="quality" value="best">
+				<param name="play" value="true">
+				<embed  pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" src="(EmptyReference!)" type="application/x-shockwave-flash" width="80" quality="best" play="true"> 
+			</object></td></tr></table>';
+					} else {
+						if ($size = getimagesize ($_midir_.$_dirseccion_.'/'.$file)) {
+							$nimagenes++;						
+							echo '<table bgcolor="#FFFFFF"><tr><td>'.'<input type="hidden" name="img'.$nimagenes.'" value="'.$_dirseccion_.'/'.$file.'">'.'<input name="cb'.$nimagenes.'" type="checkbox" value="on" unchecked>'.'</td><td><a href="'.$_dirseccion_.'/'.$file.'" target="_blank">'.$file.'</a></td><td><img width="80" src="'.$_dirseccion_.'/'.$file.'" border="0"></td></tr></table>';
+						}
+					}
+				}
+			}
+		}   
+		closedir($dirh); 
+	} else {
+		echo "no hay imagenes en la seccion.";
+	}
+	
+}
+?>
+<script>
+nimagenes = <?=$nimagenes?>;
+</script>
+<a href="javascript://" onclick="javascript:insertar('left');">Insertar a la izquierda</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="javascript://" onclick="javascript:insertar('right');">Insertar a la derecha</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</form>
+</body>

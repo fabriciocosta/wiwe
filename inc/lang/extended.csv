@@ -1,0 +1,280 @@
+GROUP;CODE;EN;DE;SP;FR
+;YOURNAME;Your Name;Ihr name;Su Nombre;Votre Nom
+;YOURPHONE;Your Phone;Ihre Telefonnummer;Su Teléfono;Votre Téléphone
+;YOURMOBILE;Your Mobile;Ihre Mobiltelefonnummer;Su móvil;Votre Mobile
+;YOUREMAIL;Your Mail;Ihre e-mail-adresse;Su email;Votre Email
+;CONFIRMYOUREMAIL;Confirm Your Mail;E-mail bestätigen;Confirme su email;Confirmez votre email
+;YOUREMAILISYOURUSERNAME ;Your email is your username.;;;
+;LANGUAGESPOKEN;Language Spoken;Gesprochene Sprache  ;Idiomas hablados;Langues parlées
+;ENGLISH;English;Englisch;Ingles;Anglais
+;SPANISH;Spanish;Spanisch;Español;Espagnol
+;FRENCH;French;Französisch;Francés;Français
+;GERMAN;German;Deutsch;Alemán;Allemand
+;PORTUGUESE;Portugues;Portugiesisch;Portugués;Portuguais
+;ITALIAN;Italian;Italienisch;Italiano;Italien
+;CHINESE;Chinese;Chinesisch;Chino;Chinois
+;JAPANESE;Japonese;Japanisch;Japonés;Japonnais
+;YOURCOUNTRY;Your country;Your country;Su país;Votre pays
+;INWICHCOUNTRY;In which country ?;Ein Land wählen;¿En qué país?;Choisir un pays
+;CHOOSEACITY;Choose a city/town;Wählen sie eine Stadt;Elija una ciudad/pueblo;Choisir une ville
+;FIRSTCHOOSEACOUNTRY;Choose a country first;Zuerst wählen ein Land ;Elija un país primero;Choisissez d'abord un pays
+;SELECTCOUNTRY;Select a country ;Ein Land wählen;Elija un país;Choisissez un pays
+;SELECTCITY;Select a City;Wählen sie eine Stadt;Elija una ciudad;Choisissez une ville
+;SELECTLANGUAGE;Select langage;Sprache;Elegir idioma;Changer de langue
+;TYPEOFPROPERTY;Type of property;Art der Unterkunft;Tipo de propiedad;Type de résidence
+;YOUWANTTORENTPER;You want to rent per;Sie wünschen zu mieten für;Usted desea alquilar por;Vous désirez louer par
+;MONTH;Month;Monat;Mes;Mois
+;WEEK;Week;Woche;Semana;Semaine
+;DAY;Day;Tag;Día;Jour
+;EDITRECORD;Edit;Bearbeiten ;Modificar;Modifier
+;DELETERECORD;Delete;Löschen ;Eliminar;Effacer
+;VISUALVERIFICATION;Visual verification;Bestätigung;Verificación visual;Vérification visuelle
+;INSERTNEWADD;Insert a new ad here;Legen Sie eine neue Anzeige hier ;Nuevo anuncio aquí;Ajouter une annonce ici
+;FEATUREDDESTINATION;FEATURED DESTINATION :;ZIELORT :;DESTINOS :;LIEUX DE DESTINATION :
+;PARTNERS;Partners;Partnerschaft;Socios;Partenaires
+;THISAPPEARSFORWVERYONE;This appears for everyone.;Dies wird auf der Internetseite erscheinen;Esto aparecerá en el sitio web;Apparaîtra dans le site
+;YOUREMAILWONTAPPEAR;Your email  won't appear in the website;Dies wird nicht auf der Internetseite erscheinen;Esto no aparecerá en el sitio web;N'apparaîtra pas dans le site.
+;IFCOUNTRYMISSING;If the country is missing please contact us;Falls das Land fehlt; kontaktieren Sie uns bitte.;Si falta su país por favor contáctenos
+;IFCITYMISSING;If the city is missing please contact us;Falls die Steadt fehlt; kontaktieren sie uns bitte.;Si falta su ciudad por favor contáctenos
+;VALIDATEYOURADD;Validate your ad;Validieren sie ihr;Validar su aviso;Valider votre annonce
+;PRINCIPAL;Principal;Erste;Principal;Principal
+
+
+
+;INTITULATE;Title of the ad ;Benennen sie ihren Besitz;Nombre su propìedad;Intitulé
+;SIZE;Size;Grösse;Superficie;Surface
+;TOTALOFROOMS;Total of Room(s);Anzahl Zimmer;Total de ambientes;Nombre total de pièce(s)
+;BEDROOMS;Bedroom(s);Schlafzimmer;Habitaciones;Chambre(s)
+;SLEEPUP;Sleep up;Zustellbetten;Dormitorios;Couchage(s)
+;WIFIINTERNET;Wifi Internet;Wifi Internet;Wifi Internet;Wifi Internet
+;DESCRIPTION;DESCRIPTION;DESCRIPTION;DESCRIPTION;DESCRIPTION
+;RATE;Rate;Miete;Alquiler;Loyer
+;RATEUP;RATE;MIETE;ALQUILER;LOYER
+;DEPOSIT;Deposit;Einreichen;Depósito ;Dépôt
+;RENTPERMONTH;Rent / Month;Miete / Monat;Alquiler / Mes;Loyer / Mois
+;RENTPERWEEK;Rent / Week;Miete / Woche;Alquiler / Semana;Loyer / Semaine
+;RENTPERDAY;Rent / Day;Miete / Tag;Alquiler / Días;Loyer / Jour
+;FLOOR;Floor;Stockwerk;Suela;Étage
+;FINDYOURHOME;Find your home;Finden sie Ihre Residenz;Encontrar su casa;Trouver votre habitation
+;BACKTOINVENTORY;Back to inventory;Zurück zur Liste;Volver al inventario;Revenir à la liste
+
+;FROM;From;Von;Desde;De
+;TO;To;Bis;Hasta;À
+;RATE;Rate;Miete;Alquiler;Loyer
+;CURRENCY;Currency;Währung;Moneda;Devise
+
+
+;JANUARY;January;Januar;Enero;Janvier
+;FEBRUARY;February;Februar;Febrero;Février
+;MARCH;March;März;Marzo;Mars
+;APRIL;April;April;Abril;Avril
+;MAY;May;Mai;Mayo;Mai
+;JUNE;June;Juni;Junio;Juin
+;JULY;July;Juli;Julio ;Juillet
+;AUGUST;August;August;Agosto ;Août
+;SEPTEMBER;September;September;Septiembre ;Septembre
+;OCTOBER;October;Oktober;Octubre ;Octobre
+;NOVEMBER;November;November;Noviembre ;Novembre
+;DECEMBER;December;Dezember;Diciembre ;Décembre
+
+;EUROS;€ ;€ ;€;€ 
+;DOLLARS;US$ ;US$ ;US$ ;US$ 
+;BUSESAT;Buses at;Busse in ;Omnibus a;Bus à
+;METROAT;Metro at;U-bahn in;Metro a;Métro à
+;TRAMWAYSAT;Tramways at;Strassenbahn in;Trenes a/en;Tramways à 
+;NEARESTAIRPORTAT;Nearest airport at;Nächster Flughafen in ;Aeropuerto más cercano a/en;Aéroport le plus proche à
+;RAILWAYSTATIONAT;Nearest railway station at;Nächster Bahnhof in;Estación de tren más cercana a/en;Gare ferrovière la plus proche à
+;NEARESTBEACHAT;Nearest beach at;Nächster Strand in;Playa más cercano a/en;Plage la plus proche à
+;NEARESTSKIRESSORTAT;Nearest ski resort at;Nächste Skistation in;Estación de ski a/en;Station de ski la plus proche à
+;LOCALACTIVITIES;LOCAL ACTIVITIES;LOKALE AKTIVITÄTEN;ACTIVIDADES LOCALES;ACTIVITÉS LOCALES
+;MAPLOCATION;MAP LOCATION;ORT AUF DEM PLAN;LOCALIZACION EN EL MAPA;LOCALISATION SUR PLAN
+;DIVING;Diving;Tauchen;Buceo;Plongée
+;SURFING;Surfing;Surfen;Surf;Surf
+;SWIMMING;Swimming;Schwimmen;Natación ;Natation
+;TENNIS;Tennis;Tennis;Tennis;Tennis
+;FISHING;Fishing;Angeln;Pesca;Pêche
+;WATERSKING;Water-sking;Wasser-ski;Esquí acuático;Ski nautique
+;WALKING;Walking;Walking;Trekking;Marche;
+;SAILING;Sailing;Segeln;Navegación;Voile;
+;CYCLING;Cycling;Fahrradfahren;Ciclismo;Cyclisme;
+;HORSERIDING;Horse riding;Reiten;Hípismo;Equitation;
+;WINDSURFING;Wind-surfing;Windsurfen;Windsurf;Planche à voile;
+;SKI;Ski;Ski;Esquí;Ski nautique;
+;MOUNTAINGBIKING;Mountaing Biking;Mountaing Biking;Bicicleta de montaña;Vélo tout terrain;
+;PARAGLIDING;Paragliding;Paragliding;Parapente;Parapente;
+;ROLLERSKATING;Roller skating;Roller skating;Roller skating;Roller;
+;GOLF;Golf;Golf;Golf;Golf;
+;MUSEUMS;Museums;Museen;Museos;Musées;
+;RESTAURANTS;Restaurants;Restaurants;Restaurantes;Restaurants;
+;BARSCLUBS;Bars;Clubs;Discoteca;Discothèque; Discothèques
+;BOWLING;Bowling;Bowling;Bolos;Bowling;
+;TERMALBATHS;Termal Baths;Thermalbäder;Baños termales;Bains;
+;CASINO;Casino;Casino;Casino;Casino;
+;CINEMA;Cinema;Kino;Cinema;Cinéma
+;THEMEPARK;Theme park;Freizeitpark;Parque temático;Parc de loisirs
+;PATINOIRE;Ice rink;Eisbahn;Pista de patinaje sobre hielo;Patinoire
+
+;PHOTOS;PHOTOS;PHOTOS;FOTOS;PHOTOS
+
+;TITLE;Property; Unterkunft;Propiedad;Proprieté
+;CITY;City;Stadt;Ciudad;Ville
+;COUNTRY;Country;Land;País;Pays
+
+;GALLERYINSTRUCTION;You can add until 10 pictures with a resolution of 2048x1510 and 2 Mo maximum.;Sie können bis zu 10 Fotos mit einer Auflösung von 2048x1510 und 2 Mo maximum anfügen;Usted puede adjuntar hasta 10 fotos con una resolución de 2048x1510 y 2 Mo maximum.;Vous pouvez ajouter jusqu'à 10 photos avec une résolution de 2048x1510 et 2 Mo maximum.
+;TRANSPORTATION;TRANSPORTATION;VERKEHRSMITTEL;TRANSPORTE;TRANSPORT
+;;;;;MAILSENT
+;REGISTERNOW;REGISTER NOW AND ADVERTISE FOR FREE;REGISTRIEREN SIE SICH JETZT UND ANNONCIEREN SIE GRATIS;REGISTRESE AHORA Y PUBLICITE GRATUITAMENTE SU PROPIEDAD;PUBLIER GRATUITEMENT L'ANNONCE DE
+;YOURPROPERTY;YOUR PROPERTY;YOUR UNTERKUNFT;SU PROPIEDAD;VOTRE PROPRIETE
+;WELCOMETO;Welcome to BestDwelling.com ! ...  ;Willkommen bei BestDwelling.com!...;Bienvenido a BestDwelling.com! ...  ;Bienvenue chez BestDwelling.com ! ... 
+;WHYREGISTER;why register?;Warum registrieren?;¿Por qué deposita su anuncio?;Pourquoi s'enregister ?
+;YOURCONTACTINFORMATION;YOUR CONTACT INFORMATION;IHRE KONTAKTADRESSE;INFORMACION SOBRE SU CONTACTO;VOS COORDONNEES
+;YOURPROPERTYINFORMATION;YOUR PROPERTY INFORMATION;INFORMATION;INFORMACION SOBRE SU PROPIEDAD:;INFORMATION SUR LA PROPRIETE
+;ADVERTISE;ADVERTISE;ANNONCIEREN;PUBLICITE;PUBLIER
+;FORFREE; FOR FREE;GRATIS;GRATUITAMENTE;GRATUITEMENT
+
+;HERE;Here;Hier;aquí;ici
+;ADVERTISEYOURPROPERTYFORFREE;Advertise your property for free;Gratis Annonce ihres Bestizes;Publicite su anuncio gratuitamente;Publier votre annonce gratuitement
+;ABOUTUS;About us;Über uns;¿Quiénes somos?;Qui sommes-nous?
+;CONTACTUS;Contact us;Kontaktieren Sie uns ;Contacto;Contactez-nous
+
+;OURSERVICES;Our Services;Our Services;Our Services;Our Services
+;CHOOSEYOURHOME;Choose your home;Choose your home;Choose your home;Choose your home
+;CHOOSEYOURDURATION;Choose your duration;Choose your duration;Choose your duration;Choose your duration
+;ALLBUDAPEST;All Budapest;All Budapest;All Budapest;All Budapest
+
+;RENOVATION;Renovation;Renovation;Renovation;Renovation
+;PROPERTYMANAGEMENT;Property Management;Property Management;Property Management;Property Management
+;FURNISHING;Furnishing;Furnishing;Furnishing;Furnishing
+
+;UNIQUESELECTION;A unique selection of rental and sale properties;A unique selection of rental and sale properties;A unique selection of rental and sale properties;A unique selection of rental and sale properties
+;COMMENTS;Questions & Comments;Questions & Comments;Questions & Comments;Questions & Comments
+;ARRIVAL;Arrival;Arrival;Arrival;Arrival
+;DEPARTURE;Departure;Departure;Departure;Departure
+;FAQ;FAQ;FAQ;FAQ;FAQ
+;JOBOFFERS;Job offers;Job offers;Job offers;Job offers
+
+;CONTACTMEBY;Contact me by : phone / email;Contact me by : phone / email;Contact me by : phone / email;Contact me by : phone / email
+;SEARCH;Search;Suche starten ;Buscar;Rechercher
+
+;CLASSIFYBY;Classify by;Klassifizieren nach;Clasificar por;Classer par
+;PRICE;Price;Preis;Precio;Prix
+;STREET;Street;Street;Street;Rue
+;BEDROOM;Bedroom;Schlafzimmer;Habitación;Chambre
+;SLEEPUP;Sleep-up;Betten;Camas;Couchages 
+;ROOMS;Room(s);Schlafzimmer;Habitaciones;Chambre(s)
+;PRICEPERMONTH;Price per month;Price per month;Price per month;Prix par mois
+;PERNIGHT;Per night;Per night;Por día;Par jour
+;PERWEEK;Per week;Per week;Por semana;Par semaine
+;PERMONTH;Per month;Per month;Por mes;Par mois
+;AVAILABLEFROMTHE;Available from the;Available from the;Available from the;Available from the
+;DESCRIPTION;DESCRIPCÍON;BESCHREIBUNG;DESCRIPTION;DESCRIPTION
+;THEAPARTMENT;The apartment;Die Wohnung;El departemento;The apartment
+;NEWSLETTERMESSAGE;You will receive by email our news and exclusive offers.;You will receive by email our news and exclusive offers.;You will receive by email our news and exclusive offers.;You will receive by email our news and exclusive offers.
+;NEWSLETTERCONFIRMATION;;;;
+;ALREADYONDATABASE;You are already in our list;You are already in our list;You are already in our list;You are already in our list
+;WISHTORECEIVENEWSLETTER;I wish to receive our exclusive newsletters;I wish to receive our exclusive newsletters;I wish to receive our exclusive newsletters;I wish to receive our exclusive newsletters
+;NORESULT;Your search did not match any properties;Your search did not match any properties;Su búsqueda no dió resultados.;Votre recherche n'a pas de résultats.
+;NORESULTUSERADMIN;There is no ad in your account;There is no ad in your account;No hay anuncios en su cuenta.;Il n'a pas d'annonce sur votre compte. 
+;TYPEOFREALESTATE;Type of real estate;Type of real estate;Type of real estate;Type of real estate
+;PRICEAPPROXIMATELY;Price approximately;Price approximately;Price approximately;Price approximately
+
+;_nom_;Last Name;Nachname;Apellido;Nom
+;_prenom_;First Name;Vorname;Nombre;Prénom
+;_commentaire_;Message;Anmerkungen;Mensaje;Message
+;_telpers_;Phone;Telefonnummer;Teléfono;Téléphone
+;_email_;Email;Email;Email;Email
+
+;URLREWHOUSE;holidays+accomodations+rent+houses;ferienunterkunfte+miete+von+hausern;alquileres+de+vacaciones+casas;location+de+vacances+maisons
+;URLREWAPARTMENT;holidays+accomodations+rent+apartment;miete+von+wohnungen;alquileres+de+vacaciones+pisos;location+de+vacances+appartement
+;URLREWBEDANDBREAKFAST;holidays+accomodations+bed+and+breackfast;ferienunterkunfte+pensionen;alquileres+de+vacaciones+pensiones;location+de+vacances+chambres+dhotes
+;URLREWBOAT;holidays+accomodations+rent+boats+yachts;ferienunterkunfte+miete+zum+boot+yachts;alquileres+de+vacaciones+barcos+alquiler+de+yates;location+de+vacances+bateaux+yachts
+;PERDAY;per day;pro tag;por dia;par jour
+;PERWEEK;per week;pro woche;por semana;par semaine
+;PERMONTH;per month;pro monat;por mes;par mois
+
+
+;EQUIPMENTS;EQUIPMENTS;AUSSTATTUNG;EQUIPAMIENTO;EQUIPEMENTS
+;WASHINGMACHINE;Washing Machine;Waschmaschine;Máquina de lavar;Machine à Laver
+;DRYER;Dryer;Wäschetrockner ;Secadora;Sèche-linge
+;PRIVATEPARKINGCAR;Private car park ;Parkplatz;Estacionamiento;Parking privé
+;AIRCONDITIONING;Air Conditioning;Klimaanlage ;Acondicionado;Climatisation
+;DISHWASHER;Dishwasher;Geschirrspülmaschine;Lavaplatos;Lave-vaiselle
+;OPENAIRSWIMMINGPOOL;Open air swimming pool;Freibad ;Piscina al aire libre;Piscine exterieure
+;INDOORSWIMMINGPOOL;Indoor Swimming pool;Hallenbad;Piscine interior;Piscine interieure
+;TENNIS;Tennis;Tennis;Tennis;Tennis
+;SPAJACUZZI;Spa-jacuzzi;Jacuzzi;Jacuzzi;Spa-jacuzzi
+;SAUNA;Sauna;Sauna;Sauna;Sauna
+;PHONE;Phone;Telefon;Teléfono ;Téléphone
+;TELEVISION;Television;TV;Televisión;Télévision
+;RADIO;Radio;Radio;Radio;Radio
+;DVDPLAYER;DVD Player;DVD-player;DVD-player;Lecteur DVD
+;TVSETWITHSATELLITETV;TV set with satellite TV;TV mit Satellitenprogramm;Televisión por cable/por satélite;Téléviseur avec les chaînes satellites
+;BABYBED;Baby Bed;Kinderbett ;Bebe cama;Lit pour bébé
+;OPENAIRBARBECUE;Open-air barbecue;Barbecue;Asador;Barbecue
+;BREACKFAST;Breakfast;Frühstück;Desajuno;Petit déjeuner
+;DISHESANDCUTLERY;Dishes and Cutlery;Geschirr;Loza y platos;Vaisselle et couverts
+;VACCUMCLEANER;Vacuum Cleaner;Staubsauger;Aspirador;Aspirateur
+;HAIRDRIER;Hairdryer;Haartrockner;Secador;Sèche-cheveux
+;IRON;Iron;Bügeleisen;Plancha;Fer à repasser
+;IRONTABLE;Ironing table;Bügeleisen;Plancha mesa;Table à repasser
+;REFRIGERATOR;Refrigerator;Kühlschrank;Refrigerador;Réfrigérateur
+;OVEN;Oven;Ofen;Horno;Four
+;MICROWAVE;Microwave;Mikrowelle;Micro ondas;Micro onde
+;TOASTER;Toaster;Toaster;Tostadora;Grille-pain
+;SHEETSANSBLANKETS;Sheets ans Blankets;Bettlaken  und Decke;Sábanas y mantas;Draps et Couvertures
+;FAN; Fan;Ventilator;Ventilador;Ventilateur
+;STRONGBOX;Safe;Safe;Caja fuerte;Coffre-fort
+;SOLARIUM;Solarium;Solarium;Solarium;Solarium
+
+
+
+;DEPOSIT;Deposit;Kaution ;Depósito;Dépôt
+;CHARGES;House maintenance fee / month ;Zusätzliche Nebenkosten;Expensas;Charges
+;RESIDENTIALTAX;Residential Tax;Aufenthaltsgebühr ;Impuesto a la residencia;Taxe de séjour
+;ADVANCEPAYMENT;Advance payment;Anzahlung;Señal;Acompte
+;ADVANCEPAYMENT2;% of the rental ;% des Mietpreises ;% del precio de alquiler. ;% du montant du loyer. 
+;LIFT;Lift;Aufzug ;Ascensor;Ascenseur
+
+;HOLYDAYACCOMODATIONS;Holliday Accomodations;Ferienunterkünfte;Alquileres de vacaciones ;Locations de Vacances
+;VACATIONRENTALS;Vacation Rentals - Holiday Accomodations: Rent houses; apartments or boats anywhere in the world!;Ferienunterkünfte- Miete von Häusern; Wohnungen oder Booten überall auf der Welt!
+;VIEWDETAILS;More details; Mehr Details;Más información; Plus de détails
+;DELETE;Delete;Löschen;Eliminar;Effacer
+;EDIT;Edit;Modifizieren;Modificar;Modifier
+;EDITPROFILE;My Contact information;Meine Kontaktinformationen;Mi Infomatión de Contacto;Mes Informations de Contact
+;;The message could not be sent; please check that field's data is correct. Fill the form and press Send button.;Email konnte nicht gesendet werden; bitte überprüfen sie die eingegebenen Daten.
+;Votre email n'a pas pu être envoyer. Merci de vérifier les données et rempliçant correctement le formulaire.;;;;
+;;If the country is missing please contact us.;Falls das Land fehlt; kontaktieren Sie uns bitte.;Si falta su país por favor contáctenos.
+;Si le pays est manquant; contactez-nous s'il vous plaît.;;;
+;;If the city is missing please contact us.;Falls die Steadt fehlt; kontaktieren sie uns bitte.;Si falta su ciudad por favor contáctenos.
+;SQM;sqm;m2;m2;m2
+;YOUREMAILISYOURUSERNAME ;Your email is your username.;Ihre E-Mail-Adresse und ihr Nutzername.;Su correo electrónico es su nombre de usuario.;Votre email est votre nom d`utilisateur
+;Votre adresse E-mail est votre nom d'utilisateur.;;;;
+;;SEND A DIRECT EMAIL REQUIRY TO THE OWNER: ;SCHICKEN SIE EINE EMAIL DIREKT ZUM BESITZER:;ENVIAR UN EMAIL DIRECTO AL PROPIETARIO:;
+;ENVOYER UN MAIL DIRECT AU PROPRIETAIRE:;;;;
+;;Your search did not match any properties.;Es wurden keine passenden Suchergebnisse gefunden.;Su búsqueda no pudo llevarse a cabo.;Votre recherche n'a pu aboutir. 
+;;Your password have been sent on your email box.;Ihr Passwort wurde ihnen an ihre Emailadresse gesendet;Su clave ha sido enviada a su cuenta email.;Votre mot de passe vous a été envoyé sur votre boite de messagerie électronique.
+;;Are you sure to delete this ad ?;Sind sie sicher; dass sie diese Annonce löschen wollen?;
+;;Please review the fields.;Please review the fields.;Por favor; verifique los datos resaltados.
+;Veuillez vérifier les champs s'il vous plait.;;;;
+;;First Page  Previous  1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 10  Next  Last Page; Erste Seite Vorherige  1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 10 Nächste Letzte Seite;Primera página  Anterior  1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 10  Proxima  Ultima página;Première Page  Précédente  1  | 2  | 3  | 4  | 5  | 6  | 7  | 8  | 9  | 10  Suivante  Dernière Page
+
+;ENGLISH;English;Englisch;Inglés;Anglais
+;SPANISH;Spanish;Spanisch;Español;Espagnol
+;FRENCH;French;Französisch;Francés;Français
+;GERMAN;German;Deutsch;Alemán;Allemand
+;PORTUGUESE;Portuguese;Portugiesisch;Portugués;Portuguais
+;ITALIAN;Italian;Italienisch;Italiano;Italien
+;CHINESE;Chinese;Chinesisch;Chino;Chinois
+;JAPANESE;Japanese;Japanisch;Japonés;Japonnais
+
+
+;YOUMUSTCHOOSEAPERIOD;You must choose a period;You must choose a period;You must choose a period;You must choose a period
+;YOUMUSTCHOOSEAPROPERTYFIRST;You must choose a property first;You must choose a property first;You must choose a property first;You must choose a property first
+;YOUMUSTCHOOSEACOUNTRY;You must choose a country first;You must choose a country first;You must choose a country first;You must choose a country first
+;YOUMUSTCHOOSEACITY;You must choose a city;You must choose a city;You must choose a city;You must choose a city
+;YOUMUSTPUTATITLE;You must put a title for your property;You must put a title for your property;You must put a title for your property;You must put a title for your property
+;YOUMUSTPUTANIMAGEGALLERY;You must put at least one image on the gallery;You must put at least one image on the gallery;You must put at least one image on the gallery;You must put at least one image on the gallery
+;YOUMUSTPUTANIMAGE;You must put the principal image;You must put the principal image;You must put the principal image;You must put the principal image
+;YOUMUSTPUTASHORTTITLE;Title to long, you must complete less than 35 characters;Title to long, you must complete less than 35 characters;Title to long, you must complete less than 35 characters;Title to long, you must complete less than 35 characters
+;YOUMUSTENTERARATE;You must enter a rate;You must enter a rate;You must enter a rate;You must enter a rate
+;YOUMUSTSELECTAPERIOD;You must select a period for rent;You must select a period for rent;You must select a period for rent;You must select a period for rent

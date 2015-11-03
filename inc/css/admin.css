@@ -1,0 +1,744 @@
+/*ADMIN*/
+
+.vistas-adicionales {
+	display: block;
+}
+
+.campos-adicionales {
+	display: none;
+}
+
+.mas-campos {
+	font-weight: bold;
+	cursor: hand;
+	cursor: pointer;
+}
+
+
+/*NAVEGADOR*/
+
+
+	/*arbol secciones*/
+	table.MAD_ARB {  background-color: white; }
+	table.MAD_ARB_FILTROS {  background-color: white; }
+	td.MAD_ARB_FILTROS_LINE {  background-color: black; }
+
+	/*configuracion*/
+	table.MAD_CONF {  background-color: white; }
+	span.MAD_TIT { color: #202835; }
+	a.MAD_TIT:link { color: #202835; }
+	a.MAD_TIT:visited { color: #202835; }
+	a.MAD_TIT:hover { color: #202835; }
+	a.MAD_TIT:active { color: #202835; }
+
+	/*usuarios*/
+	table.MAD_USR {  background-color: white; }
+	span.MAD_TXT {}
+	a.MAD_TXT {}
+
+/*CONSULTA*/
+	
+	/*HEADER*/
+	span.MAD_SECTION { color:#FFFFFF; }
+	table.MAD_HEADER { background-color: white; }
+	td.MAD_HEADER_TIT { background-color: #202835; }
+	span.MAD_HEADER_TIT { color:#FFFFFF; }
+	td.MAD_HEADER_BG_LN { background-color: black;}
+	td.MAD_HEADER_BG_BAND { background-color: #202835;}
+	
+	/*LAPEL STYLE*/
+	table.MAD_LAPEL {  background-color: white; }
+	td.MAD_LAPEL_BG_LN {}
+	td.MAD_LAPEL_BG {}
+	
+	/*FILTERS*/
+	table.MAD_CONS {  background-color: white; }
+	td.MAD_CONS_FILTERS {background-color: white;}
+	span.MAD_CONS_FILTERS { color: #202835; }
+	a.MAD_CONS_FILTERS {}
+	
+	/*RESULTS*/
+	table.MAD_CONS_RES {background-color: white;}
+	td.MAD_CONS_RES {background-color: white;}
+	span.MAD_CONS_RES { color: #202835; }
+	span.MAD_CONS_RES_NO { color: #202835; }
+	a.MAD_CONS_RES { color: #202835; }
+	
+	td.MAD_CONS_TIT {background-color: white;}
+	span.MAD_CONS_TIT { color: #202835; }
+	td.MAD_CONS_FIELD {background-color: white;}
+	span.MAD_CONS_FIELD { color: #202835; }
+
+/*EDITION*/
+
+	/*CONFIRM*/
+	table.MAD_EDIT_CONFIRM { background-color: white;}
+	td.MAD_EDIT_CONFIRM {background-color: white;}
+	
+	span.MAD_WARNING {}
+	/*EDIT TABlEE*/
+	table.MAD_EDIT { background-color: white; }
+	td.MAD_EDIT_TIT { background-color: white; }
+	span.MAD_EDIT_TIT { color: #202835; }
+	td.MAD_EDIT_FIELD {background-color: white;}
+	
+	/*EDIT DETAILS*/
+	table.MAD_EDIT_DET {  background-color: black; }
+	td.MAD_EDIT_DET_TIT {background-color: white;}
+	span.MAD_EDIT_DET_TIT { color: #202835; }
+	td.MAD_EDIT_DET_FIELD {background-color: white;}
+	
+
+table.COMP { background-color: black;}
+td.COMP_HD_TIT { background-color: #93a1aa; color: #FFFFFF; font-weight: bolder; font-size: 12px; padding: 3px;}
+td.COMP_HD_FIELD {  background-color: #e1e6e9;  color: #000000; font-weight: normal; font-size: 12px;  padding: 3px;}
+
+.textepromo { color:#FFFFFF; }
+
+/*BODY GENERAL*/
+body,td,th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333333;
+}
+body {
+	background-color: #FFFFFF;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #330000;
+}
+a:hover {
+	text-decoration: none;
+	color: #999900;
+}
+a:active {
+	text-decoration: none;
+	color: #330000;
+}
+
+
+.pageinter {
+	color:#000000;
+	font-style: normal;
+	font-weight: 0;
+}
+
+a.pageinter:link {
+	color:#000000;
+	text-decoration: underline;
+}
+
+a.pageinter:visited {
+	color:#000000;
+	text-decoration: underline;	
+}
+
+a.pageinter:hover {
+	color:#000000;
+	text-decoration: underline;
+}
+
+a.pageinter:active {
+	color:#000000;
+	text-decoration: underline;
+}
+
+.pageintersel {
+	color:#000000;
+	font-style: normal;
+	font-weight: 900;
+}
+
+
+a.itemmenu:link {
+	color:#FFFFFF;
+	text-decoration: none;
+}
+
+a.itemmenu:visited {
+	color:#FFFFFF;
+	text-decoration: none;	
+}
+
+a.itemmenu:hover {
+	color:#FFFFFF;
+	font-weight:bold;
+	text-decoration: none;
+}
+
+a.itemmenu:active {
+	text-decoration: none;
+}
+
+
+
+.link2 {
+	color: #333333;
+}
+
+input, textarea, select, checkbox, button { font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #333333; font-weight: normal; }
+
+
+/* TREE NAVIGATOR CSS */
+
+.tree {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	padding: 9px;
+	white-space: nowrap;
+}
+.tree img {
+	border: 0px;
+	vertical-align: text-bottom;
+}
+.tree a {
+	color: #000000;
+	text-decoration: none;
+}
+.tree a:hover {
+	color: #555555;
+}
+
+.boxname { font-family: Verdana; font-size: 11px; color: #333333; }
+.boxfield { font-family: Verdana; font-size: 11px; color: #333333; }
+.error { font-family: Verdana; font-size: 11px; color: #BB0000; }
+.errormessages { font-family: Verdana; font-size: 11px; color: #660000; }
+
+
+
+
+
+
+/*NUEVA VERSION - EDICION DE CAMPOS*/
+
+.edicion div.campo,
+.edicion div.vista-adicionales {
+
+	display: block;
+	position: relative;
+	float: left;
+	
+	
+	width: 100%;
+	height: auto;
+	padding: 10px 0px 10px 0px;
+	margin: 0px;
+	border-top: solid 1px #000000;
+	background-color: #F0F0F0;
+}
+.edicion  .campo  .MAD_EDIT_TIT,
+.vista-adicionales .MAD_EDIT_TIT {
+	display: block;
+	float: left;
+	width: 144px;
+	padding-right: 10px;
+	font-weight: bold;
+	text-align: right;
+	/*
+	display: block;
+	position: relative;
+	float: left;
+	clear: both;
+	*/
+}
+
+.edicion .campo .MAD_EDIT_FIELD {
+	display: block;
+	float: left;
+	width: 80%;	
+	text-align: left;
+	/*clear: right;*/
+	/*
+	
+	position: relative;
+		
+	border: solid 0px #000000;	
+	*/
+}
+
+div.edicion {
+	display: block;
+	float: left;
+	position: relative;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+#confirm-ribbon {
+	display: block;
+	position: relative;
+	float: left;
+	background-color: #FFFFFF;
+	border: solid 1px #000000;
+	width: 100%;
+	margin: 0px;
+	padding: 10px;
+}
+
+div.ok {
+	display: block;
+	float: left;
+	
+	width: 48%;
+	margin: 0px;
+	text-align: left;		
+}
+
+div.cancel {
+	display: block;
+	float: left;
+
+	width: 48%;
+	margin: 0px;
+	text-align: right;	
+}
+
+
+div.didEN,
+div.didFR,
+div.didPO,
+div.didDE,
+div.didSP {
+	display: none;
+	float: left;
+	clear: both;
+	padding: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+div.didEN {
+	background-color: #BB0000;
+}
+
+div.didPO {
+	background-color: #05CC70;
+}
+
+div.didDE {
+	background-color: #000000;
+}
+
+div.didFR {
+	background-color: #0033CC;
+}
+
+
+/* CONSULTAS DEL ADMIN */
+.consulta,
+.resultados {
+	display: block;
+	position: relative;
+	float: left;
+	width: 100%;
+	background-color: #F8F8F8;
+	border-bottom: solid 0px #666666;
+	border-top: solid 2px #CCCCCC;
+	vertical-align: middle;
+	overflow: hidden;
+}
+
+
+.consulta div,
+.consulta label,
+.resultados .selector {
+	display: inline;
+	position: relative;
+	float: left;
+	
+	height: 100%;
+	width: 5%;
+	
+	padding: 0px;
+	padding-left: 5px;
+	padding-right: 5px;	
+
+	padding-top:3px;
+	height: 17px;	
+	
+	border-left: solid 1px #CFCFCF;
+	
+}
+.consulta label {
+	display: none;
+}
+
+.resultados .funciones{
+	display: block;
+	float: left;
+}
+
+.resultados .deleteall {
+	float: left;
+	margin: 3px;	
+}
+
+.consulta .titulo,
+.consulta .nick
+ {
+	font-size: 12px;
+	font-family: Verdana;
+	font-weight: bold;
+	
+	text-align: left;
+	width: 30%;
+}
+
+.consulta .fecha {
+	position: absolute;	
+}
+
+.consulta .hora {
+	right: 120px;
+}
+
+.consulta .dia {
+	right: 200px;
+}
+
+
+.consulta .status {
+	display: block;
+	padding: 0px !important;
+	background-repeat: no-repeat;	
+	width: 20px;
+	height: 20px;
+}
+
+.consulta .statusS {
+	background-image: url('../../inc/images/bullet-color-S.png');
+}
+
+.consulta .statusN {
+	background-image: url('../../inc/images/bullet-color-N.png');
+}
+
+.funciones option {
+	display: block;
+	height: 15px;
+}
+
+.funciones option.ACTIVATE,
+.funciones option.DEACTIVATE,
+.funciones option.DELETE,
+.funciones option.LISTMAILS
+ {
+	
+	padding-left: 25px;	
+	background-repeat: no-repeat;
+}
+
+.funciones option.ACTIVATE {
+	background-image: url('../../inc/images/bullet-color-small-S.png');
+	background-position: 3px;
+}
+
+.funciones option.DEACTIVATE {
+	background-image: url('../../inc/images/bullet-color-small-N.png');
+	background-position: 3px;	
+}
+
+.funciones option.DELETE {
+	background-image: url('../../inc/images/delete.gif');
+}
+
+.funciones option.LISTMAILS {
+	background-image: url('../../inc/images/mail_icon.png');
+	background-position: 3px;
+}
+
+
+.consulta .acciones {
+	display: block;
+	float: right;
+	width: 100px;
+}
+
+.consulta .acciones a {
+	display: block;
+	position: relative;
+	float: left;
+	border: solid 0px #FF0000;
+	margin-left: 5px;
+}
+
+.consulta .acciones a.nuevo {
+	width: 14px;
+	height: 17px;	
+}
+
+.consulta .acciones a.modificar {
+	width: 17px;
+	height: 17px;	
+}
+
+.consulta .acciones a.borrar {
+	width: 14px;
+	height: 17px;	
+}
+
+.consulta .acciones a.arriba,
+.consulta .acciones a.abajo {
+	width: 13px;
+	height: 13px;	
+}
+
+
+.consulta .acciones .nuevo {
+	background-image: url('../../inc/images/agregar.gif');
+}
+
+.consulta .acciones .modificar {
+	background-image: url('../../inc/images/editar.gif');
+}
+
+.consulta .acciones .borrar {
+	background-image: url('../../inc/images/borrar.gif');
+}
+
+.consulta .acciones .arriba {
+	background-image: url('../../inc/images/upmini.gif');
+}
+
+.consulta .acciones .abajo {
+	background-image: url('../../inc/images/downmini.gif');
+}
+
+.consulta .creador,
+.consulta .editor,
+.consulta .tipo {
+	overflow: hidden;
+}
+
+#PASSWORD .editar-campo label,
+#PASSWORD .editar-campo input
+ {
+	margin-left: 10px;
+}
+
+.modulo_admin_logout,
+.modulo_admin_logout a {
+	color: #FFFFFF !important;
+}
+
+.ui-widget-content,
+.consulta {
+	z-index: 10;
+}
+
+.ui-draggable-dragging {
+	z-index: 1000;
+}
+
+.relaciones {
+	border:1px;
+	border-color:#000000;
+	width:50%;
+	height:300px;
+	z-index:1000;
+	overflow: scroll;
+	position: relative;
+	float: left;
+	display: inline-block;
+}
+
+
+.pop-relaciones {
+	border:1px;
+	border-color:#000000;
+	width: 50%;
+	height:300px;
+	z-index: 10000;
+	overflow: scroll;
+	display: none;
+	position: relative;
+	float: left;
+	display: inline-block;
+
+}
+
+.add-relaciones {
+	clear: both;
+	position: relative;
+	display: inline-block;
+	width: auto;
+	float: left;
+	border: solid 1px #000000;
+	background-color: #A0A0A0;
+	color: #FFFFFF !important;
+	padding: 5px;
+}
+
+a.relaciones-eliminar {
+	color: #FF0000 !important;
+}
+
+
+.TRABAJO_ASIGNACION .consulta-subcontenido .selector,
+.TRABAJO_ASIGNACION .consulta-subcontenido .tipo,
+.TRABAJO_ASIGNACION .consulta-subcontenido .fecha
+{
+	display: none;
+}
+
+.TRABAJO_ASIGNACION .consulta-subcontenido .titulo {
+	width: 60%;
+}
+
+
+
+div.MAD_EDIT_DETALLES {
+	display: block;
+	position: relative;
+	background-color: #EFEFEF;	
+}
+
+div.MAD_EDIT_DET {
+	display: block;
+	position: relative;
+	background-color: #EFEFEF;
+	padding: 5px;
+	margin-top: 20px;
+	border: solid 1px #A0A0A0;
+}
+
+.MAD_EDIT_DET div.MAD_EDIT_DET_TIT {
+	display: block;
+	position: relative;
+	padding-top: 5px;	
+	padding-bottom: 5px;
+}
+
+.MAD_EDIT_DET label.MAD_EDIT_DET_TIT {
+	font-weight: bold;
+
+}
+
+textarea {
+	display: block;
+	position: relative;
+	width: 100%;
+	padding: 5px;
+}
+
+.subedicion {
+	background-color: #DEDEDE;
+	border: solid 7px #F0F0F0;
+	padding: 20px;
+}
+
+.pagebook {
+		display: block;
+		position: relative;
+		float: left;
+		width: 100%;
+		border: solid 1px #000000;
+		background-color: #CFCFCF;
+}
+
+
+.pagebook .tabcontrol,
+.pagebook .pagescontrol
+ {
+	display: block;
+	float: left;
+	position: relative;
+	background-color: #CFCFCF !important;
+	clear: both;
+	width: 100%;
+	
+}
+
+.pagebook .tabcontrol .tab {
+
+	display: block;
+	float: left;
+	position: relative;
+	border-right: solid 1px #FFFFFF;
+	padding: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	cursor: hand;		
+	
+}
+
+.pagebook .pagescontrol .page {
+
+	display: block;
+	float: left;
+	position: relative;
+	border: solid 0px #FF00FF;
+	width: 98%;
+	clear: both;
+	display: none;
+	padding: 10px;
+	
+}
+
+.page-off,
+.page-disabled,
+.page {
+	display: none !important;
+}
+
+.page-on {
+	display: block !important;
+	background-color: #CFCFCF !important;
+}
+
+.tab-off,
+.tab-disabled,
+.tab {
+	display: block !important;
+	background-color: #666666 !important;
+	color: #FFFFFF;
+}
+
+.tab-on {
+	display: block !important;
+	background-color: #CFCFCF !important;
+	color: #000000;
+}
+
+
+.profundidad-0 {
+	font-weight: bold;
+}
+
+.profundidad-1 {
+	font-weight: bold;
+	padding-left: 5px;
+}
+
+.subedicion #COPETE_edit {
+	display: block !important;
+}
+.profundidad-2 {
+	font-weight: normal;
+	font-style: italic;
+	padding-left: 15px;
+	padding-top: 5px;
+}
+
+.subedicion #CUERPO_edit {
+	display: block !important;
+}
+.profundidad-3 {
+	font-weight: normal;
+	padding-left: 30px;
+}
+
+option.disabled {
+	
+	color: #CFCFCF;
+
+}
+

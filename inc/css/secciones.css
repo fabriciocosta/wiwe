@@ -1,0 +1,11 @@
+.datos  { color: #333333; font-style: italic; font-weight: 900; font-size: 15px; font-family: Verdana, Arial, Helvetica, Geneva, Swiss, SunSans-Regular }
+.secciontitulo  { color: #663333; font-style: italic; font-weight: normal; font-size: 12px; font-family: Verdana, Arial, Helvetica, Geneva, Swiss, SunSans-Regular }
+.seccion-localizacion { color: #663333; font-style: italic; font-weight: normal; font-size: 12px; font-family: Verdana, Arial, Helvetica, Geneva, Swiss, SunSans-Regular }
+.toc-categoria { color: #663333; font-weight: 900; font-size: 11px; font-family: Verdana, Arial; letter-spacing: 1px }
+.toc-seccion  { color: #663333; font-weight: normal; font-size: 9px; font-family: Verdana, Arial }
+.toc-subseccion { color: #663333; font-size: 9px; font-family: Verdana, Arial }
+.toc-subcategoria { color: #663333; font-weight: bold; font-size: 11px; font-family: Verdana, Arial }
+
+.seccion_colapsado_nombre {	font-family: Verdana, Arial;	font-size:	9px;color: #663333;font-weight: normal;}
+.seccion_resumen_nombre {font-family: Verdana, Arial;font-size:	11px;color: #663333;font-weight: normal;}
+.seccion_resumen_descripcion {	font-family: Verdana, Arial;	font-size:	9px;color: #663333;font-weight: normal;	}
