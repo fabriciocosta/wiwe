@@ -10,7 +10,9 @@
 ?>
 <script src="../../inc/js/os3grid.js" type="text/javascript"></script>
 <script src="../../inc/js/form_validators.js" type="text/javascript"></script>
-  
+<script type="text/javascript" src="../../inc/js/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="../../inc/js/jquery.treeview.js"></script>
+
 <script>
 
 function selecttab() {
@@ -92,9 +94,18 @@ function findPos(obj) {
 	
 	return [curleft,curtop];
 }
+function conf_createtree(idseccion) {
+	$('#div_'+idseccion).treeview({
+		persist: 'location',
+		collapsed: true,
+		unique: true,
+		/*persist: 'cookie',*/
+		animated: 'fast'
+	});
+}
 
 function conf_refreshseccion( idseccion ) {
-	DynamicRequest( 'div_'+idseccion, '../admin/ramasecciones.php', '_idseccion_='+idseccion );
+	DynamicRequest( 'div_'+idseccion, '../admin/ramasecciones.php', '_idseccion_='+idseccion, 'conf_createtree(\''+idseccion+'\')' );
 }
 
 function conf_nuevaseccion( idseccion ) {
