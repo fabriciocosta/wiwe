@@ -6,14 +6,6 @@ body {
 	padding: 0px;
 }
 
-a:link,
-a:visited ,
-a:hover ,
-a:active
- {
-	text-decoration: none;
-	color: #000000;
-}
 
 
 .hidden {
@@ -21,7 +13,8 @@ a:active
 	display: none !important;
 
 }
-.debugdetails ,
+
+.debugdetails ,
 .errordetails,
 .showmessage,
 .showerror {
@@ -29,7 +22,8 @@ a:active
 	float: left;
 	clear: both;
 	position: relative;
-	background-color: #EFEFEF;
+	background-color: #222;
+	color: #EEE;
 	text-align: center;
 	width: auto;
 	height: auto;		
@@ -53,19 +47,18 @@ a:active
 	font-size: 12px;
 	font-weight: bold;
 	padding: 5px;			
-	color: #000000;
 }
 
 
 .debugdetails,
 .showmessage {
-	border: solid 1px #00BB00;
+	border: solid 1px #008800;
 }
 
 .errordetails,
 .showerror {
-	background-color: #FFDFDF;
-	color: #AA4444 !important;
+	background-color: #664444;
+	color: #EE8888 !important;
 	border: solid 0px #DFDFDF;
 }
 

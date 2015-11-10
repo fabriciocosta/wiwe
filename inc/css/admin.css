@@ -742,3 +742,19 @@ option.disabled {
 
 }
 
+
+
+.GALERIA,
+.GALERIA .titulo {
+		height: 88px;
+}
+
+
+.GALERIA .titulo img {
+	
+	width: 100px;
+
+}
+
+
+
