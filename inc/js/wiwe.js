@@ -178,13 +178,13 @@ function getContent( divid, contend_id /*Contenido->m_id*/, content_template /*c
 	
 }
 
-function getRandomContent( divid, contend_id /*Contenido->m_id*/, content_type, content_template /*colapsado|resumen|completo*/, endcall ) {
+function getRandomContent( divid, contend_id /*Contenido->m_id*/, content_type, content_template /*colapsado|resumen|completo|...{template code}...*/, endcall ) {
 	
 	DynamicRequest( divid, 
 					dirabs + '/inc/core/getrandomcontent.php',
 					'_cID_='+contend_id
 					+'&_tipocontenido_='+content_type
-					+'&_accion_='+content_template, 
+					+'&_content_template_='+content_template, 
 					endcall );
 	
 }
@@ -348,6 +348,7 @@ function relaciones_add_autocomplete( event, id_input_field, type_input_field, t
 	}
 }
 
+
 function relaciones_update( tipocampo, tiporelacion, id_contenido_seccion, sql, sqlcount, hide, last_callback ) {
 
 	params = 'accion=update';
@@ -389,6 +390,22 @@ function relaciones_delete( tipocampo, tiporelacion, id_contenido_seccion, sql, 
 		params+= '&last_callback='+last_callback;		
 		if (hide=='0') callback = 'relaciones_add( \''+tipocampo+'\', \''+tiporelacion+'\', \''+id_contenido_seccion+'\', \''+sql+'\', \''+sqlcount+'\', \''+hide+'\', \''+last_callback+'\' )';
 		DynamicRequest( 'div_relaciones_'+tipocampo, dirabs + '/inc/core/relaciones.php', params, callback );
+}
+
+function relaciones_order( event, tipocampo, tiporelacion, id_contenido_seccion, sql, sqlcount, idtoorder, hide, last_callback ) {
+	callback = '';
+	params = 'accion=order';
+	params+= '&order='+event.target.selectedIndex;
+	params+= '&tiporelacion='+tiporelacion;
+	params+= '&id_contenido_seccion='+id_contenido_seccion;
+	params+= '&sql='+sql;
+	params+= '&sqlcount='+sqlcount;
+	params+= '&idtoorder='+idtoorder;
+	params+= '&tipodetalle='+tipocampo;
+	params+= '&hide='+hide;
+	params+= '&last_callback='+last_callback;
+	console.log("relaciones_order > last_callback:"+last_callback+" hide:"+hide+" params:"+params);
+	DynamicRequest( 'div_relaciones_'+tipocampo, dirabs + '/inc/core/relaciones.php', params, callback );
 }
 
 function subValid( obj ) {
