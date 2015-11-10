@@ -394,6 +394,7 @@ class CTiposDetalles extends CErrorHandler {
 					);
 					$_trelaciones_->LimpiarSQL();
 					$_trelaciones_->FiltrarSQL( "ID_CONTENIDO" , "", $__CDetalle__->m_id_contenido );
+					$_trelaciones_->OrdenSQL("relaciones.ORDEN ASC, CREL.TITULO ASC");
 					$_trelaciones_->Open();
 					$spacer = "";
 					if ( $_trelaciones_->nresultados > 0 ) {
@@ -456,6 +457,7 @@ class CTiposDetalles extends CErrorHandler {
 					);
 					$_trelaciones_->LimpiarSQL();
 					$_trelaciones_->FiltrarSQL( "ID_CONTENIDO" , "", $__CDetalle__->m_id_contenido );
+					$_trelaciones_->OrdenSQL("relaciones.ORDEN ASC, secciones.NOMBRE ASC");
 					$_trelaciones_->Open();
 					$spacer = "";
 					if ( $_trelaciones_->nresultados > 0 ) {
