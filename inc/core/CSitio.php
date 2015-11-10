@@ -82,6 +82,7 @@ class CSitio {
 	function Inicializar() {
 		
 		global $_accion_;
+		global $_content_template_;
 		global $_contenido_;
 		global $_seccion_;
 		global $_idfichabase_;
@@ -136,10 +137,9 @@ class CSitio {
 		$this->BuscarTitulo();
 		$this->InicializarTitulos();		
 	
-		
-	  	$this->InicializarTemplatesColapsados();
-		if ($_accion_=='completo') $this->InicializarTemplatesCompletos();   
-		if ($_accion_=='resumen') $this->InicializarTemplatesResumenes();	
+  	$this->InicializarTemplatesColapsados();
+		if ($_accion_=='completo' || $_content_template_=='completo') $this->InicializarTemplatesCompletos();   
+		if ($_accion_=='resumen' || $_content_template_=='resumen') $this->InicializarTemplatesResumenes();	
 		
 		//forzamos la asignacion de la ficha base
 		if ( ($__modulo__=="home") && ($_contenido_!='') ) 
