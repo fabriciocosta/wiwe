@@ -76,7 +76,7 @@ class CContenidos extends CErrorHandler {
 				
 				$tc->LimpiarSQL();	
 				$tc->FiltrarSQL('ID','',$__idcontenido__);
-				$tc->Open();						
+				$tc->Open();
 				if ( $tc->nresultados==1 ) {
 					$_row_ = $tc->Fetch();
 					$this->m_CContenido = new CContenido($_row_);
@@ -86,6 +86,7 @@ class CContenidos extends CErrorHandler {
 				} elseif ($tc->nresultados==0) {
 					DebugError('No hay fichas con este id.');
 				}
+				echo "]";
 			} else $debugerror = "CContenidos::GetContenido __idcontenido__ INDEFINIDO: [".$__idcontenido__."]";			
 			DebugError($debugerror);
 			$this->PushError( new CError( "UNDEFINED_PARAMETER", $debugerror) );
@@ -150,7 +151,7 @@ class CContenidos extends CErrorHandler {
 	}
 	
 	function GetContenidoCompleto( $__idcontenido__ ) {
-		$this->GetContenido($__idcontenido__);
+		$CC = $this->GetContenido($__idcontenido__);
 		if ($this->m_CContenido!=null)  {
 			$this->m_CTiposContenidos->GetCompleto( $this->m_CContenido );
 			return $this->m_CContenido;
@@ -963,8 +964,8 @@ class CContenidos extends CErrorHandler {
 		
 		$this->EditPreprocess(  $__tipocontenido__, $tpl );
 		
-		//echo $htmlcopete;
-		//echo $htmlcuerpo;
+		//echo " copete:".$htmlcopete;
+		//echo " cuerpo:".$htmlcuerpo;
 		//translate
 		$__CMultilang__->Translate( $tpl );
 		$nn = 0;
@@ -977,11 +978,17 @@ class CContenidos extends CErrorHandler {
 				$html = $this->GetHtml($__tipocontenido__, $nombre);									
 				
 				$cceedit = $this->m_tcontenidos->EditarCampoStr($nombre,'','',$lang, $form_name, $min, $max, $html);
-				/*
-				if ($campo['tipo']=='BLOBTEXTO') 
-					if ($htmlcopete=="html" && $nombre=="COPETE") $cceedit.= '<script> setForm(\''.$form_name.'\'); textareaEdit( \''.$form_name_point.'_e_'.$nombre.'\',\'\' ); </script>';
-					if ($htmlcuerpo=="html" && $nombre=="CUERPO") $cceedit.= '<script> setForm(\''.$form_name.'\'); textareaEdit( \''.$form_name_point.'_e_'.$nombre.'\',\'\' ); </script>';
-			s	*/
+				/*echo " <pre>
+					nombre: ".$nombre." 
+					tipo: ".$campo['tipo']."
+				</pre>";
+				*/
+				if ($campo['tipo']=='BLOBTEXTO') {
+					if (($htmlcopete=="html" && $nombre=="COPETE") || 
+						($htmlcuerpo=="html" && $nombre=="CUERPO") )
+						$cceedit.= '<script> setForm(\''.$form_name.'\'); textareaEdit( \''.$form_name_point.'_e_'.$nombre.'\',\'\' ); </script>';					
+				}
+				
 				//multidioma		
 				if ( ($campo['tipo']=='TEXTOML' || $campo['tipo']=='BLOBTEXTOML')) {
 					if ($__CMultilang__->Activo()) {
@@ -991,10 +998,11 @@ class CContenidos extends CErrorHandler {
 							$cceedit.= $this->m_tcontenidos->EditarCampoStr( $nombre, '', '', $codigo, $form_name, $min, $max, $html );							
 							$cceedit.= '</div>';
 							
-							//if ($campo['tipo']=='BLOBTEXTOML') {
-							//	if ($htmlcopete=="html" && $nombre=="ML_COPETE") $cceedit.= '<script> setForm(\''.$form_name.'\'); textareaEdit( \''.$form_name_point.'_e_'.$nombre.'\',\''.$codigo.'\' ); </script>';
-							//	if ($htmlcuerpo=="html" && $nombre=="ML_CUERPO") $cceedit.= '<script> setForm(\''.$form_name.'\'); textareaEdit( \''.$form_name_point.'_e_'.$nombre.'\',\''.$codigo.'\' ); </script>';
-							//}
+							if ($campo['tipo']=='BLOBTEXTOML') {
+								if (($htmlcopete=="html" && $nombre=="ML_COPETE") || 
+									($htmlcuerpo=="html" && $nombre=="ML_CUERPO") )
+									$cceedit.= '<script> setForm(\''.$form_name.'\'); textareaEdit( \''.$form_name_point.'_e_'.$nombre.'\',\''.$codigo.'\' ); </script>';
+							}
 							
 							
 						}
