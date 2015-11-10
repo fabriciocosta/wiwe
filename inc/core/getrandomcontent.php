@@ -19,7 +19,9 @@ if (!defined("DNK_SITE") and !defined("Sitio")) {
 
 global $_cID_;
 global $_tipocontenido_;
-
+global $_content_template_;
+//echo "_content_template_:".$_content_template_;
+//echo '<br>';
 $tc = $Sitio->Contenidos->m_tcontenidos;
 
 $tc->LimpiarSQL();
@@ -30,7 +32,13 @@ if ($tc->nresultados>0) {
 	while( $rf = $tc->Fetch()) {
 		if ($rf["contenidos.ID"]!=$_cID_) {
 			$Content = $Sitio->Contenidos->GetContenidoCompleto( $rf["contenidos.ID"] );
-			echo  $Sitio->TiposContenidos->TextoCompleto( $Content );
+			if ($_content_template_=='resumen') {
+				echo  $Sitio->TiposContenidos->TextoResumen( $Content  ); 
+			} else if ($_content_template_=='colapsado') {
+				echo  $Sitio->TiposContenidos->TextoColapsado( $Content ); 
+			} else { 
+				echo  $Sitio->TiposContenidos->TextoCompleto( $Content, $_content_template_ );
+			}
 			break;
 		}
 	}
