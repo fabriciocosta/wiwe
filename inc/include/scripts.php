@@ -17,17 +17,20 @@
 <script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/CSScriptLib.js"></script>
 <script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/datetimepicker.js"></script>
 <script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/tree.js"></script>
+<script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/MDream.js"></script>
+<script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/calendar.js"></script>
+<script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/wysiwyg.js"></script>
+<script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/fckeditor/fckeditor.js"></script>
 <script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/wiwe.js"></script>
 <script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/flowplayer-3.2.2.min.js"></script>
-<script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/jquery-1.8.0.min.js"></script>
-<script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/jquery-ui-1.8.23.custom.min.js"></script>
-
-
+<!--
+<script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/jquery-ui-1.8.4.custom.min.js"></script>
 <script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/jquery.nivo.slider.js"></script>
-<script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/bday-picker.min_.js"></script>
-<script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/jquery-ui-timepicker-addon.js"></script>
-<script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/jquery.treeview.js"></script>
+-->
+<script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/jquery.js"></script>
+
 
 <?
 if ($__modulo__=="admin") {

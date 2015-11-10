@@ -10,8 +10,12 @@ if (isset($_GET['mode']) && $_GET['mode'] == 'image')
 	session_start();  
 	$_SESSION['code'] = md5($rand);  
 	$img = imagecreatetruecolor(200, 70);  
-	$bkg = imagecolorallocate($img, 80, 130, 80);  
-	$color = imagecolorallocate($img, 5, 10, 5);
+	
+	//$bkg = imagecolorallocate($img, 80, 130, 80);  
+	$bkg = imagecolorallocate($img, 0, 0, 0);
+	//$color = imagecolorallocate($img, 5, 10, 5);
+	$color = imagecolorallocate($img, 100, 100, 100);
+	
 	// Draw a white rectangle
 	imagefilledrectangle( $img, 0, 0, 200, 70, $bkg );
 	$a = floor( $rand/10000 );  

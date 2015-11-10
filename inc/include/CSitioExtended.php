@@ -5,7 +5,196 @@ class CSitioExtended extends CSitio {
 	
 	//**ADDMODULE**//
 	
+		//ADDED BY CONFIG MANAGER
+		function ModuloPersonas() {
+			global $__modulo__;
+			if ($__modulo__=="personas") {
+				require("../../inc/modules/ModuloPersonas.php");
+			}
+		}
+					
+					
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloMejoras() {
+			global $__modulo__;
+			if ($__modulo__=="mejoras") {
+				require("../../inc/modules/ModuloMejoras.php");
+			}
+		}
+					
+					
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloGaleria() {
+			global $__modulo__;
+			if ($__modulo__=="galeria") {
+				require("../../inc/modules/ModuloGaleria.php");
+			}
+		}
+					
+					
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloNotas() {
+			global $__modulo__;
+			if ($__modulo__=="notas") {
+				require("../../inc/modules/ModuloNotas.php");
+			}
+		}
+					
+					
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloEventos() {
+			global $__modulo__;
+			if ($__modulo__=="eventos") {
+				require("../../inc/modules/ModuloEventos.php");
+			}
+		}
+					
+					
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloCiudades() {
+			global $__modulo__;
+			if ($__modulo__=="ciudades") {
+				require("../../inc/modules/ModuloCiudades.php");
+			}
+		}
+					
+					
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloPaises() {
+			global $__modulo__;
+			if ($__modulo__=="paises") {
+				require("../../inc/modules/ModuloPaises.php");
+			}
+		}
+					
+					
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloFestivales() {
+			global $__modulo__;
+			if ($__modulo__=="festivales") {
+				require("../../inc/modules/ModuloFestivales.php");
+			}
+		}
+					
+					
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloInstituciones() {
+			global $__modulo__;
+			if ($__modulo__=="instituciones") {
+				require("../../inc/modules/ModuloInstituciones.php");
+			}
+		}
+					
+					
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloEspacios() {
+			global $__modulo__;
+			if ($__modulo__=="espacios") {
+				require("../../inc/modules/ModuloEspacios.php");
+			}
+		}
+					
+					
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloRolesobra() {
+			global $__modulo__;
+			if ($__modulo__=="rolesobra") {
+				require("../../inc/modules/ModuloRolesobra.php");
+			}
+		}
+					
+					
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloComentarios() {
+			global $__modulo__;
+			if ($__modulo__=="comentarios") {
+				require("../../inc/modules/ModuloComentarios.php");
+			}
+		}
+					
+					
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloObras() {
+			global $__modulo__;
+			if ($__modulo__=="obras") {
+				require("../../inc/modules/ModuloObras.php");
+			}
+		}
+					
+					
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloNoticias() {
+			global $__modulo__;
+			if ($__modulo__=="noticias") {
+				require("../../inc/modules/ModuloNoticias.php");
+			}
+		}
+					
+					
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloTutoriales() {
+			global $__modulo__;
+			if ($__modulo__=="tutoriales") {
+				require("../../inc/modules/ModuloTutoriales.php");
+			}
+		}
+					
+					
+		
+		//ADDED BY CONFIG MANAGER
+		function ModuloPanel() {
+			global $__modulo__;
+			if ($__modulo__=="panel") {
+				require("../../inc/modules/ModuloPanel.php");
+			}
+		}
+		
+		
+
+		//ADDED BY CONFIG MANAGER
+		function ModuloPerfil() {
+			global $__modulo__;
+			if ($__modulo__=="perfil") {
+				require("../../inc/modules/ModuloPerfil.php");
+			}
+		}
+		
+			
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloCaracteristicas() {
+			global $__modulo__;
+			if ($__modulo__=="caracteristicas") {
+				require("../../inc/modules/ModuloCaracteristicas.php");
+			}
+		}
+					
+					
+	
+		//ADDED BY CONFIG MANAGER
+		function ModuloDesarrollo() {
+			global $__modulo__;
+			if ($__modulo__=="desarrollo") {
+				require("../../inc/modules/ModuloDesarrollo.php");
+			}
+		}
+					
 						
+	
 	function ModuloHomepage() {
 		global $__modulo__;
 		if ($__modulo__=="home") {
@@ -13,14 +202,61 @@ class CSitioExtended extends CSitio {
 		}						
 	}	
 
-
+	function ModuloInstitucional() {
+		global $__modulo__;
+		if ($__modulo__=="institucional") {
+			require('../../inc/modules/ModuloInstitucional.php');
+		}						
+	}	
+	
+	function ModuloComunidad() {
+		global $__modulo__;
+		if ($__modulo__=="comunidad") {
+			require('../../inc/modules/ModuloComunidad.php');
+		}						
+	}	
+	
 	function ModuloContacto() {
 		global $__modulo__;
 		if ($__modulo__=="contacto") {
 			require('../../inc/modules/ModuloContacto.php');
 		}						
 	}
+	
+	function ModuloVideos() {
+		global $__modulo__;
+		if ($__modulo__=="videos") {
+			require('../../inc/modules/ModuloVideos.php');
+		}						
+	}	
+	
+	function ModuloDescargas() {
+		global $__modulo__;
+		if ($__modulo__=="descargas") {
+			require('../../inc/modules/ModuloDescargas.php');
+		}						
+	}	
+	
+	function ModuloDocumentacion() {
+		global $__modulo__;
+		if ($__modulo__=="documentacion") {
+			require('../../inc/modules/ModuloDocumentacion.php');
+		}
+	}	
+	
+	function ModuloEnunciados() {
+		global $__modulo__;
+		if ($__modulo__=="enunciados") {
+			require('../../inc/modules/ModuloEnunciados.php');
+		}
+	}	
 
+	function ModuloEnlaces() {
+		global $__modulo__;
+		if ($__modulo__=="enlaces") {
+			require('../../inc/modules/ModuloEnlaces.php');
+		}
+	}	
 	
 	///**************************************************************
 	/// Administration for user level

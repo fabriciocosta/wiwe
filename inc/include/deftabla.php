@@ -2,6 +2,7 @@
 //version 4.2 06/09/2006: completado usuarios
 //version 4.1 22/08/2006 : agregado referencia a usuario.nombre y usuario.apellido
 //version 4.0 18/07/2006
+//header('Content-type: text/html; charset=iso-8859-1'); passed to config.php or Dinamik.php
 
 require "../../inc/core/Dinamik.php";
 //se saca si antes ya se definio
@@ -165,7 +166,6 @@ $_tusuarios_->AgregarCampo('MAIL',		'',		'TEXTO',		'10%','NOT NULL','','si','si'
 $_tusuarios_->AgregarCampo('PASSWORD',		'',		'PASSWORD',		'10%','NULL','','si','si',19);
 $_tusuarios_->AgregarCampo('PASSMD5',		'',		'TEXTO',		'10%','NULL','','si','si',19);
 $_tusuarios_->AgregarCampo('PASSKEY',		'',		'TEXTO',		'10%','NULL','','si','si',19);
-$_tusuarios_->AgregarCampo('ACTUALIZACION',	'',	'FECHA',		'15%','NOT NULL','NOW()','si','si',25);
 $_tusuarios_->AgregarCampo('BAJA',	'',	'TEXTO',		'15%','NOT NULL','N','si','si',25);
  
 $_tgrupos_->AgregarCampo('ID',		'',		'ENTERO',		'10%','NULL','','no','no',20);
@@ -236,22 +236,16 @@ $_tgrupossecciones_->AgregarIndice('ID','','PRIMARIO');
 $_tgruposusuarios_->AgregarIndice('ID','','PRIMARIO');
 
 $_tcontenidos_->AgregarIndice('ID','','PRIMARIO');
-$_tcontenidos_->AgregarIndice( '{BYDATEIN} DESC','contenidos.FECHAALTA DESC');
-$_tcontenidos_->AgregarIndice( '{BYDATEIN} ASC','contenidos.FECHAALTA ASC');
-$_tcontenidos_->AgregarIndice( '{BYLASTID}','contenidos.ID DESC' );
-$_tcontenidos_->AgregarIndice( '{BYLASTID} ASC','contenidos.ID ASC' );
 $_tcontenidos_->AgregarIndice( '{BYORDER}','contenidos.ORDEN ASC' );
-$_tcontenidos_->AgregarIndice( '{BYORDER} DESC','contenidos.ORDEN DESC' );
-$_tcontenidos_->AgregarIndice( '{BYTITLE}','contenidos.TITULO ASC' );
-$_tcontenidos_->AgregarIndice( '{BYTITLE} DESC','contenidos.TITULO DESC' );
+$_tcontenidos_->AgregarIndice( '{BYLASTID}','contenidos.ID DESC' );
+$_tcontenidos_->AgregarIndice( '{BYTITLE}','contenidos.TITULO' );
 //$_tcontenidos_->AgregarIndice( '{BYAUTHOR}','AUTOR' );
 //$_tcontenidos_->AgregarIndice( '{BYBRIEF}','COPETE');
 //$_tcontenidos_->AgregarIndice('DATOS','CUERPO');
 //$_tcontenidos_->AgregarIndice('FECHA','FECHAEVENTO');
-
-$_tcontenidos_->AgregarIndice( '{BYVERIFIED}','contenidos.BAJA ASC');
-$_tcontenidos_->AgregarIndice( '{BYVERIFIED} DESC','contenidos.BAJA DESC');
-$_tcontenidos_->AgregarReferenciaCombo('BAJA','',array('N'=>'{NO}','S'=>'{YES}', 'V'=>'{VERIFICATION_NEEDED}','B'=>'{BANNED}'));
+$_tcontenidos_->AgregarIndice( '{BYDATEIN}','contenidos.FECHAALTA DESC');
+$_tcontenidos_->AgregarIndice( '{BYVERIFIED}','contenidos.BAJA');
+$_tcontenidos_->AgregarReferenciaCombo('BAJA','',array('N'=>'{NO}','S'=>'{YES}'));
 
 $_tusuarios_->AgregarReferenciaCombo('BAJA','',array('N'=>'{NO}','S'=>'{YES}'));
 
@@ -265,17 +259,11 @@ $_tsecciones_->AgregarIndice('ID','','PRIMARIO');
 $_tsecciones_->AgregarIndice('ORDEN','secciones.ORDEN');
 
 $_tusuarios_->AgregarIndice('ID','','PRIMARIO');
-$_tusuarios_->AgregarIndice('ULTIMO ID ASC','usuarios.ID ASC');
-$_tusuarios_->AgregarIndice('ULTIMO ID','usuarios.ID DESC');
-$_tusuarios_->AgregarIndice('ACTUALIZACION DESC','ACTUALIZACION DESC');
-$_tusuarios_->AgregarIndice('ACTUALIZACION ASC','ACTUALIZACION ASC');
 $_tusuarios_->AgregarIndice( '{BYFIRSTNAMELASTNAME}','NOMBRE,APELLIDO');
 $_tusuarios_->AgregarIndice( '{BYLASTNAMEFIRSTNAME}','APELLIDO,NOMBRE');
 $_tusuarios_->AgregarIndice( '{BYCOUNTRY}','PAIS,CIUDAD');
 $_tusuarios_->AgregarIndice( '{BYCITY}','CIUDAD');
 $_tusuarios_->AgregarIndice( '{BYEMAIL}','MAIL');
-$_tusuarios_->AgregarIndice('HABILITADO','usuarios.BAJA DESC');
-$_tusuarios_->AgregarIndice('DESHABILITADO','usuarios.BAJA ASC');
 
 
 $_tgrupos_->AgregarIndice('ID','','PRIMARIO');
@@ -297,7 +285,6 @@ $_tsecciones_->AgregarReferencia('ID_TIPOSECCION','','tipossecciones','ID','TIPO
 $_tsecciones_->AgregarAutoReferencia('ID_SECCION','','padres','ID','NOMBRE');
 
 $_tcontenidos_->AgregarReferencia('ID_SECCION','','secciones','ID','NOMBRE');
-$_tcontenidos_->AgregarReferencia('ID_SECCION','','secciones','ID','ML_NOMBRE');
 $_tcontenidos_->AgregarReferencia('ID_TIPOCONTENIDO','','tiposcontenidos','ID','TIPO');
 
 $_tcontenidos_->AgregarReferencia('ID_USUARIO_CREADOR','','usuarios','ID','NICK');
@@ -306,9 +293,6 @@ $_tcontenidos_->AgregarReferencia('ID_USUARIO_CREADOR','','usuarios','ID','APELL
 $_tcontenidos_->AgregarReferencia('ID_USUARIO_MODIFICADOR','','usuarios EDITORES','ID','NICK');
 $_tcontenidos_->AgregarReferencia('ID_USUARIO_MODIFICADOR','','usuarios EDITORES','ID','NOMBRE');
 $_tcontenidos_->AgregarReferencia('ID_USUARIO_MODIFICADOR','','usuarios EDITORES','ID','APELLIDO');
-
-//$_tcontenidos_->AgregarAutoReferencia('ID_CONTENIDO','PADRE','padres','ID','TITULO');
-//$_tcontenidos_->AgregarAutoReferencia('ID_CONTENIDO','PADRE','padres','ID','ML_TITULO');
 
 
 //
@@ -384,6 +368,7 @@ $tabla = &$_tcontenidos_;
 //CONSTANTES
 
 $_ttipossecciones_->LimpiarSQL();        
+$_ttipossecciones_->OrdenSQL('TIPO DESC');
 $_ttipossecciones_->Open();		     
 if ( $_ttipossecciones_->nresultados>0 ) {
 	while($_row_ = $_ttipossecciones_->Fetch() ) {						
@@ -394,6 +379,7 @@ if ( $_ttipossecciones_->nresultados>0 ) {
 $_ttipossecciones_->Close();
 
 $_ttiposcontenidos_->LimpiarSQL();        
+$_ttiposcontenidos_->OrdenSQL('TIPO DESC');
 $_ttiposcontenidos_->Open();		     
 if ( $_ttiposcontenidos_->nresultados>0 ) {
 	while($_row_ = $_ttiposcontenidos_->Fetch() ) {						
@@ -404,7 +390,8 @@ if ( $_ttiposcontenidos_->nresultados>0 ) {
 $_ttiposcontenidos_->Close();
 
 
-$_ttiposdetalles_->LimpiarSQL();        
+$_ttiposdetalles_->LimpiarSQL();      
+$_ttiposdetalles_->OrdenSQL('TIPO DESC');  
 $_ttiposdetalles_->Open();		     
 if ( $_ttiposdetalles_->nresultados>0 ) {
 	while($_row_ = $_ttiposdetalles_->Fetch() ) {						
@@ -413,24 +400,6 @@ if ( $_ttiposdetalles_->nresultados>0 ) {
 	}
 }
 $_ttiposdetalles_->Close();
-
-//TIPOS LOGS
-$_ttiposlogs_ = array(
-		0=>"LOGCODE_USER_NAVIGATION",
-		1=>"LOGCODE_ADMIN_NAVIGATION",
-		2=>"LOGCODE_USER_ACTION",
-		3=>"LOGCODE_ADMIN_ACTION",
-		4=>"LOGCODE_BANNER_CLICK",
-		5=>"LOGCODE_BANNER_ACCESS",
-		6=>"LOGCODE_PAGE_LOAD",
-		7=>"LOGCODE_PAGE_ACCESS",
-		8=>"LOGCODE_SITE_ACCESS",
-		9=>"LOGCODE_MODULE_ACCESS"
-		
-		);
-foreach($_ttiposlogs_ as $logcode=>$tipolog ) {
-	define( $tipolog, $logcode );
-}
 
 $_ID_SYSTEM_TYPE_SECTION = SYSTEM;
 $_ID_ROOT_TYPE_SECTION = ROOT;
