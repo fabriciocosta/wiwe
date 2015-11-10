@@ -28,8 +28,10 @@ global $sql; //definido dentro del tipo de relacion o tipo de detalle, por ahora
 global $sqlcount;
 global $id_contenido_seccion_rel; //id del contenido o la seccion a RELCIONAR!!!!
 global $idtodelete;
+global $idtoorder;
 global $hide;
 global $last_callback;
+global $order;
 
 $sql = str_replace("SELECCIONAR","SELECT",$sql);
 $sqlcount = str_replace("SELECCIONAR","SELECT",$sqlcount);
@@ -335,27 +337,100 @@ if ($accion=="clear") {
         if (!$_exito_) DebugError("Clear Error");
 	}
 	
-} else
-if ($accion=="update") {
+}
+if ($accion=="order" && $idtoorder!="") {
+	$list = array();
+	echo "ordering...<br>";
+	if ($tiporelacion=='contenidos') {
+		
+		$_trelaciones_->AgregarReferencia("ID_CONTENIDO_REL","","contenidos REL","ID","TITULO");
+		$_trelaciones_->LimpiarSQL();
+		$_trelaciones_->FiltrarSQL('ID_TIPORELACION','',$idtiporelacion);
+		$_trelaciones_->FiltrarSQL('ID_CONTENIDO','',$id_contenido_seccion);
+		$_trelaciones_->OrdenSQL('relaciones.ORDEN ASC, REL.TITULO ASC');
+		
+		$_trelaciones_->Open();
+		$nro_orden = 1;
+
+		while( $row = $_trelaciones_->Fetch() ) {
+			
+			$idrelacion = $row['relaciones.ID'];
+			$Contenido = $Sitio->Contenidos->GetContenido($row['relaciones.ID_CONTENIDO_REL']);
+
+			$Contenido->m_rel_order = 10*$nro_orden;
+
+			$Contenido->m_rel_id = $idrelacion;
+			if ($idtoorder!=$idrelacion) {
+				$list[$Contenido->m_rel_order] = $Contenido;
+				$nro_orden+=1;
+			} else $list[$order*10+1] = $Contenido;
+			
+		}
+		
+		$nro_orden = 1;
+		ksort( $list );
+		/*echo "countlist: ".count($list)."<br>";*/
+		foreach( $list as $ordenid => $Contenido ) {
+			/*echo "ordenid: ".$ordenid." nro_orden:".$nro_orden." Titulo:".$Contenido->Titulo()."<br>";*/
+			$_trelaciones_->ModificarRegistro(	$Contenido->m_rel_id, array(
+										'ID_TIPORELACION'=>$idtiporelacion,
+										'ID_CONTENIDO'=>$id_contenido_seccion,
+										'ID_SECCION'=>0,
+										'ID_CONTENIDO_REL'=>$id_contenido_seccion_rel,
+										'ID_SECCION_REL'=>0,
+										'ORDEN'=>$nro_orden  ) );
+			$nro_orden+=1;
+		}
+	}/*fin orden contenidos*/
+	
+}
+
+if ($accion=="update" || $accion=="order") {
 	//show all the ids created....
 	//echo "UPDATE<br>";
+	$list = array();
 	if ($tiporelacion=='contenidos') {
 		//busca todos las relaciones cuyo contenido sea el id_contenido_seccion seleccionado...
 		$_trelaciones_->AgregarReferencia("ID_CONTENIDO_REL","","contenidos REL","ID","TITULO");
 		$_trelaciones_->LimpiarSQL();
 		$_trelaciones_->FiltrarSQL('ID_TIPORELACION','',$idtiporelacion);
 		$_trelaciones_->FiltrarSQL('ID_CONTENIDO','',$id_contenido_seccion);
-		$_trelaciones_->OrdenSQL('REL.TITULO ASC');
+		//$_trelaciones_->OrdenSQL('REL.TITULO ASC');
+		$_trelaciones_->OrdenSQL('relaciones.ORDEN ASC');//$nro_orden
 		
 		$_trelaciones_->Open();
-		
-		while($row = $_trelaciones_->Fetch()) {
+		$echostr = "";
+		while( $row = $_trelaciones_->Fetch() ) {
 			$idrelacion = $row['relaciones.ID'];
 			$Contenido = $Sitio->Contenidos->GetContenido($row['relaciones.ID_CONTENIDO_REL']);
-			echo $Contenido->Titulo().' <a href="javascript:relaciones_delete(\''.$tipodetalle.'\',\''.$tiporelacion.'\', '.$id_contenido_seccion.', \''.$sql_avoid.'\',\''.$sqlcount_avoid.'\', '.$idrelacion.',\''.$hide.'\', \''.$last_callback.'\' );" class="relaciones-eliminar">'.$CLang->Get("DELETE").'</a><br>';
+			$Contenido->m_rel_order = $row['relaciones.ORDEN'];
+			$Contenido->m_rel_id = $idrelacion;
+			$list[$idrelacion] = $Contenido;
 		}
 		
+
+		
+		
+		foreach( $list as $idrelacion => $Contenido ) {
+			/*SELECT (ORDER)*/
+			$echostr.= '<select title="'.$Contenido->m_rel_order.'" onchange="javascript:relaciones_order( event, \''.$tipodetalle.'\',\''.$tiporelacion.'\', '.$id_contenido_seccion.', \''.$sql_avoid.'\',\''.$sqlcount_avoid.'\', '.$idrelacion.',\''.$hide.'\', \''.$last_callback.'\' );" class="relaciones-ordenar">';
+			for( $cl = 1; $cl<=count($list); $cl++) {
+					if ($Contenido->m_rel_order==$cl) {
+						$sel = "selected";
+					} else $sel = "";
+					$echostr.= '<option value="'.$cl.'" '.$sel.'>'.$cl.'</option>';
+			}
+			/**/
+			$echostr.= '</select>&nbsp;';
+			$echostr.= $Contenido->Titulo();
+			$echostr.= ' <a href="javascript:relaciones_delete(\''.$tipodetalle.'\',\''.$tiporelacion.'\', '.$id_contenido_seccion.', \''.$sql_avoid.'\',\''.$sqlcount_avoid.'\', '.$idrelacion.',\''.$hide.'\', \''.$last_callback.'\' );" class="relaciones-eliminar">';
+			$echostr.= $CLang->Get("DELETE").'</a>';
+			$echostr.= '<br>';
+		}
+		
+		echo $echostr;
 	}
+	
 	if ($tiporelacion=='secciones') {
 		//busca todos las relaciones cuyo contenido sea el id_contenido_seccion seleccionado...
 		$_trelaciones_->AgregarReferencia("ID_SECCION_REL","","secciones REL","ID","NOMBRE");
