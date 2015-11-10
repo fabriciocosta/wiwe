@@ -56,7 +56,7 @@ class CDetalles extends CErrorHandler {
 		
 		$matches = array();
 		$sep = "";
-    $tdetalles = "(";		
+		$tdetalles = "(";		
 
 		/*FUNCTIONS*/
 		preg_match_all( "/(\*\#)(.*?)(\#\*)/", $__template__, $matches );
@@ -77,9 +77,11 @@ class CDetalles extends CErrorHandler {
 		}		
 		$tdetalles.= ")";
 		
-
+		echo "<!--tdetalles:".$tdetalles."-->";
+		
 		if ($tdetalles=="()") {
 			$__template__ = str_replace( "*DETALLES*", "", $__template__);
+			//echo "RETURNED";
 			return;
 		}
 		
@@ -95,35 +97,38 @@ class CDetalles extends CErrorHandler {
 													  	"tiposdetalles.TIPOCAMPO NOT LIKE 'RS'",
 														"tiposdetalles.TIPOCAMPO NOT LIKE 'H'") );
 		$td->LimpiarSQL();			
-	  $td->FiltrarSQL('ID_CONTENIDO','/*SPECIAL*/ ID_TIPODETALLE IN '.$tdetalles, $__idcontenido__);
-	  $td->Open();
+		$td->FiltrarSQL('ID_CONTENIDO','/*SPECIAL*/ ID_TIPODETALLE IN '.$tdetalles, $__idcontenido__);
+		$td->Open();
 	  
-	  //echo "<!--";
-	  //echo "CDetalles->MostrarDetallesColapsados() ".$this->m_tdetalles->SQL." : nresultados: ".$this->m_tdetalles->nresultados;
-	  //echo "-->";		
+		//echo '<div class="hidden">';
+		//echo "CDetalles->MostrarDetalles() ".$this->m_tdetalles->SQL." : nresultados: ".$this->m_tdetalles->nresultados;
+		//echo '</div>';		
 		
-	  $detalles_a = array();
+		$detalles_a = array();
 		$i_a = 0;
 		if ( $td->nresultados>0 ) {		
 			while($_row_ = $td->Fetch() ) {				
 				$detalles_a[$i_a] = new CDetalle($_row_);
 				$i_a++;
 			}
-		}		 
+		} else {
+			echo "<!--no details!-->";
+		}	 
 		
 		for( $i_a = 0; $i_a< count($detalles_a); $i_a++) {
-				$CDetalle = $detalles_a[$i_a];
-				$mdetalle = $this->m_CTiposDetalles->Mostrar($CDetalle);
-				$__template__ = str_replace( "*#".$this->m_CTiposDetalles->GetTipoStr($CDetalle->m_id_tipodetalle)."#*", $mdetalle, $__template__);
-				//THUMBNAILS
-				if ( ($this->m_CTiposDetalles->GetTipoCampo($CDetalle->m_id_tipodetalle)=="I") 
-				|| ($this->m_CTiposDetalles->GetTipoCampo($CDetalle->m_id_tipodetalle)=="F")) {					
-					if (basename($mdetalle)=="spacer.gif")
-						$thm = $mdetalle;
-					else $thm = dirname($mdetalle)."/thm/".basename($mdetalle);
-					$__template__ = str_replace( "*#".$this->m_CTiposDetalles->GetTipoStr($CDetalle->m_id_tipodetalle)."_THUMB#*", $thm, $__template__);
-				}
-			
+			$CDetalle = $detalles_a[$i_a];
+			$mdetalle = $this->m_CTiposDetalles->Mostrar($CDetalle);
+			$t_det = "*#".$this->m_CTiposDetalles->GetTipoStr($CDetalle->m_id_tipodetalle)."#*";
+			//echo "<!--tdet:".$t_det."-->";
+			$__template__ = str_replace( $t_det, $mdetalle, $__template__);
+			//THUMBNAILS
+			if ( ($this->m_CTiposDetalles->GetTipoCampo($CDetalle->m_id_tipodetalle)=="I") 
+			|| ($this->m_CTiposDetalles->GetTipoCampo($CDetalle->m_id_tipodetalle)=="F")) {					
+				if (basename($mdetalle)=="spacer.gif")
+					$thm = $mdetalle;
+				else $thm = dirname($mdetalle)."/thm/".basename($mdetalle);
+				$__template__ = str_replace( "*#".$this->m_CTiposDetalles->GetTipoStr($CDetalle->m_id_tipodetalle)."_THUMB#*", $thm, $__template__);
+			}			
 			
 		}	 
 
@@ -143,10 +148,16 @@ class CDetalles extends CErrorHandler {
 	  	    
 		if ( $td->nresultados>0 ) {		
 			while($_row_ = $td->Fetch() ) {
-				$CDetalle = new CDetalle($_row_);		
+				$CDetalle = new CDetalle($_row_);
+				$t_det = "*#".$this->m_CTiposDetalles->GetTipoStr($CDetalle->m_id_tipodetalle)."#*";
+				/*				
+				echo "<br>Referencia RC: [".$this->m_CTiposDetalles->GetTipoStr($CDetalle->m_id_tipodetalle)."] 
+									=> ID: [".$CDetalle->m_entero."]
+									=> TITULO: [".$CDetalle->m_CReference->Titulo()."]";
+					*/				
 				$mdetalle = $this->m_CTiposDetalles->Mostrar($CDetalle);
-				/*echo " => [".$mdetalle."]";*/
-				$__template__ = str_replace( "*#".$this->m_CTiposDetalles->GetTipoStr($CDetalle->m_id_tipodetalle)."#*", $mdetalle, $__template__);
+				//echo " => [".$mdetalle."] ".print_r($CDetalle,true);
+				$__template__ = str_replace( $t_det, $mdetalle, $__template__);
 
 			}
 		}
@@ -159,10 +170,21 @@ class CDetalles extends CErrorHandler {
 		$td->LimpiarSQL();
 		$td->FiltrarSQL('ID_CONTENIDO','/*SPECIAL*/ ID_TIPODETALLE IN '.$tdetalles,$__idcontenido__);
 		$td->Open();
+		
+		//echo "<!--";
+		//echo "CDetalles->MostrarDetallesColapsados()<br>".$this->m_tdetalles->SQL."<br>nresultados: ".$this->m_tdetalles->nresultados;
+		//echo "-->";
+		
 		if ( $td->nresultados>0 ) {
 			while($_row_ = $td->Fetch() ) {
 				$CDetalle = new CDetalle($_row_);
+				/*
+				echo "<br>Referencia RS: [".$this->m_CTiposDetalles->GetTipoStr($CDetalle->m_id_tipodetalle)."]
+				 => [".$CDetalle->m_entero."]
+				=> [".$CDetalle->m_CReference->Nombre()."]";
+				*/
 				$mdetalle = $this->m_CTiposDetalles->Mostrar($CDetalle);
+				/*echo " => [".$mdetalle."]";*/
 				$__template__ = str_replace( "*#".$this->m_CTiposDetalles->GetTipoStr($CDetalle->m_id_tipodetalle)."#*", $mdetalle, $__template__);
 		
 			}
@@ -2048,8 +2070,10 @@ class CDetalles extends CErrorHandler {
 					$_exito_=false;
 				} else
 				if (trim($tmpname)!="" && trim($name)!="") {
+					
 					if (is_uploaded_file($tmpname)) {						
-						$_exito_ = tmp_to_local($tmpname,$_SITEROOT_.'/tmp/'.$tmpmov);		    					
+								
+						$_exito_ = tmp_to_local( $tmpname, $_SITEROOT_.'/tmp/'.$tmpmov);		    					
 						if($_exito_) $_exito_ = thumbnail( $_SITEROOT_, '/tmp/'.$tmpmov, $ADataDef['width']['values'], "/archivos/imagen", $tmpmov, $ADataDef['height']['values']);
 						//if($_exito_) $_exito_ = rename_ftp('/archivos/imagen/'.$tmpmov,'/tmp/'.$tmpmov);
 						if($_exito_) {
@@ -2065,12 +2089,12 @@ class CDetalles extends CErrorHandler {
 						$_exito_ = thumbnail( $_SITEROOT_, "/archivos/imagen/".$tmpmov, $ADataDef['thmwidth']['values'], "/archivos/imagen/thm", $tmpmov, $ADataDef['thmheight']['values']);
 						chmod_ftp('/archivos/imagen/thm/'.$tmpmov);
 					} else {
-						$this->PushError( new CError("UPLOADERROR","uploading error while confirming detail ".$TipoDetalle->m_tipo." file:".$tmpname) );
+						$this->PushError( new CError("UPLOADERROR","uploading error while confirming detail ".$TipoDetalle->m_tipo." file:".$tmpname." error response:".$response) );
 						$_exito_=false;
 					}
 				} else {
 					if ( $elerror!=UPLOAD_ERR_NO_FILE ) {
-						$this->PushError( new CError("UPLOADERROR","uploading error confirming detail ".$TipoDetalle->m_tipo." file:".$name." size:".$size." type:".$type." error:".$elerror) );
+						$this->PushError( new CError("UPLOADERROR","uploading error confirming detail ".$TipoDetalle->m_tipo." file:".$name." size:".$size." type:".$type." error:".$elerror." response:".$response) );
 						$_exito_=false;
 					} else $_exito_=true; //no se intento subir ninguna imagen
 				}
