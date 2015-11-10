@@ -1201,7 +1201,7 @@ class Tabla {
 	}
 
 
-	function EditarCampoStr($nombre,$nested='',$event='',$lang='',$form='', $min='' , $max='', $html='') {
+	function EditarCampoStr( $nombre, $nested='',$event='',$lang='',$form='', $min='' , $max='', $html='') {
 		$resstr = "";
 		$disabled = "";
 		$selected = "";
@@ -1215,7 +1215,7 @@ class Tabla {
 		if (isset($GLOBALS['_e_'.$nombre]))  { $defecto = $GLOBALS['_e_'.$nombre]; }
 		else { $defecto = $campo['defecto']; }
 		
-		//$defecto = str_replace( array('"',"'"),array("&quot;","&#39;"),$defecto);		 
+		$defecto = str_replace( array('"',"'"),array("&quot;","&#39;"),$defecto);		 
 		$defecto = $this->UnescapeString($defecto);
 		
 		
