@@ -7,7 +7,8 @@
 ?>
 <link rel="SHORTCUT ICON" href="<?=$_DIR_ADMABS?>/images/wiwe.ico" />
 <link type="text/css" rel="stylesheet" href="../../inc/css/os3grid.css" />
-<link rel="stylesheet"  href="../../inc/css/configuracion.css"  type="text/css">
+<link rel="stylesheet"  href="../../inc/css/configuracion.css"  type="text/css"/>
+<link href="../../inc/css/jquery.treeview.css" rel="stylesheet" media="screen"/>
 <style>
   .conf_menuitem_left_sel { background-repeat: no-repeat;
     background-image: url(../images/conf_left_border.png);
@@ -40,17 +41,17 @@
 		
 		.table_name {
 			font-size: 13px;
-			fomt-weight: bold;
+			font-weight: bold;
 		}
 		
 		.content_name {
 			font-size: 12px;
-			fomt-weight: bold;
+			font-weight: bold;
 		}		
 		
 		.field_name {
 			font-size: 11px;
-			fomt-weight: bold;
+			font-weight: bold;
 		}		
 	
 		.debugdetails,
