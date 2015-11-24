@@ -115,11 +115,11 @@ a:hover {
 }
 
 .consulta .statusS {
-	background-image: url('/wiwe/inc/images/bullet-color-S.png');
+	background-image: url('../../inc/images/bullet-color-S.png');
 }
 
 .consulta .statusN {
-	background-image: url('/wiwe/inc/images/bullet-color-N.png');
+	background-image: url('../../inc/images/bullet-color-N.png');
 }
 
 .consulta .acciones .arriba,
