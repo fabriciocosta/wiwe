@@ -243,13 +243,16 @@ function SignUpValidation() {
 	var nick = ff._e_NICK.value;
 	var pass = ff._e_PASSWORD.value;
 	var passconfirm = ff._e_PASSWORD_confirm.value;
-	alert("signup validation");
+	
+	//alert("signup validation");
+	
 	//if (!agreed) {
 	//	alert('You must agree to the term and conditions before continuiing');
 	//	return false;
 	//} else {
 		//if (visualconfirmation!='') {
-			if ( /*nick=='' ||*/ pass=='' || passconfirm=='') {
+			/*
+			if (  pass=='' || passconfirm=='') {
 				alert('You must complete all the fields');
 				return false;
 			}
@@ -257,6 +260,7 @@ function SignUpValidation() {
 				alert('Password confirmation doesn´t match');
 				return false;
 			}
+			*/
 			return true;
 		//} else {
 		//	alert('You must enter the visual confirmation code');
