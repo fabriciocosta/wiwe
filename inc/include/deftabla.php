@@ -259,6 +259,7 @@ $_tsecciones_->AgregarIndice('ID','','PRIMARIO');
 $_tsecciones_->AgregarIndice('ORDEN','secciones.ORDEN');
 
 $_tusuarios_->AgregarIndice('ID','','PRIMARIO');
+$_tusuarios_->AgregarIndice( '{BYLASTENTRY}','ID DESC');
 $_tusuarios_->AgregarIndice( '{BYFIRSTNAMELASTNAME}','NOMBRE,APELLIDO');
 $_tusuarios_->AgregarIndice( '{BYLASTNAMEFIRSTNAME}','APELLIDO,NOMBRE');
 $_tusuarios_->AgregarIndice( '{BYCOUNTRY}','PAIS,CIUDAD');

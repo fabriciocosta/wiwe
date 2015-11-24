@@ -904,15 +904,23 @@ class CUsuarios extends CErrorHandler {
 		global $CLang;
 		
 		$ftemplate = "../../inc/include/templateuserformrecovery.php";
-		
+
 		$resstr = '
-				<div id="recovery">
+				<div id="recovery">				
 				<form id="formrecovery" name="formrecovery" method="post" action="/perfil/forgotpassword">
-					<div id="message">'.$CLang->Get('PASSWORDRECOVERY').'</div>
-					
-					<label id="usermail">'.$CLang->Get('MUSTINSERTMAIL').'</label>
-					<div id="usermailinput"><input name="_email_" type="text" value=""></div>
-					<div id="loginsend"><input class="inputbutton" name="submit" type="submit" value="'.$CLang->Get('SEND').'"></div>					
+				
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-6 col-md-4 col-md-offset-4">
+							<h1 class="text-center login-title">{PASSWORDRECOVERY}</h1>
+							<div class="account-wall">
+							
+								<input type="text" autofocus="" required="" placeholder="{MUSTINSERTMAIL}" class="form-control" name="_email_">
+								<button name="submit" type="submit" class="btn btn-lg btn-primary btn-block">{SEND}</button>
+							</div>
+						</div>
+					</div>
+				</div>
 					';
 				
 		if (file_exists($ftemplate)) {

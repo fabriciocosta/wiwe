@@ -1919,6 +1919,13 @@ if ( $_SESSION['nivel'] == '1' || $_SESSION['nivel'] == '0' ) {
 			return;
 		}			
 		
+		if ($_orden_=='') {
+			//seleccionamos el primer indice definido (ver deftabla.php)				
+			foreach($this->Usuarios->m_tusuarios->indices as $indice) {					
+				$_orden_= $indice['indice'];					
+				break;
+			}
+		}
 		
 		$this->Usuarios->SetTemplateConsulta($_f_NIVEL);
 		$CLang->Translate($this->Usuarios->m_templatesconsulta[$_f_NIVEL]);
