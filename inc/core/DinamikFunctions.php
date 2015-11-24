@@ -364,6 +364,7 @@ function DebugError( $debudgdetails ) {
 
 function ShowError( $msg_error, $echo = true ) {
 	$res = '<div class="showerror"><span>'.$msg_error.'</span></div>';
+	
 	if ($echo) echo $res;
 	else return $res;	
 }
@@ -377,8 +378,15 @@ function LogError( $msg ) {
 	fclose($fhandle);
 	
 }
-function ShowMessage( $msg, $echo = true ) {
-	$res = '<div class="showmessage"><span>'.$msg.'</span></div>';
+function ShowMessage( $msg, $echo = true, $close = false ) {
+	//$res = '<div class="showmessage"><span>'.$msg.'</span></div>';
+	if ($close==false) $closeb = '<a href="#" class="close" data-dismiss="alert">&times;</a>';
+
+    $res = '<div class="alert alert-warning">
+        '.$msg.'
+    </div>';
+
+
 	if ($echo) echo $res;
 	else return $res;
 }
