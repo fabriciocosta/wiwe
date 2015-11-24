@@ -1,0 +1,240 @@
+.navbar-brand {
+	padding: 5px !important;	
+}
+
+
+
+
+
+#fotog {
+	width: 400px;
+	height: 300px;
+}
+
+.menu {
+  background-image: url(../../inc/images/menu_background.png);
+  font-weight: bold;
+  color: #ffffff;
+  background-repeat: repeat-x;
+  background-position:  center center;
+  font-size: 11px;
+  font-family: Verdana;
+}
+
+.menu_section {
+  background-image: url(../../inc/images/menu_background_section.png);
+  font-weight: bold;
+  color: #7c95bd;
+  background-repeat: repeat-x;
+  background-position:  center center;
+  font-size: 11px;
+  font-family: Verdana;
+}
+
+.menu_section_header_up {
+	background-image: url(../../inc/images/section_header_mid_back.png);
+	background-repeat: repeat-y;
+}
+.menu_section_header_mid {
+	background-image: url(../../inc/images/section_header_mid_back.png);
+	background-repeat: repeat-y;
+}
+.menu_section_header_down {
+	background-color: #fc7718;
+	
+}
+
+a.menu_item_unsel:link {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+a.menu_item_unsel:visited {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+a.menu_item_unsel:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+a.menu_item_unsel_section {
+	text-decoration: none;	
+}
+
+a.menu_item_unsel:active {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+a.menu_item_unsel_section:link {
+	color: #7c95bd;
+	text-decoration: none;
+}
+
+a.menu_item_unsel_section:visited {
+	color: #7c95bd;
+	text-decoration: none;
+}
+
+a.menu_item_unsel_section:hover {
+	color: #7c95bd;
+	text-decoration: none;
+}
+
+a.menu_item_unsel_section:active {
+	color: #7c95bd;
+	text-decoration: none;
+}
+
+
+.center {
+  padding: 12px;
+  background-color: #000000;
+  background-image: url(../images/background_front.png);
+  background-repeat: repeat-x;
+}
+.center_right {
+  padding: 24px 12px 12px;
+  background-color: #001b39;
+  font-weight: normal;
+  font-style: normal;
+  text-transform: none;
+  text-align: left;
+  text-decoration: none;
+  color: white;
+  font-family: Verdana;
+  font-size: 11px;
+  line-height: 15px;
+}
+.center_front {
+  padding-right: 12px;
+  text-align: center;
+}
+.header {
+  background-image: url(../images/header.jpg);
+  background-repeat: no-repeat;
+}
+
+.header_section {
+  background-image: url(../images/header_section.jpg);
+  background-repeat: no-repeat;
+}
+
+.login {
+  display: inline;
+  float: none;
+  position: relative;
+  bottom: 12px;
+  color: white;
+  font-family: Verdana,Arial;
+  font-size: 11px;
+  font-weight: bold;
+  right: 20px;
+}
+
+.section_header_title {
+  display: inline;
+  float: none;
+  position: relative;
+  bottom: 0px;
+  color: white;
+  font-family: Verdana,Arial;
+  font-size: 18px;
+  font-weight: bold;
+  left: 26px;
+}
+
+.noticia_fecha {
+  text-align: left;
+  text-decoration: none;
+  color: white;
+  font-family: Verdana;
+  font-size: 11px;
+  font-weight: normal;
+  line-height: 15px;
+}
+
+.noticia_titulo {
+  text-align: left;
+  text-decoration: none;
+  color: #ff9500;
+  font-family: Verdana;
+  font-size: 11px;
+  font-weight: bold;  
+  line-height: 15px;
+  text-decoration:none;
+}
+
+.noticia_texto {
+  text-align: left;
+  text-decoration: none;
+  color: white;
+  font-family: Verdana;
+  font-size: 11px;
+  font-weight: normal;  
+  line-height: 15px;
+}
+
+.text_orange {
+  color: #ff9500;
+  font-weight: normal;
+  font-size: 11px;	
+  font-family: Verdana, Arial;
+}
+.text_white {
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 11px;	
+  font-family: Verdana, Arial;
+}
+
+.title_white {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight:bold;
+  font-family: Verdana,Arial;
+
+}
+
+.text_menu_orange {
+  color: #ff9500;
+  font-style: normal;
+  font-weight: bold;
+  font-family: Verdana,Arial;
+  font-size: 11px;
+  line-height: 11px;
+}
+.text_menu_white {
+  font-family: Verdana,Arial;
+  font-size: 11px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 11px;
+  color: #ffffff;
+}
+.title_orange {
+  color: #ff9500;
+  font-size: 13px;
+  font-weight:bold;
+  font-family: Verdana, Arial;
+
+}
+.videos {
+  height: 342px;
+  width: 590px;
+  /*background-color: #cccccc;*/
+  overflow: auto;
+}
+
+
+
+
+.DESCARGA {
+	background-color: #00F;
+}
+
+
+
+
