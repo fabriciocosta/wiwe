@@ -1232,27 +1232,27 @@ class Tabla {
 			}
 						
 			if (($campo['tipo'] == 'TEXTO')) {				
-				$resstr.= '<input '.$disabled.' id="'.$formpoint.'_e_'.$campo['nombre'].'" name="_e_'.$campo['nombre'].'" type="text" value="'.$defecto.'" size="'.$campo['tamanio'].'">';
+				$resstr.= '<input '.$disabled.' id="'.$formpoint.'_e_'.$campo['nombre'].'" name="_e_'.$campo['nombre'].'" type="text" value="'.$defecto.'" size="'.$campo['tamanio'].'" class="form-control">';
 				if ( is_numeric($max) || is_numeric($min) )
 					$resstr.= TextCounter( $formpoint.'_e_'.$campo['nombre'], $min, $max );
 			}
 			elseif (($campo['tipo'] == 'TEXTOML')) {				
 				if ($lang=="") {//la primera llamada sin el lang especificado, es para contener todos los idiomas
-					$resstr.= '<input '.$disabled.' id="'.$formpoint.'_e_'.$campo['nombre'].'" name="_e_'.$campo['nombre'].'" type="hidden" value="'.$defecto.'" size="'.$campo['tamanio'].'" class="campo">';				
+					$resstr.= '<input '.$disabled.' id="'.$formpoint.'_e_'.$campo['nombre'].'" name="_e_'.$campo['nombre'].'" type="hidden" value="'.$defecto.'" size="'.$campo['tamanio'].'" class="campo form-control">';				
 				} else {//aqui debe estar especificado el lang: EN | FR | SP
-					$resstr.= '<input '.$disabled.' id="'.$formpoint.'_e_'.$campo['nombre'].'_'.$lang.'" name="_e_'.$campo['nombre'].'_'.$lang.'" type="text" value="'.$this->TextoML($defecto,$lang).'" size="'.$campo['tamanio'].'" class="campo" onChange="javascript:setForm(\''.$form.'\');completeML(\'_e_'.$campo['nombre'].'\',\''.$lang.'\')" >';	
+					$resstr.= '<input '.$disabled.' id="'.$formpoint.'_e_'.$campo['nombre'].'_'.$lang.'" name="_e_'.$campo['nombre'].'_'.$lang.'" type="text" value="'.$this->TextoML($defecto,$lang).'" size="'.$campo['tamanio'].'" class="campo form-control" onChange="javascript:setForm(\''.$form.'\');completeML(\'_e_'.$campo['nombre'].'\',\''.$lang.'\')" >';	
 				}
 				if ( is_numeric($max) || is_numeric($min) )
 					$resstr.= TextCounter( $formpoint.'_e_'.$campo['nombre'], $min, $max );
 			}			
 			elseif ($campo['tipo'] == 'FECHA') {
 				if ($defecto!="") $defecto = date("Y-m-d h:i:s",strtotime($defecto));
-				$resstr.= '<input '.$disabled.' type="text" id="'.$formpoint.'_e_'.$campo['nombre'].'" border="0" name="_e_'.$campo['nombre'].'" value="'.$defecto.'" size="'.$campo['tamanio'].'" class="campo">
+				$resstr.= '<input '.$disabled.' type="text" id="'.$formpoint.'_e_'.$campo['nombre'].'" border="0" name="_e_'.$campo['nombre'].'" value="'.$defecto.'" size="'.$campo['tamanio'].'" class="campo form-control">
 				'.UI_DateTimePicker($formpoint.'_e_'.$campo['nombre']);
 				//<a class="pickadate" href="javascript:setForm(\''.$form.'\');NewCal(\'_e_'.$campo['nombre'].'\',\'yyyymmdd\',true,24)"><img src="'.$GLOBALS['_DIR_SITEABS'].'/inc/images/cal.gif" width="16" height="16" border="0" alt="Pick a date"></a>';
 			}				
 			elseif ($campo['tipo'] == 'BLOBTEXTO') {
-				$resstr.= '<TEXTAREA '.$disabled.'  id="'.$formpoint.'_e_'.$campo['nombre'].'" name="_e_'.$campo['nombre'].'" rows="'.$campo['tamanio2'].'" cols="'.$campo['tamanio'].'" class="campo">'.$defecto.'</TEXTAREA>';
+				$resstr.= '<TEXTAREA '.$disabled.'  id="'.$formpoint.'_e_'.$campo['nombre'].'" name="_e_'.$campo['nombre'].'" rows="'.$campo['tamanio2'].'" cols="'.$campo['tamanio'].'" class="campo form-control">'.$defecto.'</TEXTAREA>';
 				if ( is_numeric($max) || is_numeric($min) )
 					$resstr.= TextCounter( $formpoint.'_e_'.$campo['nombre'], $min, $max );				
 				if ($html=="html")						
@@ -1263,9 +1263,9 @@ class Tabla {
 			}
 			elseif ($campo['tipo'] == 'BLOBTEXTOML') {
 				if ($lang=="") {//la primera llamada sin el lang especificado, es para contener todos los idiomas
-					$resstr.= '<input id="'.$formpoint.'_e_'.$campo['nombre'].'" name="_e_'.$campo['nombre'].'" type="hidden" value="'.$defecto.'" size="'.$campo['tamanio'].'" class="campo">';				
+					$resstr.= '<input id="'.$formpoint.'_e_'.$campo['nombre'].'" name="_e_'.$campo['nombre'].'" type="hidden" value="'.$defecto.'" size="'.$campo['tamanio'].'" class="campo form-control">';				
 				} else {//aqui debe estar especificado el lang: EN | FR | SP
-					$resstr.= '<TEXTAREA '.$disabled.' id="'.$formpoint.'_e_'.$campo['nombre'].'_'.$lang.'" name="_e_'.$campo['nombre'].'_'.$lang.'" rows="'.$campo['tamanio2'].'" cols="'.$campo['tamanio'].'" class="campo" onChange="javascript:setForm(\''.$form.'\');completeML(\'_e_'.$campo['nombre'].'\',\''.$lang.'\')">'.$this->TextoML($defecto,$lang).'</TEXTAREA>';
+					$resstr.= '<TEXTAREA '.$disabled.' id="'.$formpoint.'_e_'.$campo['nombre'].'_'.$lang.'" name="_e_'.$campo['nombre'].'_'.$lang.'" rows="'.$campo['tamanio2'].'" cols="'.$campo['tamanio'].'" class="campo form-control" onChange="javascript:setForm(\''.$form.'\');completeML(\'_e_'.$campo['nombre'].'\',\''.$lang.'\')">'.$this->TextoML($defecto,$lang).'</TEXTAREA>';
 				}			
 				if ( is_numeric($max) || is_numeric($min) )
 					$resstr.= TextCounter( $formpoint.'_e_'.$campo['nombre'], $min, $max );
@@ -1277,20 +1277,20 @@ class Tabla {
 							</script>';
 			}			
 			elseif (($campo['tipo'] == 'ENTERO') or ($campo['tipo'] == 'DECIMAL')) {
-				$resstr.= '<input '.$disabled.'  id="'.$formpoint.'_e_'.$campo['nombre'].'" name="_e_'.$campo['nombre'].'" type="text" value="'.$defecto.'" size="'.$campo['tamanio'].'" class="campo">';
+				$resstr.= '<input '.$disabled.'  id="'.$formpoint.'_e_'.$campo['nombre'].'" name="_e_'.$campo['nombre'].'" type="text" value="'.$defecto.'" size="'.$campo['tamanio'].'" class="campo form-control">';
 			}
 			elseif ($campo['tipo'] == 'PASSWORD') {
 				if ( $nombre != $campo['nombre'] ) {
 					if ($nombre=="PASSWORD_new")
 						$nombre = "PASSWORD";
-					$resstr.= '<input '.$disabled.' id="'.$formpoint.'_e_'.$nombre.'" name="_e_'.$nombre.'" type="password" value="" size="'.$campo['tamanio'].'" class="campo">';
+					$resstr.= '<input '.$disabled.' id="'.$formpoint.'_e_'.$nombre.'" name="_e_'.$nombre.'" type="password" value="" size="'.$campo['tamanio'].'" class="campo form-control">';
 				} else {
-					$resstr.= '<label id="_label_'.$campo['nombre'].'">'.$GLOBALS['CLang']->m_Users['USERPASSWORD'].'</label><input id="_e_'.$campo['nombre'].'" name="_e_'.$campo['nombre'].'" type="password" value="" size="'.$campo['tamanio'].'" class="campo">';
-					$resstr.= '<label id="_label_'.$campo['nombre'].'_confirm">'.$GLOBALS['CLang']->m_Users['USERPASSWORDCONFIRM'].'</label><input id="_e_'.$campo['nombre'].'_confirm" name="_e_'.$campo['nombre'].'_confirm" type="password" value="" size="'.$campo['tamanio'].'" class="campo">';
+					$resstr.= '<label id="_label_'.$campo['nombre'].'">'.$GLOBALS['CLang']->m_Users['USERPASSWORD'].'</label><input id="_e_'.$campo['nombre'].'" name="_e_'.$campo['nombre'].'" type="password" value="" size="'.$campo['tamanio'].'" class="campo form-control">';
+					$resstr.= '<label id="_label_'.$campo['nombre'].'_confirm">'.$GLOBALS['CLang']->m_Users['USERPASSWORDCONFIRM'].'</label><input id="_e_'.$campo['nombre'].'_confirm" name="_e_'.$campo['nombre'].'_confirm" type="password" value="" size="'.$campo['tamanio'].'" class="campo form-control">';
 				}
 			}
 			elseif ($campo['tipo'] == 'ARCHIVO') {
-				$resstr.= '<input '.$disabled.'  id="'.$formpoint.'_e_'.$campo['nombre'].'" name="_archivo_'.$campo['nombre'].'" type="file" size="'.$campo['tamanio'].'" class="campo">';
+				$resstr.= '<input '.$disabled.'  id="'.$formpoint.'_e_'.$campo['nombre'].'" name="_archivo_'.$campo['nombre'].'" type="file" size="'.$campo['tamanio'].'" class="campo form-control">';
 			}
 			$resstr.= '</div>';
 		} else {//si el campo tiene alguna referencia, entonces: mostrar un combo con el lookup

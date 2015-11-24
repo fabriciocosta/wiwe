@@ -1,13 +1,18 @@
 @charset "UTF-8";
 
 
+
+#bs-example-navbar-collapse-1 {
+	float: left !important;
+}
+
 .navbar-brand {
 	padding: 5px !important;	
 }
 
 .module .container {
-	background-color: rgba( 255, 255, 255, 0.25);
-	border-radius: 20px;
+	background-color: rgba( 255, 255, 255, 0.0);
+	border-radius: 0px;
 }
 
 .module {
@@ -24,9 +29,6 @@
 	content: "Mejoras: ";
 	font-size: 12px;
 }
-
-
-
 
 
 
@@ -119,7 +121,7 @@ body {
 	background-image: url(/inc/moldeo/fondo.png) !important;
 	background-repeat: repeat-x !important;
 	background-position: 0px 0px !important; 
-	text-align: center !important;
+	/*text-align: center !important;*/
 }
 form {
 	margin: 0px;
@@ -135,10 +137,11 @@ div {
 	padding: 0;
 	margin: 0;
 	display: block;
+/*
 	height: auto;
 	
 	border: solid 0px #FF0000;	
-
+*/
 }
 
 #sitebody {
@@ -213,13 +216,21 @@ div {
 
 .logininfo {
 	float: left;
+	padding-top: 15px;
 }
 
 .langoptions {
 	float: left;
 }
 
+.dropdown-menu {
+	background-color: #ccc !important;
+}
 
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus, {
+	background-color: #555 !important;
+}
 
 #sitemenu {
 }

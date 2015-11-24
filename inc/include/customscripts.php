@@ -238,18 +238,18 @@ function SignUpValidation() {
 
 	var ff = document.register;
 	
-	var agreed = ff._iagree_.checked;
-	var visualconfirmation = ff._visualconfirmation_.value;
+	//var agreed = ff._iagree_.checked;
+	//var visualconfirmation = ff._visualconfirmation_.value;
 	var nick = ff._e_NICK.value;
 	var pass = ff._e_PASSWORD.value;
 	var passconfirm = ff._e_PASSWORD_confirm.value;
-	
-	if (!agreed) {
-		alert('You must agree to the term and conditions before continuiing');
-		return false;
-	} else {
-		if (visualconfirmation!='') {
-			if (nick=='' || pass=='' || passconfirm=='') {
+	alert("signup validation");
+	//if (!agreed) {
+	//	alert('You must agree to the term and conditions before continuiing');
+	//	return false;
+	//} else {
+		//if (visualconfirmation!='') {
+			if ( /*nick=='' ||*/ pass=='' || passconfirm=='') {
 				alert('You must complete all the fields');
 				return false;
 			}
@@ -258,12 +258,12 @@ function SignUpValidation() {
 				return false;
 			}
 			return true;
-		} else {
-			alert('You must enter the visual confirmation code');
-			return false;
-		}
+		//} else {
+		//	alert('You must enter the visual confirmation code');
+		//	return false;
+		//}
 		
-	}
+	//}
 	
 		
 

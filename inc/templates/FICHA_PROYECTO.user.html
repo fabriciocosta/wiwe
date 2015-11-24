@@ -1,0 +1,109 @@
+<script>
+
+function ValidarProyecto( publicar ) {
+
+	
+	var titulo;
+	titulo = document.getElementById("_e_TITULO");
+	if (titulo) {
+		titulo = titulo.value;
+	}
+
+	var resumen;
+	resumen = document.getElementById("_e_COPETE");
+	if (resumen) {
+		resumen = resumen.value;
+	}	
+
+
+	var categorias;
+	categorias = document.getElementById("div_relaciones_ORGANIZACION_CATEGORIAS");
+	if (categorias) {
+		categorias = categorias.innerHTML;
+	}	
+	
+	if ( titulo!="" && titulo.length>=titulo_min ) {
+		
+		
+			if ( resumen!='' && resumen.length>=resumen_min ) {
+
+				if (publicar=='true') {
+					document.register._e_BAJA.value = "V";
+					document.register._e_BAJA.selectedIndex = 2;
+				} else if (publicar=='false') {
+					document.register._e_BAJA.value = "N";
+					document.register._e_BAJA.selectedIndex = 0;
+				}
+				return true;
+			
+			} else {
+				Popup('dialog','Debe completar el campo resumen con más de '+resumen_min+' caracteres.');
+			}
+		
+				
+	} else {
+		//alert('Debe elegir al menos una categoría');
+		Popup('dialog','Debe completar el nombre de la organización con más de '+titulo_min+' caracteres.');
+	}
+	return false;	
+
+}
+</script>
+
+
+<div class="contenidos">
+	
+  <div class="editar_ficha">
+
+<table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="40%" height="30" valign="top" scope="col">Nombre del proyecto<span id="obligatorio">*</span></td>
+    <td width="60%" height="30" valign="top" scope="col">*TITULO*</td>
+    </tr>
+  <tr>
+    <td width="40%" height="25" valign="top">Resumen <span id="obligatorio">*</span></td>
+    <td width="60%" valign="top"><div align="left">*COPETE*</div></td>
+    </tr>  
+  <tr>
+    <td width="40%" height="25" valign="top">Descripción ampliada</td>
+    <td width="60%" valign="top">*CUERPO*</td>
+    </tr>
+  <tr>
+    <td height="25" colspan="2" valign="top"><hr></td>
+    </tr>
+  
+
+  <tr>
+    <td height="25">&nbsp;</td>
+    <td height="50" valign="bottom">  <div style="float:left">
+   	<input name="Submit" class="inputbutton cancelar" type="button" value="Cancelar" type="button" onclick="javascript:history.go(-1);">
+		<input name="Submit" class="inputbutton guardar" type="button" value="Publicar" type="button" onclick="if (ValidarProyecto('true')) document.register.submit();">
+		<!-- <input name="Submit" class="inputbutton publicar" type="button" value="Publicar organización" type="button" onclick="if (ValidarOrganizacion('true')) document.register.submit();">-->
+		<!-- <input name="Submit" class="inputbutton nopublicar" type="button" value="No Publicar Organización" type="button" onclick="if (ValidarOrganizacion('false')) document.register.submit();"> -->		
+	</div></td>
+  </tr>
+</table>
+        
+  </div>
+</div>
+
+<div style="display:none;">
+
+                    
+          <h6 align="left">
+            Publicar<br>
+            *BAJA*
+          </h6>                          
+                  
+*ID_SECCION*
+*ID_TIPOCONTENIDO*
+		*ML_TITULO*
+		*ML_COPETE*
+		*ML_CUERPO*
+		*FECHAEVENTO*
+		*FECHAALTA*
+		*FECHABAJA*
+
+		*PALABRASCLAVE*
+		*ML_PALABRASCLAVE*
+</div>

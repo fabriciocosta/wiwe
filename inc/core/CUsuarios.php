@@ -868,26 +868,34 @@ class CUsuarios extends CErrorHandler {
 	}
 	
 	
-	function ShowLogin( $pre="", $temp="", $post = "" ) {
+	function ShowLogin( $pre="", $temp="", $post = "", $_template_ = "{LINK}", $_header_='<div class="logininfo">', $_footer_='</div>', $_separator_='', $_templateitemmenu_="{LINK}", $_headermenu_='<hr/>', $_footermenu_='' ) {
 		
 		global $CLang;
 		
-		$resstr = '<div class="logininfo">'.$pre;
+		$resstr = $_header_.$pre;
 				
 		if ($this->Logged()) {
 			if (is_object( $this->m_CSesionUsuario )) {
-				$resstr.= '<a href="/perfil">'.$this->m_CSesionUsuario->m_nick.'</a>';
+				$resstr.= str_replace(	array( "{PROFILELINK}", "{USERNAME}", "{USERLINK}"), 
+										array( "/perfil", $this->m_CSesionUsuario->m_nick, '<a href="/perfil">'.$this->m_CSesionUsuario->m_nick.'</a>' ),
+										$_template_ );
+				
+				$resstr.= $_headermenu_;
+				
+				$resstr.= $_separator_.str_replace( "{LINK}", ' <a href="/perfil">'.$CLang->Get('PROFILE').'</a>', $_templateitemmenu_);
 				
 				if (ModuloInstalled('panel')) {
-					$resstr.= ' | <a href="/panel">'.$CLang->Get('PANEL').'</a>';
+					$resstr.= $_separator_.str_replace( "{LINK}", ' <a href="/panel">'.$CLang->Get('PANEL').'</a>', $_templateitemmenu_);
 				}
 				
-				$resstr.= ' | <a href="/perfil/logout">'.$CLang->Get("LOGOUT").'</a>';
+				$resstr.= $_separator_.str_replace( "{LINK}", ' <a href="/perfil/logout">'.$CLang->Get("LOGOUT").'</a>', $_templateitemmenu_);
+				
+				$resstr.= $_footermenu_;
 			}
 		} else {
-			$resstr.= '<a href="/perfil/loginform">'.$CLang->Get("LOGIN").'</a>';
+			$resstr.= str_replace( "{LINK}", '<a href="/perfil/loginform">'.$CLang->Get("LOGIN").'</a>', $_template_);
 		}
-		$resstr.= $post."</div>";
+		$resstr.= $post.$_footer_;
 		return $resstr;
 	}
 	
@@ -1016,6 +1024,8 @@ class CUsuarios extends CErrorHandler {
 		
 		global $CLang;
 		global $formlogin_printed;
+		global $_cID_;
+		global $_accion_;
 		
 		if ($formlogin_printed==true) {
 			return;
@@ -1023,51 +1033,55 @@ class CUsuarios extends CErrorHandler {
 		
 		
 		$ftemplate = "../../inc/include/templateuserformlogin.php";
-		
-		$resstr = '
-		<div id="login">
-		<form id="formlogin" name="formlogin" method="post" action="/perfil/login">
-			
-			<input type="hidden" value="'.$previous_url_to_go.'" name="previous_url"/>
-			
-			<div id="message">'.$CLang->Get('LOGINMESSAGE').'</div>
-			
-			<div>
-			
-				<label id="usermail">'.$CLang->Get('USEREMAIL').'</label>
-			
-				<div id="usermailinput"><input name="_email_" type="text" value=""></div>
-			
-			</div>
-			
-			<div>
-			
-			<label id="userpassword">'.$CLang->Get('PASSWORD').'</label>
-			
-			<div id="usermailinput"><input name="_password_" type="password" value=""></div>
-			
-			</div>
-			
-			<div id="loginsend"><input class="inputbutton" name="submit" type="submit" value="'.$CLang->Get('LOGIN').'"></div>
-			
-			<div id="forgotpassword">			
-				<a href="/perfil/forgotpassword">'.$CLang->Get('FORGOTPASSWORD').'</a>
-			</div>
 
-			<div id="register">			
-				<a href="/perfil/register">'.$CLang->Get('SIGNUP').'</a>
-			</div>			
-			
-			';
+		$resstr.= '
+		<div id="login">
+			<form id="formlogin" name="formlogin" method="post" action="/perfil/login">
+				
+				<input type="hidden" value="'.$previous_url_to_go.'" name="previous_url"/>
+				
+				<div id="message">'.$CLang->Get('LOGINMESSAGE').'</div>
+				
+				<div>
+				
+					<label id="usermail">'.$CLang->Get('USEREMAIL').'</label>
+				
+					<div id="usermailinput"><input name="_email_" type="text" value=""></div>
+				
+				</div>
+				
+				<div>
+				
+				<label id="userpassword">'.$CLang->Get('PASSWORD').'</label>
+				
+				<div id="usermailinput"><input name="_password_" type="password" value=""></div>
+				
+				</div>
+				
+				<div id="loginsend"><input class="inputbutton" name="submit" type="submit" value="'.$CLang->Get('LOGIN').'"></div>
+				
+				<div id="forgotpassword">			
+					<a href="/perfil/forgotpassword">'.$CLang->Get('FORGOTPASSWORD').'</a>
+				</div>
+
+				<div id="register">			
+					<a href="/perfil/register">'.$CLang->Get('SIGNUP').'</a>
+				</div>			
+				
+				<div id="div_debug" class="debugdetails">
+					<div id="id_pedido">
+						<input type="text" value="'.$_cID_.'" name="_cID_">
+						<input type="text" value="'.$_accion_.'" name="_accion_">
+					</div>
+				</div>
+			</form>		
+		</div>
+		';
 		
 		if (file_exists($ftemplate)) {
 			require $ftemplate;
 		}
-		
-		$resstr.= '
-		</form>		
-		</div>
-		';
+
 				
 		$formlogin_printed = true;
 		if ($echo) echo $resstr;

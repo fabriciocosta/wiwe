@@ -132,6 +132,11 @@ class CTiposContenidos extends CErrorHandler {
 		
 	}
 	
+	/**
+	* /if spanish Obtiene el nombre del tipo de contenido pasandole el valor /else
+	* Get the type /end
+	* 
+	*/
 	function GetTipo( $__id_tipocontenido__ ) {
 		return $this->m_Int2StrArray[ $__id_tipocontenido__ ];		
 	}

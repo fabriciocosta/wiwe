@@ -14,10 +14,15 @@ global $Contenido;
 global $Usuario;
 global $_template_consulta_;
 global $_template_edicion_;
+global $Sitio;
 $execute = "";
 
-$_template_consulta_ = implode('',file("../../inc/templates/CONTENIDO.panel.consulta.html"));
-$_template_edicion_ = implode('',file("../../inc/templates/CONTENIDO.panel.edicion.html"));
+//$_template_consulta_ = implode('',file("../../inc/templates/CONTENIDO.panel.consulta.html"));
+//$_template_edicion_ = implode('',file("../../inc/templates/CONTENIDO.panel.edicion.html"));
+
+$_template_consulta_ = "";
+$_template_edicion_ = "";
+
 $Usuario = $this->Usuarios->GetSesionUsuario();
 ?>
 
@@ -33,6 +38,10 @@ if (  $this->Usuarios->Logged() && $Usuario->m_nivel<=4) {
 			$Contenido = $this->Contenidos->GetContenido($_cID_);
 		} else $Contenido = null;
 		
+		$tipocontenido = $Sitio->TiposContenidos->GetTipo($ID_TIPOCONTENIDO);
+		$_template_edicion_ = implode( '', file("../../inc/templates/FICHA_".$tipocontenido.".panel.consulta.html") );
+		if ($_template_edicion_=="") 
+			$_template_edicion_ = implode( '', file("../../inc/templates/CONTENIDO.panel.edicion.html") );	
 		//error_reporting(E_ALL);
 		
 		if ( $_accion_=="agregar" ) {
@@ -122,6 +131,8 @@ if (  $this->Usuarios->Logged() && $Usuario->m_nivel<=4) {
 			$ConfirmRecord->m_ml_cuerpo = "";
 			$ConfirmRecord->ToGlobals();
 
+					
+			
 			if ($this->UserAdminRecordConfirm( "confirmeditrecord", $ConfirmRecord, $_template_edicion_ )) {
 				echo '<span style="color:#00CC00">[old record confirmed]</span>';
 				//post process:
@@ -172,9 +183,21 @@ if (  $this->Usuarios->Logged() && $Usuario->m_nivel<=4) {
 		global $_tcontenidos_;
 		global $Usuario;
 		global $ID_TIPOCONTENIDO;
-		global $Sitio;
 		global $_accion_;
+		global $Sitio;
+		global $_template_consulta_;
 		
+		if ($_template_consulta_=="") {
+			
+			//_template_consulta_ = implode('',file("../../inc/templates/FICHA_PROYECTO.panel.consulta.html"));
+			//$strID_TIPOCONTENIDO = ;
+			$tipocontenido = $Sitio->TiposContenidos->GetTipo($id_tipocontenido);
+			
+			$_template_consulta_ = implode( '', file("../../inc/templates/FICHA_".$tipocontenido.".panel.consulta.html") );
+			if ($_template_consulta_=="") 
+				$_template_consulta_ = implode( '', file("../../inc/templates/CONTENIDO.panel.consulta.html") );
+			
+		}
 		?>
 		<div class="panelcontent">
 		<h3><?=$str_miscontenidos?></h3>
@@ -221,7 +244,7 @@ if (  $this->Usuarios->Logged() && $Usuario->m_nivel<=4) {
 		    <div class="clear"></div>
 		      ' );
 				*/
-	      	global $_template_consulta_;
+	      	
 	      	$Sitio->TiposContenidos->MostrarConsulta( $Contenido, str_replace("[LINK_CONTENIDO]", $lnk_contenido, $_template_consulta_) );
 	      	
 	      }
@@ -231,8 +254,8 @@ if (  $this->Usuarios->Logged() && $Usuario->m_nivel<=4) {
 	    ?>
 	    </div>
 	    <div class="panelcontent_menu"><hr>
-		    <a href="/panel/_accion_=vermas&ID_TIPOCONTENIDO=<?=$id_tipocontenido?>" class="panelitem">Ver todas</a> | 
-		    <a href="/panel/_accion_=agregar&ID_TIPOCONTENIDO=<?=$id_tipocontenido?>" class="panelitem">Agregar <?=$str_contenido?></a>
+		    <a href="/panel?_accion_=vermas&ID_TIPOCONTENIDO=<?=$id_tipocontenido?>" class="panelitem">Ver todo</a> | 
+		    <a href="/panel?_accion_=agregar&ID_TIPOCONTENIDO=<?=$id_tipocontenido?>" class="panelitem">Agregar <?=$str_contenido?></a>
 	    </div>
 	    </div>
 	    <?
@@ -241,7 +264,10 @@ if (  $this->Usuarios->Logged() && $Usuario->m_nivel<=4) {
 
 <div class="paneles">
       <?
-      UserABMContent( "Tutoriales", "Tutoriales", "/tutoriales/*IDCONTENIDO*", FICHA_TUTORIAL );
+      UserABMContent( "Proyectos", "Proyectos", "/proyecto/*IDCONTENIDO*", FICHA_PROYECTO );
+      ?>
+      <?
+      //UserABMContent( "Tutoriales", "Tutoriales", "/tutoriales/*IDCONTENIDO*", FICHA_TUTORIAL );
       ?>
       <?
       //UserABMContent( "Desarrollos", "Desarrollos", "/desarrollos/*IDCONTENIDO*", FICHA_DESARROLLO );

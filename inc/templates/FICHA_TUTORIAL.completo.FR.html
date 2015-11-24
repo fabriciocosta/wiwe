@@ -1,0 +1,38 @@
+<div class="TUTORIAL completo" id="TUTORIAL _*IDCONTENIDO*_">
+	<div class="titulo">*TITULO*</div>
+	<div class="fecha alta dia">*ALTA DIA*</div>
+	<div class="fecha alta hora">*ALTA HORA*</div>
+	<div class="fecha baja dia">*BAJA DIA*</div>
+	<div class="fecha baja hora">*BAJA HORA*</div>	
+	<div class="nombre">*NOMBRE*</div>
+	<div class="imagen"><img src="*#TUTORIAL_IMAGEN#*" title="*TITULO*" alt="*TITULO*" border="0"></div>
+	<div class="archivo">
+		<a href="#flv_*IDCONTENIDO*_" onclick="javascript:showdiv('flv_*IDCONTENIDO*_')">Voir le cours en ligne [ 1280x768 ]</a>
+		<br>
+		<a href="*#TUTORIAL_ARCHIVO#*""target="_blank">Télécharger le cours (bouton droit)</a>
+	</div>	
+
+	<div class="copete">*COPETE*</div>
+	<div class="cuerpo">*CUERPO*</div>	
+	<div class="autor">*AUTOR*</div>	
+	<div class="fecha evento dia">*FECHAEVENTO DIA*</div>
+	<div class="fecha evento hora">*FECHAEVENTO HORA*</div>	
+</div>
+
+<div id="flv_*IDCONTENIDO*_" class="flv">
+		<a href="#flv_*IDCONTENIDO*_" onclick="javascript:hidediv('flv_*IDCONTENIDO*_')">FERMER</a>
+		<a name="flv_*IDCONTENIDO*_"></a>
+			<object id="tutorial_flv" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" name="player*ID*" width="1280" height="768">
+				<param name="movie" value="*#TUTORIAL_ARCHIVO#*" />
+				<param name="allowfullscreen" value="true" />
+				<param name="allowscriptaccess" value="always" />
+				<param name="flashvars" value="" />
+				<object type="application/x-shockwave-flash" data="*#TUTORIAL_ARCHIVO#*" width="1280" height="768">
+					<param name="movie" value="*#TUTORIAL_ARCHIVO#*" />
+					<param name="allowfullscreen" value="true" />
+					<param name="allowscriptaccess" value="always" />
+					<param name="flashvars" value="" />
+					<p><a href="http://get.adobe.com/flashplayer">Get Flash</a> to see this player.</p>
+				</object>
+			</object>
+		</div>

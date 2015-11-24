@@ -121,6 +121,49 @@ class CMultiLang {
 		} else return false;
 	}
 	
+	#########################################################
+	# Copyright © 2008 Darrin Yeager                        #
+	# https://www.dyeager.org/                               #
+	# Licensed under BSD license.                           #
+	#   https://www.dyeager.org/downloads/license-bsd.txt    #
+	#########################################################
+
+	function getDefaultLanguage() {
+		if (isset($_SERVER["HTTP_ACCEPT_LANGUAGE"]))
+		  return $this->parseDefaultLanguage($_SERVER["HTTP_ACCEPT_LANGUAGE"]);
+		else
+		  return $this->parseDefaultLanguage(NULL);
+	}
+
+	function parseDefaultLanguage($http_accept, $deflang = "en") {
+		if(isset($http_accept) && strlen($http_accept) > 1)  {
+		  # Split possible languages into array
+		  $x = explode(",",$http_accept);
+		  foreach ($x as $val) {
+			 #check for q-value and create associative array. No q-value means 1 by rule
+			 if(preg_match("/(.*);q=([0-1]{0,1}.\d{0,4})/i",$val,$matches))
+				$lang[$matches[1]] = (float)$matches[2];
+			 else
+				$lang[$val] = 1.0;
+		  }
+
+		  #return default language (highest q-value)
+		  $qval = 0.0;
+		  foreach ($lang as $key => $value) {
+			 if ($value > $qval) {
+				$qval = (float)$value;
+				$deflang = $key;
+			 }
+		  }
+		}
+		return strtolower($deflang);
+	}
+
+	/**
+	*
+	* Select language based on browser and default defined languages
+	*
+	*/
 	function SelectLang( $lang_code ) {
 		global $__lang__;
 		global $_LANG_;
@@ -133,9 +176,12 @@ class CMultiLang {
 		if ($this->m_browser_auto) {
 		 	//selection automatique de language....(selon le navigateur)
 			if ( $_SESSION["userlang"]=="" && $__modulo__ != "admin" ) {
+				$browserlang = $this->getDefaultLanguage();
+				// por cada 
+				
 				foreach($this->m_arraylangs as $idiom=>$code) {
 					
-					if ( strpos($_SERVER['HTTP_ACCEPT_LANGUAGE'],strtolower( str_replace("SP","ES",$code) ) ) === false ) {
+					if ( strpos( strtolower($browserlang), strtolower( str_replace("SP","ES",$code) ) ) === false ) {
 						//echo "not set auto in: ".str_replace("SP","ES",$code);
 					} else {
 						//echo "Set auto in: ".$code;
@@ -143,6 +189,7 @@ class CMultiLang {
 					}
 					
 				}
+				
 			}
 			
 			/*if ( $__lang__=="" && !isset($lang) && $__modulo__ != "admin" ) {
@@ -193,23 +240,58 @@ class CMultiLang {
 		
 	}
 	
-	function ShowLangOptions() {
+	/**
+	 *
+	 * Shows actual lang selection
+	 * 
+	 * ShowLangOptions("<li>{LANG}</li>") => <li>EN</li>
+	 * ShowLangOptions("<li>{LANGUAGE}</li>") => <li>English</li>
+	 * ShowLangOptions("<li>{LANGSTDCODE} - {LANGUAGE}</li>") => <li>Es - Español</li>
+	 * 
+	 */
+	function ShowLangSelection( $__template__ = "" ) {
+		global $__lang__;
+		
+		if ($__template__=="") $__template__ = "{LANG}";
+		
+		if ($__lang__=="") $__lang__ = $this->m_default;
+		
+		$__template__ = str_replace( "{LANG}", $__lang__, $__template__ );
+		
+		return $__template__;
+	}
+	
+	/*
+		ShowLangOptions > 
+		$__template__ = "<li>{OPTION}</li>"
+	*/
+	function ShowLangOptions( $__template__= "{LANGLINK}", $_header_='<div class="langoptions">', $_footer_='</div>', $separator=' | ' ) {
 		
 		global $__lang__;
 
-		$resstr = '<div class="langoptions">';
+		$resstr = $_header_;
 		$sep = "";
 		
 		($__lang__=="")? $select="select": $select=""; 
-		$resstr.= $sep.'<a href="?setlang=1&__lang__=" class="lang'.$select.'">'.$this->m_default.'</a>';
-		$sep = " | ";
+		$resstr.= $sep.str_replace( 
+						array("{LANGUAGE}","{LANG}", "{LANGLINK}"),
+						array( $idiom, $code, '<a href="?setlang=1&__lang__='.$code.'" class="lang'.$select.'" role="menuitem">'.$this->m_default.'</a>'),
+						$__template__ );
+		$sep = $separator;
 		
 		foreach($this->m_arraylangs as $idiom=>$code) {
+			
 			($__lang__!="" && $__lang__==$code)? $select="select": $select="";
-			$resstr.= $sep.'<a href="?setlang=1&__lang__='.$code.'" class="lang'.$select.'">'.$code.'</a>';
-			$sep = " | ";
+			
+			
+			$resstr.= $sep.str_replace( 
+						array("{LANGUAGE}","{LANG}", "{LANGLINK}"),
+						array( $idiom, $code, '<a href="?setlang=1&__lang__='.$code.'" class="lang'.$select.'" role="menuitem">'.$code.'</a>'),
+						$__template__ );
+			
+			$sep = $separator;
 		}
-		return $resstr."</div>";	
+		return $resstr.$_footer_;	
 	}
 }
 ?>

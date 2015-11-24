@@ -6,10 +6,10 @@ class CSitioExtended extends CSitio {
 	//**ADDMODULE**//
 	
 		//ADDED BY CONFIG MANAGER
-		function ModuloPersonas() {
+		function ModuloProyecto() {
 			global $__modulo__;
-			if ($__modulo__=="personas") {
-				require("../../inc/modules/ModuloPersonas.php");
+			if ($__modulo__=="proyecto") {
+				require("../../inc/modules/ModuloProyecto.php");
 			}
 		}
 					

@@ -1,20 +1,108 @@
-[ERROR]
 
 <div id="USUARIO" class="edicion usuario [ROLECLASS]">
 
 
+
+<div class="container">
+    <h1>{EDITPROFILE}</h1>
+  	<hr>
+	<div class="row">
+      <!-- left column -->
+	  <!--
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+          <h6>{CHANGEIMAGE}</h6>
+          
+          <input class="form-control" type="file">
+        </div>
+      </div>
+	  -->
+      
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable [ALERT]">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+          [ERROR]
+        </div>
+        <h3>{PERSONALINFO} <div id="camposobligatorios"><span id="obligatorio">*</span> {REQUIREDFIELD}</div></h3>
+        
+        <div class="form-horizontal" role="form">
+          <div class="form-group #NOMBRE#">
+            <label class="col-lg-3 control-label">{FIRSTNAME}: <span id="obligatorio">*</span></label>
+            <div class="col-lg-8">
+              *NOMBRE*
+            </div>
+          </div>
+          <div class="form-group #APELLIDO#">
+            <label class="col-lg-3 control-label">{LASTNAME}: <span id="obligatorio">*</span></label>
+            <div class="col-lg-8">
+              *APELLIDO*
+            </div>
+          </div>
+          <div class="form-group #NICK#">
+            <label class="col-lg-3 control-label">{YOUREMAIL}: <span id="obligatorio">*</span></label>
+            <div class="col-lg-8">
+				*NICK*
+            </div>
+          </div>
+          <div class="form-group #MAIL#">
+            <label class="col-lg-3 control-label">{CONFIRMYOUREMAIL}: <span id="obligatorio">*</span></label>
+            <div class="col-lg-8">
+              *MAIL*
+            </div>
+          </div>
+          <div class="form-group #PASSWORD#">
+            <label class="col-md-3 control-label">{USERPASSWORD}:  <span id="obligatorio">*</span></label>
+            <div class="col-md-8">
+              <input id="_e_PASSWORD" name="_e_PASSWORD" value="" size="35" class="form-control" type="password">
+			</div>
+		  </div>		
+          <div class="form-group #PASSWORD#">
+            <label class="col-md-3 control-label">{USERPASSWORDCONFIRM}:  <span id="obligatorio">*</span></label>
+            <div class="col-md-8">
+              <input id="_e_PASSWORD_confirm" name="_e_PASSWORD_confirm" value="" size="35" class="campo form-control" type="password">
+            </div>
+          </div>
+		<div id="VERIFICATION" class="campo #VERIFICACIONVISUAL#">
+			<label class="col-md-3 control-label">{VISUALVERIFICATION} <span id="obligatorio">*</span></label>
+			<div class="col-md-8">
+				{VERIFICATIONVISUELLE}
+			</div>
+		</div>		  
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input class="btn btn-primary" name="submit" value="{SAVE}" type="submit">
+              <span></span>
+              <input class="btn btn-default" value="{CANCEL}" type="reset">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<hr>
+
+
+<!--
+
 	<div id="USUARIO_COLUMNA" class="columna-izq">
 	
-	<!--DATOS OBLIGATORIOS-->
-	<div id="USUARIO_OBLIGATORIOS" class="obligatorios">	
-		<div id="NICK" class="campo #NICK#">
-			<label class="MAD_EDIT_TIT">{USERNICK} <span id="obligatorio">*</span></label>
+	<div id="USUARIO_OBLIGATORIOS" class="obligatorios" role="form">	
+
+		<div id="NICK" class="form-group #NICK#">
+			<label class="col-lg-3 control-label">{USERNICK} <span id="obligatorio">*</span></label>
 			<div class="MAD_EDIT_FIELD">*NICK*</div>
 		</div>
+		
 		<div id="NOMBRE" class="campo #NOMBRE#">
-			<label class="MAD_EDIT_TIT">{USERFIRSTNAME} <span id="obligatorio">*</span></label>
-			<div class="MAD_EDIT_FIELD">*NOMBRE*</div>
+			<label class="MAD_EDIT_TIT col-lg-3 control-label">{USERFIRSTNAME} <span id="obligatorio">*</span></label>
+			<div class="col-lg-8">*NOMBRE*</div>
 		</div>
+		
+		
 		<div id="APELLIDO" class="campo #APELLIDO#">
 			<label class="MAD_EDIT_TIT">{USERLASTNAME} <span id="obligatorio">*</span></label>
 			<div class="MAD_EDIT_FIELD">*APELLIDO*</div>
@@ -44,7 +132,6 @@
 	</div>
 
 	<div id="PROVEEDOR_OBLIGATORIOS" class="proveedor hidden">
-		<!--OBLIGATORIOS PROVEEDOR-->
 		<div id="TELEFONO" class="campo #TELEFONO#">
 			<label class="MAD_EDIT_TIT">{USERPHONENUMBER} <span id="obligatorio">*</span></label>
 			<div class="MAD_EDIT_FIELD">*TELEFONO*</div>
@@ -89,9 +176,7 @@
 
 
 
-	<!-- OPCIONALES PROVEEDOR-->
 	<div id="PROVEEDOR_ADICIONALES" class="proveedor hidden">		
-		<!--DATOS ADICIONALES-->
 		<div id="EMPRESA" class="campo">
 			<label class="MAD_EDIT_TIT">{USERCOMPANY}</label>
 			<div class="MAD_EDIT_FIELD">*EMPRESA*</div>
@@ -120,12 +205,10 @@
 			<label class="MAD_EDIT_TIT">{OCCUPATION}</label>
 			<div class="MAD_EDIT_FIELD">*OCUPACION*</div>
 		</div>	
-<!-- 
 		<div id="IMAGEN" class="campo">
 			<label class="MAD_EDIT_TIT">Agrega el logo de tu empresa o una foto personal</label>
 			<div class="MAD_EDIT_FIELD">*#USUARIO_IMAGEN#*</div>
 		</div>	
--->
 	</div>	
 	
 <div id="CONFIRM" class="campo">
@@ -139,29 +222,27 @@
 		</div>
 </div>
 
-<!-- OTROS -->
 	<div id="ID_CONTENIDO" class="campo hidden">
 		<label class="MAD_EDIT_TIT">{CONTENT}</label>
 		<div class="MAD_EDIT_FIELD">*ID_CONTENIDO*</div>
 	</div>
 
 
-	</div> <!-- columna-izq final -->
-
+	</div>
+-->
 	<!-- FICHA USUARIO -->
+<!--
 	<div id="FICHA_USUARIO" class="adicionales">
 		<div id="UNREGISTER" class="campo unregister">
 			<a class="inputbutton" href="/perfil/closeaccount">{UNREGISTER}</a>
 		</div>
-		<!-- 
 		<div id="NOTIFICACIONES" class="campo">
 			<label class="MAD_EDIT_TIT #USUARIO_NO_RECIBIR_NOTIFICACIONES#">Deseo no recibir notificaciones por email</label>
 			<div class="MAD_EDIT_FIELD">*#USUARIO_NO_RECIBIR_NOTIFICACIONES#*</div>		
 		</div>		
-		-->
 	</div>
+-->	
 	
-	<div id="camposobligatorios"><span id="obligatorio">*</span> {REQUIREDFIELD}</div>
 	
 </div>
 
@@ -228,6 +309,27 @@
 
 -->
 <div class="hidden">
+
+*TELEFONO*
+*PAIS*
+*PROVINCIA*
+*CIUDAD*
+*DIRECCION*
+*PISO*
+*CP*
+*CONTACTO*
+*PAGINA*
+*CELULAR*
+*EMPRESA*
+*OFICINA*
+*NACIMIENTO*
+*SEXO*
+*INTERNO*
+*IDIOMAS*
+*OCUPACION*
+
+
+
 *TITULO*
 *ML_TITULO*
 *ID_TIPOCONTENIDO*

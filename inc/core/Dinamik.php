@@ -15,6 +15,7 @@ if (defined("DINAMIK_DEF")) {
 	define("DINAMIK_DEF","DINAMIK definido");
 	
 	if (!defined("DINAMIKADMIN_DEF")) {
+		require "../../inc/recaptcha/recaptchalib.php";
 		require "../../inc/include/config.php";	
 		
 		require "../../inc/core/CLang.php";

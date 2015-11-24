@@ -3,7 +3,7 @@
 
 global $_DIR_SITEABS;
 global $__modulo__;
-
+global $CLang;
 ?>
 
 <?Php
@@ -54,7 +54,91 @@ if ($__lang__!="") $ln = ".".strtolower($__lang__);
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
-        </div>
+        
+		
+			<div class="top-nav notification-row">   
+
+				<div class="dropdown" style="float: right">
+					<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+					<?=$CMultiLang->ShowLangSelection("{LANG}")?>				
+					<span class="caret"></span></button>					
+					<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+					<?=$CMultiLang->ShowLangOptions( '<li role="presentation">{LANGLINK}</li>','','','')?>
+					<!--
+					  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+					  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+					  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+					  <li role="presentation" class="divider"></li>
+					  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>-->
+					</ul>
+				  </div>
+				  
+				<!-- notificatoin dropdown start-->
+				<ul class="nav navbar-nav pull-right top-menu">				
+						<?
+						if (!$Sitio->Usuarios->Logged()) {
+							echo $Sitio->Usuarios->ShowLogin("","","","<li>{LINK}</li>","","", "");
+						} else {
+							echo $Sitio->Usuarios->ShowLogin("","","",
+							'<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							{USERNAME}
+							<b class="caret"></b>
+						</a>',
+							"<li>",
+							"</li>", 
+							"", 
+							'<li class="eborder-top">
+								<a href="#"><i class="icon_profile"></i> {LINK}</a>
+							</li>',
+							'<ul class="dropdown-menu extended logout">
+							<div class="log-arrow-up"></div>',
+							'</ul>');
+							}
+						?>
+					<!--
+						
+						<ul class="dropdown-menu extended logout">
+							<div class="log-arrow-up"></div>
+							<li class="eborder-top">
+								<a href="#"><i class="icon_profile"></i> My Profile</a>
+							</li>
+							<li>
+								<a href="#"><i class="icon_mail_alt"></i> My Inbox</a>
+							</li>
+							<li>
+								<a href="#"><i class="icon_clock_alt"></i> Timeline</a>
+							</li>
+							<li>
+								<a href="#"><i class="icon_chat_alt"></i> Chats</a>
+							</li>
+							<li>
+								<a href="login.html"><i class="icon_key_alt"></i> Log Out</a>
+							</li>
+							<li>
+								<a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
+							</li>
+							<li>
+								<a href="documentation.html"><i class="icon_key_alt"></i> Documentation</a>
+							</li>
+						</ul>
+						
+						
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								
+							</a>
+							<ul class="dropdown-menu extended logout">
+								<div class="log-arrow-up"></div>
+								
+							</ul>
+							
+						</li>
+-->
+				
+				</ul>
+				
+			</div>
+		</div>
         <!-- /.container -->
     </nav>
     

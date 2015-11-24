@@ -172,7 +172,11 @@ function CheckMissingError() {
 		
 		global $requiredfields_register;
 		foreach($requiredfields_register as $field=>$value) {
-			if ($value==$errorfieldmsg) DebugError("$field missing");			
+			if ($value==$errorfieldmsg) {
+				DebugError("$field missing");
+				$usererror.= ShowError( $field." is [".$value."]", false );
+			}
+			//$usererror.= ShowError( $field." is required", false );
 		}
 		 
 		DebugError( "CAMPOS FALTANTES" );
@@ -182,12 +186,26 @@ function CheckMissingError() {
 function CheckVisualError() {
 	global $CLang;
 	global $_visualconfirmation_;
+//	global $captchaResponse;
 	global $visual_code_ok;
 	global $usererror;
-	
+	global $respvisual;
+	/*
+	if ($captchaResponse) {
+		$usererror.= ShowError( $captchaResponse['error-codes'], false );
+	}*/
+	if ($respvisual->is_valid) {
+		$visual_code_ok = true;
+		//$usererror.= ShowError( "hey", false );
+	}
+	else
+	if (!$respvisual->is_valid) {
+		$usererror.= ShowError( $CLang->Get('WRONGVISUALCONFIRMATIONCODE'), false );
+	}
+	else
 	if ( !$visual_code_ok ) {
 		$usererror.= ShowError( $CLang->Get('WRONGVISUALCONFIRMATIONCODE'), false );
-		DebugError( "ERROR en la confirmacion visual : ".$_visualconfirmation_." :".md5($_visualconfirmation_) ." code:".$_SESSION['code'] );
+		//DebugError( "ERROR en la confirmacion visual : ".$_visualconfirmation_." :".md5($_visualconfirmation_) ." code:".$_SESSION['code'] );
 	}											
 }
 
@@ -228,8 +246,8 @@ function CheckConditions() {
 	global $usererror;
 	Debug( "Conditions: ".$_conditions_ );
 	if ($_conditions_!="on") {
-			$usererror.=  ShowError( $CLang->Get('MUSTACCEPTCONDITIONS'), false );
-			DebugError("conditions needed" );		
+			//$usererror.=  ShowError( $CLang->Get('MUSTACCEPTCONDITIONS'), false );
+			//DebugError("conditions needed" );		
 	}
 }
 
@@ -565,7 +583,10 @@ if ( $_accion_=="confirmnew" || $_accion_=="insertnew" ) {
 			Debug("procesando nuevo usuario : _accion_ :".$_accion_);
 			
 			global $_visualconfirmation_;
-
+			global $_conditions_;
+			global $captchaResponse;
+			$_conditions_ = "on";
+			
 			if ($this->Usuarios->Logged()) {
 				
 				Debug("Está logueado, deberá desloguearse");
@@ -598,7 +619,38 @@ if ( $_accion_=="confirmnew" || $_accion_=="insertnew" ) {
 				$miss_ok = (!$UsuarioNuevo->RequiredFields( $requiredfields_register, $errorfieldmsg  )) && 
 						   (!$ContenidoNuevo->RequiredFields( $requiredfields_ficha_register, $errorfieldmsg));
 				$pass_ok = $UsuarioNuevo->PasswordVerification();					
-				$visual_code_ok = $_visualconfirmation_!="" && $_SESSION['code']==md5($_visualconfirmation_);
+				//$visual_code_ok = $_visualconfirmation_!="" && $_SESSION['code']==md5($_visualconfirmation_);
+				
+				$privatekey = "6LdRlxETAAAAAFuhS5AjEO7oOIgIRWqdvV4PQNU6";
+				global $respvisual;
+				$respvisual = recaptcha_check_answer ($privatekey,
+											 $_SERVER["REMOTE_ADDR"],
+											 $_POST["recaptcha_challenge_field"],
+											 $_POST["recaptcha_response_field"]);
+				$visual_code_ok = $respvisual->is_valid;
+				
+/*
+				if ($GLOBALS['g-recaptcha-response']) {
+					
+					$fields = array(
+						'secret' => '6LdRlxETAAAAAFuhS5AjEO7oOIgIRWqdvV4PQNU6',
+						'response' => $_SESSION['g-recaptcha-response'],
+						'remoteip'=> $_SERVER['REMOTE_ADDR']
+					);
+					{
+					  "success": true|false,
+					  "error-codes": [...]   // optional
+					}
+					//$response = json_decode( http_post_fields("https://www.google.com/recaptcha/api/siteverify", $fields ) );
+					//$response['success']
+					echo "response:".$response["success"];
+					$captchaResponse = $response;					
+				}
+*/
+				
+				//$visual_code_ok = true;
+				//$response["success"]==true;
+				
 
 				//========================================================================
 				// CONFIRMACION NUEVO USUARIO
@@ -741,7 +793,7 @@ if ( $_accion_=="confirmnew" || $_accion_=="insertnew" ) {
 												if ($ADMINISTRATOR_CONFIRMATION_NEEDED) {
 															$link_activation = $base_link_activation.'/'.$this->Usuarios->Crypt( $code );
 															
-															$template = $UsuarioNuevo->m_nick.' '.$CLang->Get("CLICKTOACTIVATE").' :  <a href="'.$link_activation.'" target="_blamk">'.$CLang->Get("ACTIVATEACCOUNT").'</a>';
+															$template = $UsuarioNuevo->m_nick.' '.$CLang->Get("CLICKTOACTIVATE").' :  <a href="'.$link_activation.'" target="_blank">'.$CLang->Get("ACTIVATEACCOUNT").'</a>';
 																							
 															Debug("ADMINISTRATOR_CONFIRMATION_NEEDED <br>".$template);
 															
@@ -1077,6 +1129,7 @@ if ( $_accion_=="confirmnew" || $_accion_=="insertnew" ) {
 					CheckMissingError();
 					CheckPasswordError();
 					//CheckConditions();
+					
 					$_mod_ = "profil";
 					$_accion_="edit";
 				}
@@ -1243,7 +1296,7 @@ if (
 			if (isset($GLOBALS["_e_NICK"])) $_e_nick_ = $GLOBALS["_e_NICK"]; 
 			if ($NICK_IS_MAIL) 
 					$__template__ = str_replace( array("*NICK*","#NICK#"), 
-												array('<input name="_e_NICK" type="text" READONLY value="'.$_e_nick_.'" size="45">',"hidden"),
+												array('<input name="_e_NICK" type="text" READONLY value="'.$_e_nick_.'" size="45" class="form-control">',"hidden"),
 												$__template__);
 													
 			//CiviliteEdit( "",$__template__);
@@ -1256,9 +1309,15 @@ if (
 			
 			
 			
-			// mostramos el codigo de verificacion visual !!!! muy importante !!!
-			$__template__ = str_replace("{VERIFICATIONVISUELLE}",'<img width="200" height="70" src="'.$_DIR_SITEABS.'/inc/include/getimage.php?mode=image" alt="" /><br>
-<input type="text" name="_visualconfirmation_" value="" />',$__template__);			
+			// mostramos el codigo de verificacion visual !!!! muy importante !!!			
+			$publickey = "6LdRlxETAAAAAE_GMgNisjr4ClkB3CAb-9BQA61M"; // you got this from the signup page
+			$htmlvisual = '<img width="200" height="70" src="'.$_DIR_SITEABS.'/inc/include/getimage.php?mode=image" alt="" /><br>
+<input type="text" name="_visualconfirmation_" value="" />';
+			$htmlvisual = recaptcha_get_html($publickey);
+			//$htmlvisual = '<div class="g-recaptcha" data-sitekey="6LdRlxETAAAAAE_GMgNisjr4ClkB3CAb-9BQA61M"></div>';
+			
+
+			$__template__ = str_replace("{VERIFICATIONVISUELLE}",$htmlvisual,$__template__);			
 			//$__template__ = str_replace( "{VERIFICATIONVISUELLE}" , "", $__template__ );
 
 			$execute = '<script>
@@ -1340,7 +1399,12 @@ if (
 							<input type="text" name="_accion_" value="<?=$_confirmaccion_?>">
 							</div>
                           	<?
-								if ($usererror!="") $usererror = '<div class="profileerror">'.$usererror.'</div>';
+								//if ($usererror!="") $usererror = '<div class="profileerror">'.$usererror.'</div>';
+								$usererror = str_replace(array("<div","</div"),array("<span","</span"), $usererror); 
+								if ($usererror!="") {
+									
+								} else $USEREDIT = str_replace( "[ALERT]", "alert-closed", $USEREDIT ); 
+								
 								$USEREDIT = str_replace("[ERROR]",$usererror, $USEREDIT); 
 								
 								//$USEREDIT = str_replace("[RECORDEDIT]",$RECORDEDIT,$USEREDIT);
