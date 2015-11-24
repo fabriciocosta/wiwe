@@ -1,0 +1,378 @@
+
+
+.control-label {
+	color: #EEE;
+}
+
+.perfil {
+
+}
+
+#camposobligatorios {
+	color: #FFF;
+}
+
+.alert-closed {
+	display: none;
+}
+
+/* PERFIL */
+
+/*NUEVA VERSION - EDICION DE CAMPOS*/
+
+.usuario {
+	/*background-color: #222;*/
+}
+
+/* cada campo */
+
+.edicion div.campo,
+.edicion div.vista-adicionales {
+
+	display: block;
+	position: relative;
+	float: left;
+	
+	
+	width: 100%;
+	height: auto;
+	padding: 0px;
+	margin: 0px;
+	border-top: solid 0px #000000;
+	
+	padding-top: 10px;	
+	padding-bottom: 10px;		
+}
+.edicion  .campo  .MAD_EDIT_TIT {
+	display: block;
+	float: left;
+	width: 20%;
+	/*
+	display: block;
+	position: relative;
+	float: left;
+	clear: both;
+	*/
+}
+
+.edicion .campo .MAD_EDIT_FIELD {
+	display: block;
+	float: left;
+	width: 75%;	
+	margin-left: 5%;
+	/*clear: right;*/
+	/*
+	
+	position: relative;
+		
+	border: solid 0px #000000;	
+	*/
+}
+
+.MAD_EDIT_FIELD input,
+.MAD_EDIT_FIELD table
+ {
+	font-size: 12px;
+	color: #FFFFFF;
+	background-color: #000000;
+	padding: 3px;
+	width: 100%;
+	border: solid 1px #333333;
+}
+
+.MAD_EDIT_FIELD table textarea {
+	width: 100%;
+}
+
+.profileerror {
+	
+}
+
+/*
+.profileerror {
+	display: block;
+	float: left;
+	clear: both;
+	background-color: #FFEFEF;
+	padding-left: 2%;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-weight: bold;
+	width: 98%;
+	text-align: left;
+	border: solid 0px #FF8888;
+}
+
+.profileerror div {
+	display: block !important;
+	border: 0px;
+	background-color: transparent;
+	font-weight: bold;
+	color: #880000;
+	padding: 5px;
+	float: left !important;
+}
+*/
+
+div.edicion {
+	display: block;
+	float: left;
+	position: relative;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+div.columna-izq {
+	display: block;
+	float: left;
+	position: relative;
+	width: 50%;
+}
+
+div.proveedor,
+div.obligatorios {
+	width: 100%;
+	display: block;
+	float: left;
+	clear: both;
+	position: relative;
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;	
+
+}
+
+div.adicionales {
+	display: block;
+	float: right;
+	/*position: absolute;*/
+	position: relative;
+	width: 40%;
+	border: solid 0px;
+	float: right;
+	margin-top: 40px;
+	margin-right: 10px;
+	
+	height: 300px;
+	
+	/*
+	right: 0px;
+	bottom: 10px;
+	*/
+}
+
+.adicionales .unregister {
+		top: 30px;
+}
+
+.adicionales .campo,
+#ACEPTAR {
+	float: right !important;
+	text-align: right;
+}
+
+
+.fielderror {
+	/*display: inline !important;*/
+	/*border: solid 1px #FF0000 !important;*/
+	color: #FF0000 !important;
+	font-weight: bold !important;
+}
+
+.fielderror label,
+.fielderror a {
+	/*display: inline !important;*/
+	/*border: solid 1px #FF0000 !important;*/
+	color: #FF0000 !important;
+	font-weight: bold !important;
+}
+
+.fielderror input,
+.fielderror textarea,
+.fielderror select
+ {
+	border: solid 5px #FF8888;	
+}
+
+#TERMINOS a {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+#camposobligatorios {
+	display: block;
+	position: relative;
+	font-size: 10px;
+}
+
+#obligatorio {
+	color: #FF0000;
+}
+
+#NOTIFICACIONES  label,
+#TERMINOS label
+ {
+	/*width: auto !important;
+	position: absolute !important;
+	right: 0px;
+	bottom: 2px;
+	float: none !important;*/
+	text-align: right;
+	width: 80%;
+}
+
+.campo label {
+		text-align: right;
+}
+
+#NOTIFICACIONES .MAD_EDIT_FIELD,
+#TERMINOS .MAD_EDIT_FIELD {
+/*
+	width: 20px !important;
+	position: absolute !important;
+	float: none !important;
+	right: 300px;
+	bottom: 0px;
+	*/
+	text-align: left;
+	width: 15%;
+	text-align: left;
+}
+
+
+/* POR ROLES */
+.role-usuario #PROVEEDOR_OBLIGATORIOS {
+	display: none !important;
+}
+
+.role-usuario .role-proveedor {
+	display: none !important;
+}
+
+
+#login #formlogin div,
+#recovery #formrecovery div
+{
+	padding: 5px;
+}
+
+#login #formlogin input,
+#login #formlogin label,
+#recovery input,
+#recovery label
+ {
+	padding: 5px;
+	font-size: 12px;
+}
+
+#login #formlogin #usermailinput input {
+	width: 230px;
+}
+
+
+#login,
+#recovery {
+	display: block;
+	clear: both;
+	position: relative;
+}
+
+#login #formlogin,
+#recovery #formrecovery {
+	
+	display: block;
+	clear: both;
+	position: relative;
+	
+	width: 50%;
+	padding: 10px;
+	margin-left: 25%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border: solid 1px #000088;
+	
+	/*background-color: rgba( 255, 255, 255, 0.75 );*/
+}
+
+#message {	
+	font-size: 16px;
+	font-weight: bold;
+}
+
+
+.form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 10px;
+}
+.form-signin .checkbox
+{
+    font-weight: normal;
+}
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.form-signin input[type="text"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.account-wall
+{
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+}
+.login-title
+{
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+.profile-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.need-help
+{
+    margin-top: 10px;
+}
+.new-account
+{
+    display: block;
+    margin-top: 10px;
+}
