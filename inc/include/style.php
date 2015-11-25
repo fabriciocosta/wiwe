@@ -27,6 +27,7 @@ if ( DebugOn() ) echo '<style> .debugdetails, .errordetails {	display: block; } 
 
 <link type="text/css" rel="stylesheet" href="<?=$_DIR_SITEABS?>/inc/css/bootstrap.min.css"/>
 <link type="text/css" rel="stylesheet" href="<?=$_DIR_SITEABS?>/inc/css/full-slider.css"/>
+<link type="text/css" rel="stylesheet" href="<?=$_DIR_SITEABS?>/inc/css/3-col-portfolio.css"/>
 
 <script type="text/javascript">
 

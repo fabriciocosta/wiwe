@@ -202,7 +202,7 @@ if ($__modulo__=="home") {
 <?
 } else {
 ?>
-<a name="head"></a><br><br><br><br>
+<a name="head"></a><br><br>
 <?
 }
 ?>
@@ -224,13 +224,14 @@ if ($__modulo__=="home") {
 if ($__modulo__!="home") {
 		
 ?>	
+<!--
 	<div id="section_header">
 		<div class="menu_section_header_up" id="section_header_top"><img width="100%" height="7" border="0" src="/inc/imgmoldeo/section_header_up_back.png"></div>
 		<div class="menu_section_header_mid" id="section_header_middle"><div class="section_header_title"><?=ucwords( $__modulo__ )?></div></div>
 		<div class="menu_section_header_down" id="section_header_bottom"></div>
 		<div id="section_header_description"><div class="section_description"></div></div>
 	</div>
-	
+-->	
 <?
 }
 ?>

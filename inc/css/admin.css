@@ -96,11 +96,13 @@ td.COMP_HD_FIELD {  background-color: #e1e6e9;  color: #000000; font-weight: nor
 .textepromo { color:#FFFFFF; }
 
 /*BODY GENERAL*/
+/*
 body,td,th {
 	font-family: Verdana, Arial, Helvetica, sans-serif;
 	font-size: 11px;
 	color: #333333;
 }
+*/
 body {
 	background-color: #FFFFFF;
 	margin-bottom: 0px;

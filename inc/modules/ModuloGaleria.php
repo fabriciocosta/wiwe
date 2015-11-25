@@ -26,9 +26,18 @@ $TIPOCONTENIDO = FICHA_GALERIA;
 ?>
 <a name="head"></a>
 <div class="container content content-<?=$__modulo__?>">
+<!--
 	<div class="header header-<?=$__modulo__?>">    
 	    <h1><?=$texto_firstline?></h1>
 	    <h2><?=$texto_body?></h2>
+	</div>
+	-->
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><?=$texto_firstline?>
+				<small>Crea, clona, comparte...</small>
+			</h1>
+		</div>
 	</div>
 <?
 

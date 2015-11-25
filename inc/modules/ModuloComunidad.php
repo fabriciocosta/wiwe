@@ -6,12 +6,19 @@ global $texto;
 
 $this->Sistema('SISTEMA_COMUNIDAD', $texto);
 
+$texto_firstline = $CLang->Get("COMMUNITY");
 
 global $_cID_;
 ?>
 <a name="head"></a>
 <div class="container">
-
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><?=$texto_firstline?>
+				<small>Crea, clona, comparte...</small>
+			</h1>
+		</div>
+	</div>
 <?php 
 if ($_cID_) {
 	?>
