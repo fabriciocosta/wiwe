@@ -28,6 +28,8 @@ $Usuario = $this->Usuarios->GetSesionUsuario();
 
 <div class="clear"></div>
 <div class="panel">
+	<div class="container">
+		<div class="row">
 <?
 if (  $this->Usuarios->Logged() && $Usuario->m_nivel<=4) {	
 	
@@ -290,4 +292,6 @@ if (  $this->Usuarios->Logged() && $Usuario->m_nivel<=4) {
 	
 }
 ?>
+		</div>
+	</div>
 </div>
