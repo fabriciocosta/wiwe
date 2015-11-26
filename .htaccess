@@ -1,0 +1,70 @@
+RewriteEngine  on
+
+RewriteRule ^$ /home [L]
+
+RewriteRule ^admin$ /principal/admin/index.php [L,R]
+RewriteRule ^config$ /config/login/login.php [L,R]
+RewriteRule ^administracion$ /administracion/login/login.php [L,R]
+
+RewriteRule ^caracteristicas$ /principal/home/caracteristicas.php [L]
+RewriteRule ^features$ /principal/home/caracteristicas.php  [L]
+
+RewriteRule ^comunidad$ /principal/home/comunidad.php [L]
+RewriteRule ^community$ /principal/home/comunidad.php [L]
+
+RewriteRule ^galeria$ /principal/home/galeria.php [L]
+RewriteRule ^gallery$ /principal/home/galeria.php [L]
+
+RewriteRule ^descargas/lastversion$ /principal/home/descargasversion.php [L]
+RewriteRule ^downloads/lastversion$ /principal/home/descargasversion.php [L]
+RewriteRule ^descargas$ /principal/home/descargas.php [L]
+RewriteRule ^downloads$ /principal/home/descargas.php [L]
+
+RewriteRule ^desarrollo$ /principal/home/desarrollo.php [L]
+RewriteRule ^development$ /principal/home/desarrollo.php [L]
+
+RewriteRule ^docs$ /principal/home/documentacion.php
+RewriteRule ^documentacion$ /principal/home/documentacion.php
+
+RewriteRule ^tutoriales$ /principal/home/tutoriales.php [L]
+RewriteRule ^tutorials$ /principal/home/tutoriales.php [L]
+
+RewriteRule ^videos$ /principal/home/videos.php [L]
+
+RewriteRule ^event$ /principal/home/eventos.php [L]
+RewriteRule ^eventos$ /principal/home/eventos.php [L]
+
+RewriteRule ^contacto$ /principal/home/contacto.php [L]
+RewriteRule ^contact$ /principal/home/contacto.php [L]
+
+RewriteRule ^perfil/activation/+(.+)$ /principal/home/perfil.php?_mod_=activation&_activationcode_=$1 [L]
+RewriteRule ^profile/activation/+(.+)$ /principal/home/perfil.php?_mod_=activation&_activationcode_=$1 [L]
+
+RewriteRule ^perfil/+(.+)$ /principal/home/perfil.php?_mod_=$1 [L]
+RewriteRule ^profile/+(.+)$ /principal/home/perfil.php?_mod_=$1 [L]
+
+RewriteRule ^perfil$ /principal/home/perfil.php [L]
+RewriteRule ^profile$ /principal/home/perfil.php [L]
+
+RewriteRule ^work$ /principal/home/obras.php [L]
+RewriteRule ^obras/espacios/([^/]+)$ /principal/home/obras.php?_mod_=espacios&_valor_=$1 [L]
+RewriteRule ^work/location/([^/]+)$ /principal/home/obras.php?_mod_=espacios&_valor_=$1 [L]
+
+RewriteRule ^obras/categorias/([^/]+)$ /principal/home/obras.php?_mod_=categorias&_valor_=$1 [L]
+RewriteRule ^work/category/([^/]+)$ /principal/home/obras.php?_mod_=categorias&_valor_=$1 [L]
+
+RewriteRule ^obras/festivales/([^/]+)$ /principal/home/obras.php?_mod_=festivales&_valor_=$1 [L]
+RewriteRule ^work/festival/([^/]+)$ /principal/home/obras.php?_mod_=festivales&_valor_=$1 [L]
+
+RewriteRule ^repository/([^/]+)$ /repository/([^/]+) [L]
+
+RewriteRule ^home$ /principal/home/home.php
+RewriteRule ^Home$ /principal/home/home.php
+
+#RewriteRule ^([^/]+)$ /principal/home/$1.php
+#RewriteRule ^([^/]+)/+([0-9]+)$ /principal/home/$1.php?_cID_=$2
+
+RewriteRule ^([^/]+)/+([0-9]+)$ /principal/home/$1.php?_cID_=$2 [L]
+RewriteRule ^([^/]+)/+([^/]+)$ /principal/home/$1.php?_titulo_contenido_=$2 [L]
+#RewriteRule ^([^/]+)/+([^/]+)$ /principal/home/$1.php?$2 [L]
+RewriteRule ^([^/]+)$ /principal/home/$1.php [L]

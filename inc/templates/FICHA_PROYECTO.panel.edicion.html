@@ -20,11 +20,33 @@
 		<label class="MAD_EDIT_TIT">{CARDBRIEF}</label>
 		<div  class="MAD_EDIT_FIELD">*COPETE* *ML_COPETE*</div>
 	</div>
-
-	<div id="DETALLES" class="campo">
-		<label class="MAD_EDIT_TIT">{CARDDETAILS}</label>
-		<div  class="MAD_EDIT_FIELD">*DETALLES*</div>
+	
+	<div id="MOLDEOZIP" class="campo">
+		<label class="MAD_EDIT_TIT">{MOLDEOZIP}</label>
+		<div  class="MAD_EDIT_FIELD">*#PROYECTO_ARCHIVO#*</div>
 	</div>
+	
+	<div id="MOLDEOZIPSCREENSHOT" class="campo">
+		<select id="creation-method-input">
+			<option value="Blob">RAM</option>	
+		</select>
+		<ul id="file-list"></ul>
+		<canvas id="preview"></canvas>
+		<script type="text/javascript" src="../../inc/js/zip/zip.js"></script>
+		<script type="text/javascript" src="../../inc/js/zip/checkmol.js"></script>
+		
+	</div>
+	
+	<div id="MOLDEOIMAGEN" class="campo">
+		<label class="MAD_EDIT_TIT">{MOLDEOIMAGEN}</label>
+		<div  class="MAD_EDIT_FIELD">*#PROYECTO_IMAGEN#*</div>
+	</div>
+
+	<div id="LINKVIDEO" class="campo">
+		<label class="MAD_EDIT_TIT">{LINKVIDEO}</label>
+		<div  class="MAD_EDIT_FIELD">*#PROYECTO_LINK_VIDEO#*</div>
+	</div>
+	
 
 	<div id="CUERPO" class="campo">
 		<label class="MAD_EDIT_TIT">{CARDBODY}</label>

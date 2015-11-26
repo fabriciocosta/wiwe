@@ -705,7 +705,7 @@ class CTiposContenidos extends CErrorHandler {
 				if ($template=="") {
 					$resstr.= '<div class="MAD_EDIT_DET '.$__CTipoDetalle__->m_tipo.'">';
 					$resstr.= '<div class="MAD_EDIT_DET_TIT">
-							<label class="MAD_EDIT_DET_TIT">'.$__CTipoDetalle__->m_descripcion.'</label>
+							<label class="MAD_EDIT_DET_TIT" title="'.$__CTipoDetalle__->m_tipo.'">'.$__CTipoDetalle__->m_descripcion.'</label>
 							</div>';
 				}
 				 

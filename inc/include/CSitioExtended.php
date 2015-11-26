@@ -546,7 +546,7 @@ class CSitioExtended extends CSitio {
 					$inputs = "";
 					if ($template=="") {
 						$resstr.= '<tr>';
-						$resstr.= '<td class="MAD_EDIT_DET_TIT"><span class="MAD_EDIT_DET_TIT">'.$row_tiposdetalles['tiposdetalles.DESCRIPCION'].'</span></td>';
+						$resstr.= '<td class="MAD_EDIT_DET_TIT"><span class="MAD_EDIT_DET_TIT" title="'.$row_tiposdetalles['tiposdetalles.TIPO'].'">'.$row_tiposdetalles['tiposdetalles.DESCRIPCION'].'</span></td>';
 					}
 					 
 					if ($__accion__=="editrecord" || $__accion__=="deleterecord") { //busca los reg. de detalles existentes para el contenido 

@@ -37,14 +37,20 @@ if (  $this->Usuarios->Logged() && $Usuario->m_nivel<=4) {
 		
 		///choose the form depending on ID_TIPOCONTENIDO
 		if ($_cID_!="") {
-			$Contenido = $this->Contenidos->GetContenido($_cID_);
+			$Contenido = $this->Contenidos->GetContenido($_cID_);			
+			$ID_TIPOCONTENIDO = $Contenido->m_id_tipocontenido;
 		} else $Contenido = null;
 		
 		$tipocontenido = $Sitio->TiposContenidos->GetTipo($ID_TIPOCONTENIDO);
-		$_template_edicion_ = implode( '', file("../../inc/templates/FICHA_".$tipocontenido.".panel.consulta.html") );
+		//ShowMessage( $ID_TIPOCONTENIDO.":".$tipocontenido );
+		
+		$_template_edicion_ = implode( '', file("../../inc/templates/".$tipocontenido.".panel.edicion.html") );
+		if ($_template_edicion_=="")
+			$_template_edicion_ = implode( '', file("../../inc/templates/FICHA_".$tipocontenido.".panel.edicion.html") );
+		//ShowMessage( "custom:".$_template_edicion_ );
 		if ($_template_edicion_=="") 
 			$_template_edicion_ = implode( '', file("../../inc/templates/CONTENIDO.panel.edicion.html") );	
-		//error_reporting(E_ALL);
+		
 		
 		if ( $_accion_=="agregar" ) {
 			
@@ -95,7 +101,8 @@ if (  $this->Usuarios->Logged() && $Usuario->m_nivel<=4) {
 			
 			$_confirmaccion_ = "confirmedit";
 
-		} else if ( $_accion_=="modificar" ) {
+		}
+		else if ( $_accion_=="modificar" ) {
 			
 			$ID_TIPOCONTENIDO = $Contenido->m_id_tipocontenido;
 			$TC = $this->TiposContenidos->GetTipoContenido($ID_TIPOCONTENIDO);
@@ -106,7 +113,8 @@ if (  $this->Usuarios->Logged() && $Usuario->m_nivel<=4) {
 			
 			$_confirmaccion_ = "confirmedit";
 			
-		} else if ( $_accion_=="borrar" ) {
+		}
+		else if ( $_accion_=="borrar" ) {
 			
 			ShowMessage( $CLang->Get('DELETINGCARD').' > '.$Contenido->m_titulo );
 			ShowError( $CLang->Get("RECORD_DELETION_WARNING") );
@@ -121,7 +129,8 @@ if (  $this->Usuarios->Logged() && $Usuario->m_nivel<=4) {
 				$_confirmaccion_ = "confirmdelete";
 			}			
 			
-		} else if ($_accion_=="confirmedit") {
+		}
+		else if ($_accion_=="confirmedit") {
 
 			$ConfirmRecord = new CContenido();//create from globals
 			$ConfirmRecord->m_id = $_cID_;
@@ -141,7 +150,8 @@ if (  $this->Usuarios->Logged() && $Usuario->m_nivel<=4) {
 				$this->UserAdminRecordPostProcess( $ConfirmRecord );
 				//$this->UserAdminRecordPostProcessAll();
 				echo "<script>window.location.href='/panel';</script>";
-			} else {
+			}
+			else {
 				echo '<span style="color:#CC0000">[old record NOT confirmed]</span>';
 				//echo $this->Detalles->GetLastError();
 				$recorderror = '<span style="color:#CC0000">'.$CLang->m_ErrorMessages[$this->Detalles->GetLastError()->m_tipo].'</span>';
@@ -150,7 +160,8 @@ if (  $this->Usuarios->Logged() && $Usuario->m_nivel<=4) {
 			}			
 			
 			
-		} else if ($_accion_=="confirmdelete") {
+		}
+		else if ($_accion_=="confirmdelete") {
 			
 				$ConfirmRecord = new CContenido();//create from globals
 				$ConfirmRecord->m_id = $_cID_;

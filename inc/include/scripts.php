@@ -32,6 +32,7 @@
 <script type="text/javascript" src="<?=$_DIR_SITEABS?>/inc/js/jquery.js"></script>
 <!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
 
+
 <?
 if ($__modulo__=="admin") {
 ?>

@@ -11,6 +11,22 @@
 	clear: both;
 }
 
+
+li.previewshot {
+	float: left;	
+}
+li.previewshot a {
+	display: none;
+}
+
+img.previewshot {
+	width: 150px;
+}
+
+.MAD_EDIT_FIELD a {
+	color: #EEE !important;
+}
+
 .edicion {
 	clear: both;
 }

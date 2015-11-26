@@ -1,5 +1,5 @@
 <?php
-
+/*
 	$this->TiposContenidos->SetTemplateEdicionUsuario( FICHE_PRODUIT );
 
 	$this->TiposDetalles->SetTemplateEdicion( PRODUIT_TARIF1DAY,  '<tr><td bgcolor="#FFFFFF"><div align="center"><span class="style3">{PERIODFROM}</span></div></td>
@@ -17,5 +17,5 @@
 	//echo $this->TiposDetalles->m_templatesedicion[PRODUIT_TARIF1DAY]["templateheader"];
 	$this->TiposDetalles->m_templatesedicion[PRODUIT_TARIF1WEEK] = $this->TiposDetalles->m_templatesedicion[PRODUIT_TARIF1DAY];
 	$this->TiposDetalles->m_templatesedicion[PRODUIT_TARIF1MONTH] = $this->TiposDetalles->m_templatesedicion[PRODUIT_TARIF1DAY];
-
+*/
 ?>
