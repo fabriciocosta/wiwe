@@ -128,9 +128,10 @@
 		
 		(function () {
 			var imb64 = document.getElementById("_edetalle_PROYECTO_IMAGENBASE64").innerHTML;
-			var file = document.getElementById("_edetalle_PROYECTO_ARCHIVO_LNK").innerHTML;
+			
 			if (imb64!="") {
 				previewImage(imb64);
+				var file = document.getElementById("_edetalle_PROYECTO_ARCHIVO_LNK").innerHTML;
 				loadPreviewShots( file.src );
 			}
 		})();
