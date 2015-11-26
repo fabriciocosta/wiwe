@@ -157,7 +157,7 @@
 										
 
 					//only show jpgs
-					if ( entry.filename.indexOf("previewshots")>0 || entry.filename.indexOf("preview_shot")>0 ) {
+					if ( entry.filename.indexOf("previewshots")>0 && entry.filename.indexOf("preview_shot")>0 ) {
 						if ( entry.filename.indexOf(".jpg")>0 ) {
 							img.setAttribute("class","previewshot");
 							a.href = "#";
