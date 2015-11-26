@@ -241,7 +241,7 @@ class CTiposDetalles extends CErrorHandler {
 					$max = $ADataDef['max']['values'];
 					
 			  		if ($tipocampo=="L") $__CDetalle__->m_txtdata = str_replace("<br>","\n",$__CDetalle__->m_txtdata);
-			  		if ($tipocampo=="B") if ($html!="html") $__CDetalle__->m_txtdata = str_replace("\n","<br>",$__CDetalle__->m_txtdata);
+			  		if ($tipocampo=="B") if ($html!="html" && $html!="base64") $__CDetalle__->m_txtdata = str_replace("\n","<br>",$__CDetalle__->m_txtdata);
 			  		$strxpl = explode("\n",$__CDetalle__->m_txtdata);
 			  		$str = "";
 			  		$cnt = 1;

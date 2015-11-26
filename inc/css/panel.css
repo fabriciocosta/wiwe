@@ -1,4 +1,7 @@
-
+.moldeo-erase {
+	float: right;
+	background-color: #008 !important;
+}
 
 .panel {
 	display: block;
@@ -11,9 +14,18 @@
 	clear: both;
 }
 
+#file-list {
+	height: auto;
+	float: left;
+	padding: 0px;
+	margin: 0px;
+}
+
 
 li.previewshot {
 	float: left;	
+	cursor: pointer;
+	cursor: hand;
 }
 li.previewshot a {
 	display: none;
@@ -22,6 +34,11 @@ li.previewshot a {
 img.previewshot {
 	width: 150px;
 }
+
+li.previewshot.selected {
+	border: solid 1px #5F5 !important;
+}
+
 
 .MAD_EDIT_FIELD a {
 	color: #EEE !important;
@@ -47,6 +64,8 @@ div.campo label,
 span.MAD_EDIT_DET_TIT
  {
 	color: #FFFFFF;
+	text-align: left !important;
+	width: 221px !important;
 }
 
 .panelcontent {
@@ -91,7 +110,7 @@ a:link,
 a:active,
 a:visited,
 a:hover {
-	/*color: white !important;*/	
+	color: #FFF;	
 }
 
 

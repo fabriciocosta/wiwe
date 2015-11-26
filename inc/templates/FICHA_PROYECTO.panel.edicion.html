@@ -1,106 +1,131 @@
 <div class="panel">
-<DIV id="CONTENIDO" class="edicion contenido">
+	<DIV id="CONTENIDO" class="edicion contenido">
 
-	<div id="ID_SECCION" class="campo hidden">
-		<label class="MAD_EDIT_TIT">{SECTION}</label>
-		<div  class="MAD_EDIT_FIELD">*ID_SECCION*</div>
-	</div>
-	
-	<div id="ID_TIPOCONTENIDO" class="campo  hidden">
-		<label class="MAD_EDIT_TIT">{CONTENTTYPE}</label>
-		<div  class="MAD_EDIT_FIELD">*ID_TIPOCONTENIDO*</div>
-	</div>	
+		<div class="col-md-7">
+			<img id="previewimg" class="previewimg img-responsive" src="http://placehold.it/600x300"/>
+			
+			<select id="creation-method-input" class="hidden">
+				<option value="Blob">RAM</option>	
+			</select>
+			<ul id="file-list" ></ul>
 
-	<div id="TITULO" class="campo">
-		<label class="MAD_EDIT_TIT">{CARDTITLE}</label>
-		<div  class="MAD_EDIT_FIELD">*TITULO* *ML_TITULO*</div>
-	</div>
-
-	<div id="COPETE" class="campo">
-		<label class="MAD_EDIT_TIT">{CARDBRIEF}</label>
-		<div  class="MAD_EDIT_FIELD">*COPETE* *ML_COPETE*</div>
-	</div>
-	
-	<div id="MOLDEOZIP" class="campo">
-		<label class="MAD_EDIT_TIT">{MOLDEOZIP}</label>
-		<div  class="MAD_EDIT_FIELD">*#PROYECTO_ARCHIVO#*</div>
-	</div>
-	
-	<div id="MOLDEOZIPSCREENSHOT" class="campo">
-		<select id="creation-method-input">
-			<option value="Blob">RAM</option>	
-		</select>
-		<ul id="file-list"></ul>
-		<canvas id="preview"></canvas>
-		<script type="text/javascript" src="../../inc/js/zip/zip.js"></script>
-		<script type="text/javascript" src="../../inc/js/zip/checkmol.js"></script>
-		
-	</div>
-	
-	<div id="MOLDEOIMAGEN" class="campo">
-		<label class="MAD_EDIT_TIT">{MOLDEOIMAGEN}</label>
-		<div  class="MAD_EDIT_FIELD">*#PROYECTO_IMAGEN#*</div>
-	</div>
-
-	<div id="LINKVIDEO" class="campo">
-		<label class="MAD_EDIT_TIT">{LINKVIDEO}</label>
-		<div  class="MAD_EDIT_FIELD">*#PROYECTO_LINK_VIDEO#*</div>
-	</div>
-	
-
-	<div id="CUERPO" class="campo">
-		<label class="MAD_EDIT_TIT">{CARDBODY}</label>
-		<div  class="MAD_EDIT_FIELD">*CUERPO*  *ML_CUERPO*</div>
-	</div>
-
-	<div id="BAJA" class="campo">
-		<label class="MAD_EDIT_TIT">{CARDVERIFIED}</label>
-		<div  class="MAD_EDIT_FIELD">*BAJA*</div>
-	</div>
-
-	<div class="vista-adicionales">
-		<label class="MAD_EDIT_TIT mas-campos" " onclick="javascript:togglediv('campos-adicionales_*ID*_');">{CARDMOREFIELDS}+</label>
-		<div id="campos-adicionales_*ID*_" class="campos-adicionales">
-			<div id="PALABRASCLAVES" class="campo">
-				<label class="MAD_EDIT_TIT">{CARDKEYWORDS}</label>
-				<div  class="MAD_EDIT_FIELD">*PALABRASCLAVE*  *ML_PALABRASCLAVE*</div>
-			</div>
-
-			<div id="FECHAEVENTO" class="campo">
-				<label class="MAD_EDIT_TIT">{CARDEVENTDATE}</label>
-				<div  class="MAD_EDIT_FIELD">*FECHAEVENTO*</div>
-			</div>
-
-			<div id="FECHAALTA" class="campo">
-				<label class="MAD_EDIT_TIT">{CARDDATEIN}</label>
-				<div  class="MAD_EDIT_FIELD">*FECHAALTA*</div>
-			</div>
-
-			<div id="FECHABAJA" class="campo">
-				<label class="MAD_EDIT_TIT">{CARDDATEOUT}</label>
-				<div  class="MAD_EDIT_FIELD">*FECHABAJA*</div>
+			<div id="LINKVIDEO" class="campo">
+				<label class="MAD_EDIT_TIT">{LINKVIDEO}</label>
+				<div  class="MAD_EDIT_FIELD">*#PROYECTO_LINK_VIDEO#*</div>
 			</div>
 			
-			<div id="CREADOR" class="campo">
-				<label class="MAD_EDIT_TIT">{CARDCREATOR}</label>
-				<div  class="MAD_EDIT_FIELD">*ID_USUARIO_CREADOR*</div>
+
+			<div id="CUERPO" class="campo">
+				<label class="MAD_EDIT_TIT">{CARDBODY}</label>
+				<div  class="MAD_EDIT_FIELD">*CUERPO*  *ML_CUERPO*</div>
+			</div>
+		</div>
+
+		<div class="col-md-5">
+			<div id="ID_SECCION" class="campo hidden">
+				<label class="MAD_EDIT_TIT">{SECTION}</label>
+				<div  class="MAD_EDIT_FIELD">*ID_SECCION*</div>
 			</div>
 			
-			<div id="EDITOR" class="campo">
-				<label class="MAD_EDIT_TIT">{CARDEDITOR}</label>
-				<div  class="MAD_EDIT_FIELD">*ID_USUARIO_MODIFICADOR*</div>
+			<div id="ID_TIPOCONTENIDO" class="campo  hidden">
+				<label class="MAD_EDIT_TIT">{CONTENTTYPE}</label>
+				<div  class="MAD_EDIT_FIELD">*ID_TIPOCONTENIDO*</div>
+			</div>	
+
+			<div id="BAJA" class="campo">
+				<label class="MAD_EDIT_TIT">{CARDVERIFIED}</label>
+				<div  class="MAD_EDIT_FIELD">*BAJA*</div>
+			</div>
+
+			<div id="TITULO" class="campo">
+				<label class="MAD_EDIT_TIT">{CARDTITLE}</label>
+				<div  class="MAD_EDIT_FIELD">*TITULO* *ML_TITULO*</div>
+			</div>
+
+			<div id="COPETE" class="campo">
+				<label class="MAD_EDIT_TIT">{CARDBRIEF}</label>
+				<div  class="MAD_EDIT_FIELD">*COPETE* *ML_COPETE*</div>
 			</div>
 			
-			<div id="ACTUALIZACION" class="campo">
-				<label class="MAD_EDIT_TIT">{CARDUPDATE}</label>
-				<div  class="MAD_EDIT_FIELD">*ACTUALIZACION*</div>
-			</div>			
+			<div id="MOLDEOZIP" class="campo">
+				<label class="MAD_EDIT_TIT">{MOLDEOZIP}</label>
+				<div  class="MAD_EDIT_FIELD">*#PROYECTO_ARCHIVO#*</div>
+			</div>
+			
+
+			
+			
+			<div id="MOLDEOIMAGENBASE64" class="campo hidden">
+				<label class="MAD_EDIT_TIT">{MOLDEOIMAGENBASE64}</label>
+				<div  class="MAD_EDIT_FIELD">*#PROYECTO_IMAGENBASE64#*</div>
+			</div>
+			
+			<div id="MOLDEOIMAGEN" class="campo hidden">
+				<label class="MAD_EDIT_TIT">{MOLDEOIMAGEN}</label>
+				<div  class="MAD_EDIT_FIELD">*#PROYECTO_IMAGEN#*</div>
+			</div>
+
+
+
+
+
+			
+			<br/><br/><br/>
+			<button id="save" class="btn  btn-primary" value="submit">{SAVE}</button>
+			<button id="cancel" class="btn" value="submit">{CANCEL}</button>
+			
+			<div class="vista-adicionales">
+				<label class="MAD_EDIT_TIT mas-campos" " onclick="javascript:togglediv('campos-adicionales_*ID*_');">{CARDMOREFIELDS}+</label>
+				<div id="campos-adicionales_*ID*_" class="campos-adicionales">
+					<div id="PALABRASCLAVES" class="campo">
+						<label class="MAD_EDIT_TIT">{CARDKEYWORDS}</label>
+						<div  class="MAD_EDIT_FIELD">*PALABRASCLAVE*  *ML_PALABRASCLAVE*</div>
+					</div>
+
+					<div id="FECHAEVENTO" class="campo">
+						<label class="MAD_EDIT_TIT">{CARDEVENTDATE}</label>
+						<div  class="MAD_EDIT_FIELD">*FECHAEVENTO*</div>
+					</div>
+
+					<div id="FECHAALTA" class="campo">
+						<label class="MAD_EDIT_TIT">{CARDDATEIN}</label>
+						<div  class="MAD_EDIT_FIELD">*FECHAALTA*</div>
+					</div>
+
+					<div id="FECHABAJA" class="campo">
+						<label class="MAD_EDIT_TIT">{CARDDATEOUT}</label>
+						<div  class="MAD_EDIT_FIELD">*FECHABAJA*</div>
+					</div>
+					
+					<div id="CREADOR" class="campo">
+						<label class="MAD_EDIT_TIT">{CARDCREATOR}</label>
+						<div  class="MAD_EDIT_FIELD">*ID_USUARIO_CREADOR*</div>
+					</div>
+					
+					<div id="EDITOR" class="campo">
+						<label class="MAD_EDIT_TIT">{CARDEDITOR}</label>
+						<div  class="MAD_EDIT_FIELD">*ID_USUARIO_MODIFICADOR*</div>
+					</div>
+					
+					<div id="ACTUALIZACION" class="campo">
+						<label class="MAD_EDIT_TIT">{CARDUPDATE}</label>
+						<div  class="MAD_EDIT_FIELD">*ACTUALIZACION*</div>
+					</div>			
+				</div>
+			</div>
 		</div>
 	</div>
-	
-	<button id="save" class="inputbutton" value="submit">{SAVE}</button>
-	<button id="cancel" class="inputbutton" value="submit">{CANCEL}</button>
-	
-	
 </div>
+
+<div class="hidden">
+*#PROYECTO_VERSION#*
+*#PROYECTO_ORIGEN_CLON#*
+*#PROYECTO_ORIGEN_VERSION#*
+*#PROYECTO_VIDEO#*
+*#PROYECTO_LINK_VIDEO#*
 </div>
+
+<script type="text/javascript" src="../../inc/js/zip/zip.js"></script>
+<script type="text/javascript" src="../../inc/js/zip/checkmol.js"></script>
+
+

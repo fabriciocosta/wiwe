@@ -90,6 +90,7 @@
 				unzipProgress.max = 0;
 				clickEvent.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
 				img.src = blobURL;
+				convertImgToDataURLviaCanvas( img.src, previewImage );
 				img.download = entry.filename;
 				//a.dispatchEvent(clickEvent);
 			}, function(current, total) {
@@ -99,49 +100,61 @@
 			});
 		}
 		
-		function uploadBlob( IMG ) {
-			// create a blob here for testing
-			var blob = new Blob(["i am a blob"]);
-			//var blob = yourAudioBlobCapturedFromWebAudioAPI;// for example   
-			var reader = new FileReader();
-			// this function is triggered once a call to readAsDataURL returns
-			reader.onload = function(event){
-				var fd = new FormData();
-				fd.append('fname', 'test.txt');
-				fd.append('data', event.target.result);
-				$.ajax({
-					type: 'POST',
-					url: 'upload.php',
-					data: fd,
-					processData: false,
-					contentType: false
-				}).done(function(data) {
-					// print the output from the upload.php script
-					console.log(data);
-				});
-			};      
-			// trigger the read from the reader...
-			reader.readAsDataURL(blob);
-
+		function convertImgToDataURLviaCanvas( imgsrc, callback, outputFormat, compress ){
+			var img = new Image();
+			img.crossOrigin = 'Anonymous';
+			img.onload = function(){
+				var canvas = document.createElement('CANVAS');
+				var ctx = canvas.getContext('2d');
+				var dataURL;
+				canvas.height = this.height;
+				canvas.width = this.width;
+				ctx.drawImage(this, 0, 0);
+				if (compress=="undefined") compress = 0.85;
+				if (outputFormat==undefined) outputFormat = "image/jpeg";
+				dataURL = canvas.toDataURL(outputFormat,compress);
+				callback(dataURL);
+				canvas = null; 
+			};
+			img.src = imgsrc;
 		}
 
-		if (typeof requestFileSystem == "undefined")
-			creationMethodInput.options.length = 1;
-		fileInput.addEventListener('change', function() {
+		function previewImage(dataURL) {
+			document.getElementById("_edetalle_PROYECTO_IMAGENBASE64").innerHTML = dataURL;
+			document.getElementById("previewimg").src = dataURL;
+			document.getElementById("previewimg").setAttribute("class","");
 			
-			fileInput.disabled = false; //just to avoid reloading a zip file while uncompressing actual one
-			
-			model.getEntries(fileInput.files[0], function(entries) {
+		}
+		
+		(function () {
+			var imb64 = document.getElementById("_edetalle_PROYECTO_IMAGENBASE64").innerHTML;
+			var file = document.getElementById("_edetalle_PROYECTO_ARCHIVO_LNK").innerHTML;
+			if (imb64!="") {
+				previewImage(imb64);
+				loadPreviewShots( file.src );
+			}
+		})();
+		
+		function loadPreviewShots( _file ) {
+			model.getEntries( _file, function(entries) {
 				fileList.innerHTML = "";
-				entries.forEach(function(entry) {
+				
+				entries.forEach(function(entry,index,z) {
+					
 					var li = document.createElement("li");
-					li.setAttribute("class","previewshot");
+					pselected = "";
+					if (index==1) pselected = " selected";
+										
+					li.setAttribute("class","previewshot"+pselected);					
+										
 					var a = document.createElement("a");
 					a.textContent = entry.filename;
 					
-					var img = document.createElement("img");
+					var img = document.createElement("img");					
+											
 					showimg( entry, li, img );
-					
+										
+
 					//only show jpgs
 					if ( entry.filename.indexOf("previewshots")>0 || entry.filename.indexOf("preview_shot")>0 ) {
 						if ( entry.filename.indexOf(".jpg")>0 ) {
@@ -156,8 +169,8 @@
 							}, false);
 							
 							img.addEventListener( "click", function(event) {
-								alert("uploadblob");
-								UploadBlob( event.target );
+								//alert("convert to b64");
+								convertImgToDataURLviaCanvas( event.target.src, previewImage );
 							} );
 							
 							li.appendChild( a );
@@ -169,6 +182,16 @@
 					
 				});
 			});
+			
+		}
+
+		if (typeof requestFileSystem == "undefined")
+			creationMethodInput.options.length = 1;
+		fileInput.addEventListener('change', function() {
+			
+			fileInput.disabled = false; //just to avoid reloading a zip file while uncompressing actual one
+			
+			loadPreviewShots( fileInput.files[0] );
 		}, false);
 	})();
 

@@ -1231,7 +1231,7 @@ class CDetalles extends CErrorHandler {
 				break;						
 			case "D":
 			case "A":						
-				if ($CDetalle->m_detalle!='') $resstr.=  '<a title="" href="'.$CDetalle->m_detalle.'" target="_blank" id="_edetalle_'.$CTipoDetalle->m_tipo.'_LNK">'.$CDetalle->m_detalle.'</a><img src="'.$_DIR_SITEABS.'/inc/images/delete.gif" border="0" onclick="javascript:erase(\'_edetalle_'.$CTipoDetalle->m_tipo.'\');"><br>';
+				if ($CDetalle->m_detalle!='') $resstr.=  '<a class="btn btn-primary" title="'.$CDetalle->m_detalle.'" href="'.$CDetalle->m_detalle.'" target="_blank" id="_edetalle_'.$CTipoDetalle->m_tipo.'_LNK"> {DOWNLOADFILE} <span class="glyphicon glyphicon-download"></span></a>  <a href="#" class="btn btn-primary btn-red moldeo-erase"   onclick="javascript:erase(\'_edetalle_'.$CTipoDetalle->m_tipo.'\');" style="background-color:#F000;"> {ERASEFILE} <span class="glyphicon glyphicon-remove"></span></a><br>';
 				$resstr.=  '<input name="_edetalle_'.$CTipoDetalle->m_tipo.'" id="_edetalle_'.$CTipoDetalle->m_tipo.'" type="hidden" size="80" value="'.$CDetalle->m_detalle.'">
 				<input id="_fdetalle_'.$CTipoDetalle->m_tipo.'" name="_fdetalle_'.$CTipoDetalle->m_tipo.'" type="file">';
 				break;
@@ -1922,13 +1922,14 @@ class CDetalles extends CErrorHandler {
 			case "A":
 			case "V":
 				
-				$tmpname = $_FILES['_fdetalle_'.$TipoDetalle->m_tipo]["tmp_name"];
-				echo "Receiving file: ".$tmpname;
-				
+				$tmpname = $_FILES['_fdetalle_'.$TipoDetalle->m_tipo]["tmp_name"];				
 				$name = $_FILES['_fdetalle_'.$TipoDetalle->m_tipo]["name"];
 				$size = $_FILES['_fdetalle_'.$TipoDetalle->m_tipo]["size"];
 				$type = $_FILES['_fdetalle_'.$TipoDetalle->m_tipo]["type"];
 				$elerror = $_FILES['_fdetalle_'.$TipoDetalle->m_tipo]["error"];
+				
+				echo "Receiving file: from [".$name."] to [".$tmpname."]";
+
 				// UPLOAD_ERR_OK         Value: 0; There is no error, the file uploaded with success.
 				// UPLOAD_ERR_INI_SIZE   Value: 1; The uploaded file exceeds the upload_max_filesize directive in php.ini.
 				// UPLOAD_ERR_FORM_SIZE  Value: 2; The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form.
@@ -1937,61 +1938,63 @@ class CDetalles extends CErrorHandler {
 				// UPLOAD_ERR_NO_TMP_DIR Value: 6; Missing a temporary folder. Introduced in PHP 4.3.10 and PHP 5.0.3.
 				// UPLOAD_ERR_CANT_WRITE Value: 7; Failed to write file to disk. Introduced in PHP 5.1.0.
 				// UPLOAD_ERR_EXTENSION  Value: 8; File upload stopped by extension. Introduced in PHP 5.2.0.
-				switch ($elerror) {
-					case UPLOAD_ERR_OK:
-						$response = 'There is no error, the file uploaded with success.';
-						break;
-					case UPLOAD_ERR_INI_SIZE:
-						$response = 'The uploaded file exceeds the upload_max_filesize directive in php.ini.';
-						break;
-					case UPLOAD_ERR_FORM_SIZE:
-						$response = 'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form.';
-						break;
-					case UPLOAD_ERR_PARTIAL:
-						$response = 'The uploaded file was only partially uploaded.';
-						break;
-					case UPLOAD_ERR_NO_FILE:
-						$response = 'No file was uploaded.';
-						break;
-					case UPLOAD_ERR_NO_TMP_DIR:
-						$response = 'Missing a temporary folder. Introduced in PHP 4.3.10 and PHP 5.0.3.';
-						break;
-					case UPLOAD_ERR_CANT_WRITE:
-						$response = 'Failed to write file to disk. Introduced in PHP 5.1.0.';
-						break;
-					case UPLOAD_ERR_EXTENSION:
-						$response = 'File upload stopped by extension. Introduced in PHP 5.2.0.';
-						break;
-					default:
-						$response = 'Unknown error';
-						break;
-				}			
+				if ($name!="") {
+					switch ($elerror) {
+						case UPLOAD_ERR_OK:
+							$response = 'There is no error, the file uploaded with success.';
+							break;
+						case UPLOAD_ERR_INI_SIZE:
+							$response = 'The uploaded file exceeds the upload_max_filesize directive in php.ini.';
+							break;
+						case UPLOAD_ERR_FORM_SIZE:
+							$response = 'The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form.';
+							break;
+						case UPLOAD_ERR_PARTIAL:
+							$response = 'The uploaded file was only partially uploaded.';
+							break;
+						case UPLOAD_ERR_NO_FILE:
+							$response = 'No file was uploaded.';
+							break;
+						case UPLOAD_ERR_NO_TMP_DIR:
+							$response = 'Missing a temporary folder. Introduced in PHP 4.3.10 and PHP 5.0.3.';
+							break;
+						case UPLOAD_ERR_CANT_WRITE:
+							$response = 'Failed to write file to disk. Introduced in PHP 5.1.0.';
+							break;
+						case UPLOAD_ERR_EXTENSION:
+							$response = 'File upload stopped by extension. Introduced in PHP 5.2.0.';
+							break;
+						default:
+							$response = 'Unknown error';
+							break;
+					}			
 
-			if ($elerror!=UPLOAD_ERR_OK) echo "Error: ".$response;
-				
-			//SINGLE ARCHIVE OR DOCUMENT	      					
-			$name = uniquecode(clean(replace_flat($name)));
-			$tmpmov = $TipoDetalle->m_tipo.$CDetalle->m_id.$name;
-			$tmpmov = replace_specials($tmpmov);
-			echo "name of file: " + $name;
-			
-			if ($tmpname!="" && $elerror==UPLOAD_ERR_OK) {							
-				if ( is_uploaded_file($tmpname) ) {															
-					/*
-					$_exito_ = tmp_to_local( $tmpname, $_SITEROOT_.'/tmp/'.$tmpmov );
-					if($_exito_) $_exito_ = rename_ftp('/archivos/documentacion/'.$tmpmov,'/tmp/'.$tmpmov);
-					chmod_ftp('/archivos/documentacion/'.$tmpmov);
-					*/
-					$_exito_ = tmp_to_local( $tmpname, $_SITEROOT_.'/archivos/documentacion/'.$tmpmov );
-					$CDetalle->m_detalle = wiwe_dir_siteabs('../../archivos/documentacion/'.$tmpmov);
-				} else {
-					//$this->m_CErrores->PushError( new CError("UPLOADERROR:".$tmpname,"uploading error confirming detail") );
-					$this->PushError( new CError("UPLOADERROR:".$tmpname,"uploading error confirming detail") );
-					$_exito_=false;
+					if ($elerror!=UPLOAD_ERR_OK) echo "Error: ".$response;
+						
+					//SINGLE ARCHIVE OR DOCUMENT	      					
+					$name = uniquecode(clean(replace_flat($name)));
+					$tmpmov = $TipoDetalle->m_tipo.$CDetalle->m_id.$name;
+					$tmpmov = replace_specials($tmpmov);
+					echo "name of file: " + $name;
+					
+					if ($tmpname!="" && $elerror==UPLOAD_ERR_OK) {							
+						if ( is_uploaded_file($tmpname) ) {															
+							/*
+							$_exito_ = tmp_to_local( $tmpname, $_SITEROOT_.'/tmp/'.$tmpmov );
+							if($_exito_) $_exito_ = rename_ftp('/archivos/documentacion/'.$tmpmov,'/tmp/'.$tmpmov);
+							chmod_ftp('/archivos/documentacion/'.$tmpmov);
+							*/
+							$_exito_ = tmp_to_local( $tmpname, $_SITEROOT_.'/archivos/documentacion/'.$tmpmov );
+							$CDetalle->m_detalle = wiwe_dir_siteabs('../../archivos/documentacion/'.$tmpmov);
+						} else {
+							//$this->m_CErrores->PushError( new CError("UPLOADERROR:".$tmpname,"uploading error confirming detail") );
+							$this->PushError( new CError("UPLOADERROR:".$tmpname,"uploading error confirming detail") );
+							$_exito_=false;
+						}
+					} else echo "Error: ".$response;
+					$CDetalle->m_txtdata = $CDetalle->m_detalle;
 				}
-			} else echo "Error: ".$response;
-			$CDetalle->m_txtdata = $CDetalle->m_detalle;
-			break;		      				
+				break;		      				
 			
 			case "I":
 			case "F":

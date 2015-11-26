@@ -15,7 +15,7 @@ global $_debug_;
 global $__modulo__;
 global $debugon;
 global $cg_admin_debug;
-$debugon = "";
+$debugon = false;
 $cg_admin_debug = false;
 
 $ip = getenv("REMOTE_ADDR") ;

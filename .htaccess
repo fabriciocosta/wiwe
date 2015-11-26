@@ -3,8 +3,8 @@ RewriteEngine  on
 RewriteRule ^$ /home [L]
 
 RewriteRule ^admin$ /principal/admin/index.php [L,R]
-RewriteRule ^config$ /administracion/login/login.php [L,R]
-RewriteRule ^config/$ /administracion/login/login.php [L,R]
+RewriteRule ^config$ /config/login/login.php [L,R]
+RewriteRule ^config/$ /config/login/login.php [L,R]
 RewriteRule ^administracion$ /administracion/login/login.php [L,R]
 RewriteRule ^administracion/$ /administracion/login/login.php [L,R]
 
