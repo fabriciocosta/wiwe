@@ -11,7 +11,14 @@ if ($__lang__!="") $ln = ".".strtolower($__lang__);
 ?>
 <body class="<?=$__modulo__?>">
 
-
+<?
+$Features = $Sitio->Secciones->GetSeccion( 11 );
+$Downloads = $Sitio->Secciones->GetSeccion( 5 );
+$Works = $Sitio->Secciones->GetSeccion( 20 );
+$Documentation = $Sitio->Secciones->GetSeccion( 7 );
+$Projects = $Sitio->Secciones->GetSeccion( 119 );
+$Community = $Sitio->Secciones->GetSeccion( 12 );
+?>
 <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -29,13 +36,13 @@ if ($__lang__!="") $ln = ".".strtolower($__lang__);
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="/features#head" title="Features/Caracter&iacute;sticas">Features</a>
+                        <a href="/features#head" title="Features/Caracter&iacute;sticas"><?=$Features->Nombre()?></a>
                     </li>
                     <li>
-                        <a href="/downloads#head" title="Downloads/Descargas">Downloads</a>
+                        <a href="/downloads#head" title="Downloads/Descargas"><?=$Downloads->Nombre()?></a>
                     </li>
                     <li>
-                        <a href="/work#head" title="Work/Obras">Work</a>
+                        <a href="/work#head" title="Work/Obras"><?=$Works->Nombre()?></a>
                     </li>
 					<!--
                     <li>
@@ -46,11 +53,22 @@ if ($__lang__!="") $ln = ".".strtolower($__lang__);
                     </li>
 					-->
                     <li>
-						<a href="/documentacion#head" title="Documentation/Documentaci&oacute;n">Documentation</a>
+						<a href="/documentacion#head" title="Documentation/Documentaci&oacute;n"><?=$Documentation->Nombre()?></a>
                     </li>
                     <li>
-						<a href="/community#head" title="Community/Comunidad">Community</a>
+						<a href="/community#head" title="Community/Comunidad"><?=$Community->Nombre()?></a>
                     </li>
+					<li>
+						<a href="/proyecto#head" title="Projects/Proyectos"><?=$Projects->Nombre()?></a>
+					</li>
+					<?
+					if ($Sitio->Usuarios->Logged()) {
+						?>
+						<li><button title="Mis Proyectos" class="btn btn-primary mo-list-project"><b>==</b></button></li>
+						<li><button title="Agregar Proyecto" class="btn btn-primary mo-add-project"><b>++</b></button></li>
+						<?
+					}
+					?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

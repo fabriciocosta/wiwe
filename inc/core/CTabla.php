@@ -1263,7 +1263,8 @@ class Tabla {
 			}
 			elseif ($campo['tipo'] == 'BLOBTEXTOML') {
 				if ($lang=="") {//la primera llamada sin el lang especificado, es para contener todos los idiomas
-					$resstr.= '<input id="'.$formpoint.'_e_'.$campo['nombre'].'" name="_e_'.$campo['nombre'].'" type="hidden" value="'.$defecto.'" size="'.$campo['tamanio'].'" class="campo form-control">';				
+					//$resstr.= '<input id="'.$formpoint.'_e_'.$campo['nombre'].'" name="_e_'.$campo['nombre'].'" type="hidden" value="'.$defecto.'" size="'.$campo['tamanio'].'" class="campo form-control">';				
+					$resstr.= '<TEXTAREA id="'.$formpoint.'_e_'.$campo['nombre'].'" name="_e_'.$campo['nombre'].'" class="campo hidden" >'.$defecto.'</TEXTAREA>';
 				} else {//aqui debe estar especificado el lang: EN | FR | SP
 					$resstr.= '<TEXTAREA '.$disabled.' id="'.$formpoint.'_e_'.$campo['nombre'].'_'.$lang.'" name="_e_'.$campo['nombre'].'_'.$lang.'" rows="'.$campo['tamanio2'].'" cols="'.$campo['tamanio'].'" class="campo form-control" onChange="javascript:setForm(\''.$form.'\');completeML(\'_e_'.$campo['nombre'].'\',\''.$lang.'\')">'.$this->TextoML($defecto,$lang).'</TEXTAREA>';
 				}			

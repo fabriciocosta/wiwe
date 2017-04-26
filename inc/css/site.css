@@ -1,6 +1,62 @@
 @charset "UTF-8";
 
 
+.PROYECTO.resumen {
+	padding-top: 20px;
+	margin-top: 10px;
+	/*box-shadow: 10px 10px 20px #000;*/
+}
+
+.PROYECTO.resumen {
+	float: left !important;
+	clear: both !important;
+	/*width: 40%;*/
+}
+
+.portfolio-item .imagen {
+	border-radius: 13px;
+		
+}
+
+
+.PROYECTO.resumen * {
+	color: #DDD !important;	
+}
+
+.PROYECTO.resumen a {
+	color: #FAFAFA !important;	
+}
+
+.jumbotron button.close {
+	font-size: 40px !important;
+	position: relative !important;
+	float: right !important;
+	margin-right: -15px !important;
+	margin-top: -15px !important;
+}
+
+
+.portfolio-item img {
+			
+	width: 444px !important;
+	height: 222px !important;
+	background-image: url("../../inc/imgmoldeo/background.jpg");
+	background-size: 100% 100%;
+}
+
+.PROYECTO.completo .imagen {
+	min-width: 555px !important;
+	min-height: 333px; 
+	background-image: url("../../inc/imgmoldeo/background.jpg");
+	background-size: 100% 100%;
+	border-radius: 21px;
+}
+
+
+.PROYECTO.completo .cuerpo * {
+	font-size: 16px !important;
+	margin-top: 16px !important;
+}
 
 #bs-example-navbar-collapse-1 {
 	float: left !important;
@@ -36,8 +92,8 @@
 }
 
 
-h1,h2,h3,h4 {
-	color: #FFF !important;
+h1,h2,h3,h4, p, p * {
+	color: #FFF;
 }
 
 .text_white * {
@@ -50,7 +106,10 @@ h1,h2,h3,h4 {
 	font-weight: none;
 }
 
-
+.col-autor {
+	/*float: right !important;*/
+	text-align: left !important;	
+}
 
 body {
 	margin-left: 0px;
@@ -458,7 +517,7 @@ div.resumen {
 	float: left;
 	position: relative;
 	
-	width: 90%;
+	/*width: 90%;*/
 	/*height: 144px;*/
 	overflow: hidden;
 	
@@ -869,7 +928,7 @@ a.lang {
 }
 
 .jumbotron {
-	display: block !important;
+	/*display: block !important;*/
 	background-color: rgba(0,0,0, 0.5 ) !important;
 	text-align: justify;
 	width: 70%;
@@ -980,6 +1039,15 @@ div.DESCARGA .resumen .titulo {
 }
 
 div.DESCARGA .resumen code {
+	display: block;
+	position: relative;
+	border: solid 1px #666;
+	background-color: #000;
+	color: #6F6;
+	padding: 5px;
+}
+
+code {
 	display: block;
 	position: relative;
 	border: solid 1px #666;

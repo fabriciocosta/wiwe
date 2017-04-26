@@ -3,7 +3,11 @@
 }
 
 
-
+.portfolio-item img {
+			
+	height: 222px !important;
+	
+}
 
 
 #fotog {

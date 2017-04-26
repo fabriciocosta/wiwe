@@ -10,9 +10,34 @@ global $__lang__;
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Moldeo.org Site">
-<meta name="author" content="Fabricio Costa Alisedo">
+<meta name="author" content="Moldeo Interactive Coop. Ltd.">
 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<? global $_cID_;
+
+if ($_cID_) {
+
+$Contenido = $Sitio->Contenidos->GetContenidoCompleto($_cID_);
+//PROYECTO_IMAGENBASE64
+/*
+$CDImagenBase64 = $Contenido->m_detalles["PROYECTO_IMAGENBASE64"];
+if ($CDImagenBase64) {
+	$im64 = $Contenido->m_detalles["PROYECTO_IMAGENBASE64"]->m_txtdata;
+}
+*/
+?>
+<!--<meta property="og:image" content="http://www.moldeo.org<?=$_DIR_SITEABS?>/inc/moldeo/moldeologo.png"/>-->
+<meta property="og:image" content="http://www.moldeo.org<?=$_DIR_SITEABS?>"/>
+<?
+} else {
+?>
+<!--<meta property="og:image" content="http://www.moldeo.org<?=$_DIR_SITEABS?>/inc/moldeo/moldeo_azul.jpg"/>-->
+<meta property="og:image" content="http://www.moldeo.org<?=$_DIR_SITEABS?>/inc/moldeo/moldeologo.png"/>
+<?
+}
+?>
+
 
 <script>
 //PERSONALIZADOS
@@ -273,7 +298,30 @@ function SignUpValidation() {
 
 }
 
-
+$(document).ready(
+	
+function() {
+	$(".mo-add-project").click(
+		function() {
+			window.location.href = "/panel?_accion_=agregar&ID_TIPOCONTENIDO=26";
+		}
+	);
+	$(".mo-list-project").click(
+		function() {
+			window.location.href = "/panel?_accion_=vermas&ID_TIPOCONTENIDO=26";
+		}
+	);
+	
+	$("#homemessage button.close").click(
+		function() {
+			$("#homemessage").hide();
+		}
+	);
+}
+	
+	
+	
+);
 
 
 </script>

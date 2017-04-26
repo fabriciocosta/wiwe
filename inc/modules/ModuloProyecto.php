@@ -13,12 +13,18 @@ $TIPOCONTENIDO = FICHA_PROYECTO;
 ?>
 <?
 	{
+		$__modulo__ = "Proyectos";
 		$Seccion = $this->Secciones->GetSeccionByName( $__modulo__ );	
 		if (is_object($Seccion)) {
 			$texto = $Seccion->m_descripcion;			
 		}
 	} 
 	
+	if ($_cID_) {
+		$Contenido = $this->Contenidos->GetContenidoCompleto($_cID_);	
+		$texto_firstline = $Contenido->Titulo();
+		
+	} else
 	if (trim($texto)!="") {
 		$textos = explode( "\n", $texto);
 		$texto_firstline = $textos[0];
@@ -29,13 +35,6 @@ $TIPOCONTENIDO = FICHA_PROYECTO;
 <div class="container"><!-- content content-<?=$__modulo__?>">-->
 
 	<!-- Page Header -->
-	<div class="row">
-		<div class="col-lg-12">
-			<h1 class="page-header"><?=$texto_firstline?>
-				<small>Crea, clona, comparte...</small>
-			</h1>
-		</div>
-	</div>
 	
         <!-- /.row -->
 <!--
@@ -52,7 +51,7 @@ if ($_cID_) {
 	<div class="row">
 	<?
 	$this->InicializarTemplatesCompletos();
-	$Contenido = $this->Contenidos->GetContenidoCompleto($_cID_);	
+	//$Contenido = $this->Contenidos->GetContenidoCompleto($_cID_);	
 	$this->TiposContenidos->MostrarCompleto( $Contenido );
 	?>
 	</div>
@@ -61,10 +60,17 @@ if ($_cID_) {
 	?>
 	<!--<div class="view-list view-list-<?=$__modulo__?>">-->
 	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header"><?=$texto_firstline?>
+				<small>Crea, clona, comparte...</small>
+			</h1>
+		</div>
+	</div>
+	<div class="row">
 	<?
 	$this->InicializarTemplatesResumenes();
 	$this->TiposContenidos->SetTemplateResumen( $TIPOCONTENIDO );
-	$this->Contenidos->MostrarPorTipo( "resumen", "", $TIPOCONTENIDO, 100 );
+	$this->Contenidos->MostrarPorTipo( "resumen", "", $TIPOCONTENIDO, 100, -1, "", "contenidos.ID DESC" );
 	?>
 	</div>
 	<?  

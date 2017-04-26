@@ -3,6 +3,32 @@
 
 class CSitioExtended extends CSitio {
 	
+	function InicializarTitulos() {
+		global $_cID_;
+		global $_TITLE_;
+		global $_DESCRIPTION_;
+		global $_KEYWORDS_;
+		global $_csistema_;
+		global $CLang;
+		$by = "{BY}";
+		
+		if (is_numeric( $_cID_) ) {
+				
+			$Contenido = $this->Contenidos->GetContenido($_cID_);
+				
+			if (is_object($Contenido)) {
+				$UsuarioX = $this->Usuarios->GetUsuario($Contenido->m_id_usuario_creador);
+				$_TITLE_ = $Contenido->Titulo()." - ".$CLang->Translate($by)." ".$UsuarioX->NombreCompleto()." - ".$_csistema_->Titulo();
+				/*." - ".$_csistema_->Titulo()*/
+		
+				$_DESCRIPTION_ = $Contenido->CopeteStrip();
+				$_KEYWORDS_ = $Contenido->PalabrasClave();
+			}
+		}
+				
+	}	
+	
+	
 	//**ADDMODULE**//
 	
 		//ADDED BY CONFIG MANAGER

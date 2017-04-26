@@ -199,14 +199,18 @@ class CSitio {
 		global $_TITLE_;
 		global $_DESCRIPTION_;
 		global $_KEYWORDS_;
+		global $_csistema_;
+		global $CLang;
+		$of = "{OF}";
 		
 		if (is_numeric( $_cID_) ) {
 				
 			$Contenido = $this->Contenidos->GetContenido($_cID_);
 				
 			if (is_object($Contenido)) {
-		
-				$_TITLE_ = $Contenido->Titulo();
+				$UsuarioX = $this->Usuarios->GetUsuario($Contenido->m_id_usuario_creador);
+				$_TITLE_ = $Contenido->Titulo()." - ".$_csistema_->Titulo();
+				/*." - ".$_csistema_->Titulo()*/
 		
 				$_DESCRIPTION_ = $Contenido->CopeteStrip();
 				$_KEYWORDS_ = $Contenido->PalabrasClave();

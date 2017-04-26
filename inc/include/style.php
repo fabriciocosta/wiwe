@@ -5,6 +5,9 @@
 <link href="<?=$_DIR_SITEABS?>/inc/css/general.css" rel="stylesheet" media="screen">
 <link href="<?=$_DIR_SITEABS?>/inc/css/lightbox.css" rel="stylesheet" media="screen">
 <link rel="stylesheet" href="<?=$_DIR_SITEABS?>/inc/css/nivo-slider.css" type="text/css" media="screen" />
+<link type="text/css" rel="stylesheet" href="<?=$_DIR_SITEABS?>/inc/css/bootstrap.min.css"/>
+<link type="text/css" rel="stylesheet" href="<?=$_DIR_SITEABS?>/inc/css/full-slider.css"/>
+<link type="text/css" rel="stylesheet" href="<?=$_DIR_SITEABS?>/inc/css/3-col-portfolio.css"/>
 
 
 <?
@@ -25,9 +28,6 @@ if ( DebugOn() ) echo '<style> .debugdetails, .errordetails {	display: block; } 
 
 ?>
 
-<link type="text/css" rel="stylesheet" href="<?=$_DIR_SITEABS?>/inc/css/bootstrap.min.css"/>
-<link type="text/css" rel="stylesheet" href="<?=$_DIR_SITEABS?>/inc/css/full-slider.css"/>
-<link type="text/css" rel="stylesheet" href="<?=$_DIR_SITEABS?>/inc/css/3-col-portfolio.css"/>
 
 <script type="text/javascript">
 

@@ -68,5 +68,6 @@ RewriteRule ^Home$ /principal/home/home.php
 
 RewriteRule ^([^/]+)/+([0-9]+)$ /principal/home/$1.php?_cID_=$2 [L]
 RewriteRule ^([^/]+)/+([^/]+)$ /principal/home/$1.php?_titulo_contenido_=$2 [L]
+RewriteRule ^([^/]+)/+([0-9]+)/+([^/]+)$ /principal/home/$1.php?_cID_=$2 [L]
 #RewriteRule ^([^/]+)/+([^/]+)$ /principal/home/$1.php?$2 [L]
 RewriteRule ^([^/]+)$ /principal/home/$1.php [L]

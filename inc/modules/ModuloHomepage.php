@@ -77,10 +77,12 @@ $(window).load(function() {
   
 -->
 
-<div class="jumbotron">
+<div id="homemessage" class="jumbotron">
+	<button type="button" class="close">&times;</button>
   <h1>Moldeo 1.0 Beta</h1>
   <p><?echo $home; ?></p>
   <p><a class="btn btn-primary btn-lg" href="/descargas#head" role="button">Descargar</a></p>
+	
 </div>
 
 
